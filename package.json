@@ -1,0 +1,34 @@
+{
+  "name": "aylien-news-api",
+  "version": "0.0.1",
+  "description": "AYLIEN News API is the most powerful way of sourcing, searching and syndicating analyzed and enriched news content.",
+  "license": "Apache-2.0",
+  "author": "AYLIEN Inc.",
+  "contributors": [
+    {
+      "name": "Hamed Ramezanian Nik",
+      "email": "hamed.r.nik@gmail.com"
+    }
+  ],
+  "keywords": [ "aylien", "news api", "news", "aylien news api"],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "dependencies": {
+    "superagent": "1.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AYLIEN/aylien_newsapi_nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AYLIEN/aylien_newsapi_nodejs/issues"
+  },
+  "homepage": "https://github.com/AYLIEN/aylien_newsapi_nodejs",
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}

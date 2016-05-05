@@ -12,7 +12,7 @@ AYLIEN News API is the most powerful way of sourcing, searching and syndicating 
 Install it via:
 
 ```shell
-npm install aylien-news-api --save
+npm install aylien-news-api
 ```
 
 #### git
@@ -20,7 +20,7 @@ npm install aylien-news-api --save
 Install it via:
 
 ```shell
-npm install AYLIEN/aylien_newsapi_nodejs --save
+npm install AYLIEN/aylien_newsapi_nodejs
 ```
 
 

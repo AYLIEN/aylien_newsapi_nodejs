@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**self** | **String** | A URL points to the category | [optional] 
-**parent** | **String** | A URL points to the parent category | [optional] 
+**self** | **String** | A URL pointing to the category | [optional] 
+**parent** | **String** | A URL pointing to the parent category | [optional] 
 
 

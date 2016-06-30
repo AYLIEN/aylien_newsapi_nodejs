@@ -7,3 +7,16 @@ Name | Type | Description | Notes
 **score** | **Number** | Polarity score of the sentiment | [optional] 
 
 
+<a name="PolarityEnum"></a>
+## Enum: PolarityEnum
+
+
+* `positive` (value: `"positive"`)
+
+* `neutral` (value: `"neutral"`)
+
+* `negative` (value: `"negative"`)
+
+
+
+

@@ -11,3 +11,14 @@ Name | Type | Description | Notes
 **links** | [**CategoryLinks**](CategoryLinks.md) | Related links for the category | [optional] 
 
 
+<a name="TaxonomyEnum"></a>
+## Enum: TaxonomyEnum
+
+
+* `iab-qag` (value: `"iab-qag"`)
+
+* `iptc-subjectcode` (value: `"iptc-subjectcode"`)
+
+
+
+

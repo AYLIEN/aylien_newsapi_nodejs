@@ -29,11 +29,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var type = "type_example"; // String | This parameter is used for defining the type of autocompletes.
 
@@ -92,11 +92,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
   'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
@@ -235,11 +235,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
   'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
@@ -366,11 +366,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
   'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
@@ -509,11 +509,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
   'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
@@ -646,11 +646,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
   'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
@@ -771,11 +771,11 @@ var apiInstance = new AylienNewsApi.DefaultApi();
 
 // Configure API key authorization: app_id
 var app_id = apiInstance.apiClient.authentications['app_id'];
-app_id.apiKey = "YOUR APP ID";
+app_id.apiKey = "YOUR_APP_ID";
 
 // Configure API key authorization: app_key
 var app_key = apiInstance.apiClient.authentications['app_key'];
-app_key.apiKey = "YOUR APP KEY";
+app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
   'id': [56], // [Integer] | This parameter is used for finding stroies by story id.

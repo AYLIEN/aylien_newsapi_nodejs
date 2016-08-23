@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** | A unique identification for the author | [optional] 
+**id** | **Number** | A unique identification for the author | [optional] 
 **name** | **String** | The extracted author full name | [optional] 
 **avatarUrl** | **String** | A URL which points to the author avatar | [optional] 
 

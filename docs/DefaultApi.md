@@ -41,7 +41,7 @@ var term = "term_example"; // String | This parameter is used for finding autoco
 
 var opts = { 
   'language': "en", // String | This parameter is used for autocompletes whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
-  'perPage': 3 // Integer | This parameter is used for specifying number of items in each page.
+  'perPage': 3 // Number | This parameter is used for specifying number of items in each page.
 };
 
 var callback = function(error, data, response) {
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
  **type** | **String**| This parameter is used for defining the type of autocompletes. | 
  **term** | **String**| This parameter is used for finding autocomplete objects that contain the specified value. | 
  **language** | **String**| This parameter is used for autocompletes whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. | [optional] [default to en]
- **perPage** | **Integer**| This parameter is used for specifying number of items in each page. | [optional] [default to 3]
+ **perPage** | **Number**| This parameter is used for specifying number of items in each page. | [optional] [default to 3]
 
 ### Return type
 
@@ -99,7 +99,7 @@ var app_key = apiInstance.apiClient.authentications['app_key'];
 app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
-  'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
+  'id': [56], // [Number] | This parameter is used for finding stroies by story id.
   'title': "title_example", // String | This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'body': "body_example", // String | This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'text': "text_example", // String | This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
@@ -109,7 +109,7 @@ var opts = {
   'categoriesTaxonomy': "categoriesTaxonomy_example", // String | This parameter is used for defining the type of the taxonomy for the rest of the categories queries.
   'categoriesConfident': true, // Boolean | This parameter is used for finding stories whose categories are confident.
   'categoriesId': ["categoriesId_example"], // [String] | This parameter is used for finding stories by categories id.
-  'categoriesLevel': [56], // [Integer] | This parameter is used for finding stories by categories level.
+  'categoriesLevel': [56], // [Number] | This parameter is used for finding stories by categories level.
   'entitiesTitleText': ["entitiesTitleText_example"], // [String] | This parameter is used to find stories based on the specified entities `text` in story titles.
   'entitiesTitleType': ["entitiesTitleType_example"], // [String] | This parameter is used to find stories based on the specified entities `type` in story titles.
   'entitiesTitleLinksDbpedia': ["entitiesTitleLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in story titles.
@@ -118,13 +118,13 @@ var opts = {
   'entitiesBodyLinksDbpedia': ["entitiesBodyLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories.
   'sentimentTitlePolarity': "sentimentTitlePolarity_example", // String | This parameter is used for finding stories whose title sentiment is the specified value.
   'sentimentBodyPolarity': "sentimentBodyPolarity_example", // String | This parameter is used for finding stories whose body sentiment is the specified value.
-  'mediaImagesCountMin': 56, // Integer | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
-  'mediaImagesCountMax': 56, // Integer | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
-  'mediaVideosCountMin': 56, // Integer | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
-  'mediaVideosCountMax': 56, // Integer | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
-  'authorId': [56], // [Integer] | This parameter is used for finding stories whose author id is the specified value.
+  'mediaImagesCountMin': 56, // Number | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
+  'mediaImagesCountMax': 56, // Number | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
+  'mediaVideosCountMin': 56, // Number | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
+  'mediaVideosCountMax': 56, // Number | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
+  'authorId': [56], // [Number] | This parameter is used for finding stories whose author id is the specified value.
   'authorName': "authorName_example", // String | This parameter is used for finding stories whose author full name contains the specified value.
-  'sourceId': [56], // [Integer] | This parameter is used for finding stories whose source id is the specified value.
+  'sourceId': [56], // [Number] | This parameter is used for finding stories whose source id is the specified value.
   'sourceName': ["sourceName_example"], // [String] | This parameter is used for finding stories whose source name contains the specified value.
   'sourceDomain': ["sourceDomain_example"], // [String] | This parameter is used for finding stories whose source domain is the specified value.
   'sourceLocationsCountry': ["sourceLocationsCountry_example"], // [String] | This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
@@ -134,16 +134,21 @@ var opts = {
   'sourceScopesState': ["sourceScopesState_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesCity': ["sourceScopesCity_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesLevel': ["sourceScopesLevel_example"], // [String] | This parameter is used for finding stories whose source scopes  is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
+  'sourceLinksInCountMin': 56, // Number | This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceLinksInCountMax': 56, // Number | This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceRankingsAlexaRankMin': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaRankMax': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaCountry': ["sourceRankingsAlexaCountry_example"], // [String] | This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
   'cluster': false, // Boolean | This parameter enables clustering for the returned stories.
   'clusterAlgorithm': "lingo", // String | This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms.
   '_return': ["_return_example"], // [String] | This parameter is used for specifying return fields.
-  'storyId': 789, // Integer | A story id
+  'storyId': 789, // Number | A story id
   'storyUrl': "storyUrl_example", // String | An article or webpage
   'storyTitle': "storyTitle_example", // String | Title of the article
   'storyBody': "storyBody_example", // String | Body of the article
   'storyPublishedAt': new Date("2013-10-20T19:20:30+01:00"), // Date | Publish date of the article. If you use a url or title and body of an article for getting coverages, this parameter is required. The format used is a restricted form of the canonical representation of dateTime in the [XML Schema specification (ISO 8601)](https://www.w3.org/TR/xmlschema-2/#dateTime).
   'storyLanguage': "auto", // String | This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
-  'perPage': 3 // Integer | This parameter is used for specifying number of items in each page.
+  'perPage': 3 // Number | This parameter is used for specifying number of items in each page.
 };
 
 var callback = function(error, data, response) {
@@ -160,7 +165,7 @@ apiInstance.listCoverages(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**[Integer]**](Integer.md)| This parameter is used for finding stroies by story id. | [optional] 
+ **id** | [**[Number]**](Number.md)| This parameter is used for finding stroies by story id. | [optional] 
  **title** | **String**| This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **body** | **String**| This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **text** | **String**| This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
@@ -170,7 +175,7 @@ Name | Type | Description  | Notes
  **categoriesTaxonomy** | **String**| This parameter is used for defining the type of the taxonomy for the rest of the categories queries. | [optional] 
  **categoriesConfident** | **Boolean**| This parameter is used for finding stories whose categories are confident. | [optional] [default to true]
  **categoriesId** | [**[String]**](String.md)| This parameter is used for finding stories by categories id. | [optional] 
- **categoriesLevel** | [**[Integer]**](Integer.md)| This parameter is used for finding stories by categories level. | [optional] 
+ **categoriesLevel** | [**[Number]**](Number.md)| This parameter is used for finding stories by categories level. | [optional] 
  **entitiesTitleText** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. | [optional] 
  **entitiesTitleType** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. | [optional] 
  **entitiesTitleLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in story titles. | [optional] 
@@ -179,13 +184,13 @@ Name | Type | Description  | Notes
  **entitiesBodyLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. | [optional] 
  **sentimentTitlePolarity** | **String**| This parameter is used for finding stories whose title sentiment is the specified value. | [optional] 
  **sentimentBodyPolarity** | **String**| This parameter is used for finding stories whose body sentiment is the specified value. | [optional] 
- **mediaImagesCountMin** | **Integer**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
- **mediaImagesCountMax** | **Integer**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
- **mediaVideosCountMin** | **Integer**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
- **mediaVideosCountMax** | **Integer**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
- **authorId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
+ **mediaImagesCountMin** | **Number**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
+ **mediaImagesCountMax** | **Number**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
+ **mediaVideosCountMin** | **Number**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
+ **mediaVideosCountMax** | **Number**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
+ **authorId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
  **authorName** | **String**| This parameter is used for finding stories whose author full name contains the specified value. | [optional] 
- **sourceId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
+ **sourceId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
  **sourceName** | [**[String]**](String.md)| This parameter is used for finding stories whose source name contains the specified value. | [optional] 
  **sourceDomain** | [**[String]**](String.md)| This parameter is used for finding stories whose source domain is the specified value. | [optional] 
  **sourceLocationsCountry** | [**[String]**](String.md)| This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
@@ -195,16 +200,21 @@ Name | Type | Description  | Notes
  **sourceScopesState** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesCity** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesLevel** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes  is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
+ **sourceLinksInCountMin** | **Number**| This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceLinksInCountMax** | **Number**| This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceRankingsAlexaRankMin** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaRankMax** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaCountry** | [**[String]**](String.md)| This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
  **cluster** | **Boolean**| This parameter enables clustering for the returned stories. | [optional] [default to false]
  **clusterAlgorithm** | **String**| This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms. | [optional] [default to lingo]
  **_return** | [**[String]**](String.md)| This parameter is used for specifying return fields. | [optional] 
- **storyId** | **Integer**| A story id | [optional] 
+ **storyId** | **Number**| A story id | [optional] 
  **storyUrl** | **String**| An article or webpage | [optional] 
  **storyTitle** | **String**| Title of the article | [optional] 
  **storyBody** | **String**| Body of the article | [optional] 
  **storyPublishedAt** | **Date**| Publish date of the article. If you use a url or title and body of an article for getting coverages, this parameter is required. The format used is a restricted form of the canonical representation of dateTime in the [XML Schema specification (ISO 8601)](https://www.w3.org/TR/xmlschema-2/#dateTime). | [optional] 
  **storyLanguage** | **String**| This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. | [optional] [default to auto]
- **perPage** | **Integer**| This parameter is used for specifying number of items in each page. | [optional] [default to 3]
+ **perPage** | **Number**| This parameter is used for specifying number of items in each page. | [optional] [default to 3]
 
 ### Return type
 
@@ -242,7 +252,7 @@ var app_key = apiInstance.apiClient.authentications['app_key'];
 app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
-  'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
+  'id': [56], // [Number] | This parameter is used for finding stroies by story id.
   'title': "title_example", // String | This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'body': "body_example", // String | This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'text': "text_example", // String | This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
@@ -252,7 +262,7 @@ var opts = {
   'categoriesTaxonomy': "categoriesTaxonomy_example", // String | This parameter is used for defining the type of the taxonomy for the rest of the categories queries.
   'categoriesConfident': true, // Boolean | This parameter is used for finding stories whose categories are confident.
   'categoriesId': ["categoriesId_example"], // [String] | This parameter is used for finding stories by categories id.
-  'categoriesLevel': [56], // [Integer] | This parameter is used for finding stories by categories level.
+  'categoriesLevel': [56], // [Number] | This parameter is used for finding stories by categories level.
   'entitiesTitleText': ["entitiesTitleText_example"], // [String] | This parameter is used to find stories based on the specified entities `text` in story titles.
   'entitiesTitleType': ["entitiesTitleType_example"], // [String] | This parameter is used to find stories based on the specified entities `type` in story titles.
   'entitiesTitleLinksDbpedia': ["entitiesTitleLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in story titles.
@@ -261,13 +271,13 @@ var opts = {
   'entitiesBodyLinksDbpedia': ["entitiesBodyLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories.
   'sentimentTitlePolarity': "sentimentTitlePolarity_example", // String | This parameter is used for finding stories whose title sentiment is the specified value.
   'sentimentBodyPolarity': "sentimentBodyPolarity_example", // String | This parameter is used for finding stories whose body sentiment is the specified value.
-  'mediaImagesCountMin': 56, // Integer | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
-  'mediaImagesCountMax': 56, // Integer | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
-  'mediaVideosCountMin': 56, // Integer | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
-  'mediaVideosCountMax': 56, // Integer | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
-  'authorId': [56], // [Integer] | This parameter is used for finding stories whose author id is the specified value.
+  'mediaImagesCountMin': 56, // Number | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
+  'mediaImagesCountMax': 56, // Number | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
+  'mediaVideosCountMin': 56, // Number | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
+  'mediaVideosCountMax': 56, // Number | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
+  'authorId': [56], // [Number] | This parameter is used for finding stories whose author id is the specified value.
   'authorName': "authorName_example", // String | This parameter is used for finding stories whose author full name contains the specified value.
-  'sourceId': [56], // [Integer] | This parameter is used for finding stories whose source id is the specified value.
+  'sourceId': [56], // [Number] | This parameter is used for finding stories whose source id is the specified value.
   'sourceName': ["sourceName_example"], // [String] | This parameter is used for finding stories whose source name contains the specified value.
   'sourceDomain': ["sourceDomain_example"], // [String] | This parameter is used for finding stories whose source domain is the specified value.
   'sourceLocationsCountry': ["sourceLocationsCountry_example"], // [String] | This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
@@ -277,9 +287,14 @@ var opts = {
   'sourceScopesState': ["sourceScopesState_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesCity': ["sourceScopesCity_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesLevel': ["sourceScopesLevel_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
-  'intervalStart': 56, // Integer | This parameter is used for setting the start data point of histogram intervals.
-  'intervalEnd': 56, // Integer | This parameter is used for setting the end data point of histogram intervals.
-  'intervalWidth': 56, // Integer | This parameter is used for setting the width of histogram intervals.
+  'sourceLinksInCountMin': 56, // Number | This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceLinksInCountMax': 56, // Number | This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceRankingsAlexaRankMin': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaRankMax': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaCountry': ["sourceRankingsAlexaCountry_example"], // [String] | This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'intervalStart': 56, // Number | This parameter is used for setting the start data point of histogram intervals.
+  'intervalEnd': 56, // Number | This parameter is used for setting the end data point of histogram intervals.
+  'intervalWidth': 56, // Number | This parameter is used for setting the width of histogram intervals.
   'field': "social_shares_count" // String | This parameter is used for specifying the y-axis variable for the histogram.
 };
 
@@ -297,7 +312,7 @@ apiInstance.listHistograms(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**[Integer]**](Integer.md)| This parameter is used for finding stroies by story id. | [optional] 
+ **id** | [**[Number]**](Number.md)| This parameter is used for finding stroies by story id. | [optional] 
  **title** | **String**| This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **body** | **String**| This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **text** | **String**| This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
@@ -307,7 +322,7 @@ Name | Type | Description  | Notes
  **categoriesTaxonomy** | **String**| This parameter is used for defining the type of the taxonomy for the rest of the categories queries. | [optional] 
  **categoriesConfident** | **Boolean**| This parameter is used for finding stories whose categories are confident. | [optional] [default to true]
  **categoriesId** | [**[String]**](String.md)| This parameter is used for finding stories by categories id. | [optional] 
- **categoriesLevel** | [**[Integer]**](Integer.md)| This parameter is used for finding stories by categories level. | [optional] 
+ **categoriesLevel** | [**[Number]**](Number.md)| This parameter is used for finding stories by categories level. | [optional] 
  **entitiesTitleText** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. | [optional] 
  **entitiesTitleType** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. | [optional] 
  **entitiesTitleLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in story titles. | [optional] 
@@ -316,13 +331,13 @@ Name | Type | Description  | Notes
  **entitiesBodyLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. | [optional] 
  **sentimentTitlePolarity** | **String**| This parameter is used for finding stories whose title sentiment is the specified value. | [optional] 
  **sentimentBodyPolarity** | **String**| This parameter is used for finding stories whose body sentiment is the specified value. | [optional] 
- **mediaImagesCountMin** | **Integer**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
- **mediaImagesCountMax** | **Integer**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
- **mediaVideosCountMin** | **Integer**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
- **mediaVideosCountMax** | **Integer**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
- **authorId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
+ **mediaImagesCountMin** | **Number**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
+ **mediaImagesCountMax** | **Number**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
+ **mediaVideosCountMin** | **Number**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
+ **mediaVideosCountMax** | **Number**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
+ **authorId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
  **authorName** | **String**| This parameter is used for finding stories whose author full name contains the specified value. | [optional] 
- **sourceId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
+ **sourceId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
  **sourceName** | [**[String]**](String.md)| This parameter is used for finding stories whose source name contains the specified value. | [optional] 
  **sourceDomain** | [**[String]**](String.md)| This parameter is used for finding stories whose source domain is the specified value. | [optional] 
  **sourceLocationsCountry** | [**[String]**](String.md)| This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
@@ -332,9 +347,14 @@ Name | Type | Description  | Notes
  **sourceScopesState** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesCity** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesLevel** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
- **intervalStart** | **Integer**| This parameter is used for setting the start data point of histogram intervals. | [optional] 
- **intervalEnd** | **Integer**| This parameter is used for setting the end data point of histogram intervals. | [optional] 
- **intervalWidth** | **Integer**| This parameter is used for setting the width of histogram intervals. | [optional] 
+ **sourceLinksInCountMin** | **Number**| This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceLinksInCountMax** | **Number**| This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceRankingsAlexaRankMin** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaRankMax** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaCountry** | [**[String]**](String.md)| This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **intervalStart** | **Number**| This parameter is used for setting the start data point of histogram intervals. | [optional] 
+ **intervalEnd** | **Number**| This parameter is used for setting the end data point of histogram intervals. | [optional] 
+ **intervalWidth** | **Number**| This parameter is used for setting the width of histogram intervals. | [optional] 
  **field** | **String**| This parameter is used for specifying the y-axis variable for the histogram. | [optional] [default to social_shares_count]
 
 ### Return type
@@ -373,7 +393,7 @@ var app_key = apiInstance.apiClient.authentications['app_key'];
 app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
-  'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
+  'id': [56], // [Number] | This parameter is used for finding stroies by story id.
   'title': "title_example", // String | This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'body': "body_example", // String | This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'text': "text_example", // String | This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
@@ -383,7 +403,7 @@ var opts = {
   'categoriesTaxonomy': "categoriesTaxonomy_example", // String | This parameter is used for defining the type of the taxonomy for the rest of the categories queries.
   'categoriesConfident': true, // Boolean | This parameter is used for finding stories whose categories are confident.
   'categoriesId': ["categoriesId_example"], // [String] | This parameter is used for finding stories by categories id.
-  'categoriesLevel': [56], // [Integer] | This parameter is used for finding stories by categories level.
+  'categoriesLevel': [56], // [Number] | This parameter is used for finding stories by categories level.
   'entitiesTitleText': ["entitiesTitleText_example"], // [String] | This parameter is used to find stories based on the specified entities `text` in story titles.
   'entitiesTitleType': ["entitiesTitleType_example"], // [String] | This parameter is used to find stories based on the specified entities `type` in story titles.
   'entitiesTitleLinksDbpedia': ["entitiesTitleLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in story titles.
@@ -392,13 +412,13 @@ var opts = {
   'entitiesBodyLinksDbpedia': ["entitiesBodyLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories.
   'sentimentTitlePolarity': "sentimentTitlePolarity_example", // String | This parameter is used for finding stories whose title sentiment is the specified value.
   'sentimentBodyPolarity': "sentimentBodyPolarity_example", // String | This parameter is used for finding stories whose body sentiment is the specified value.
-  'mediaImagesCountMin': 56, // Integer | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
-  'mediaImagesCountMax': 56, // Integer | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
-  'mediaVideosCountMin': 56, // Integer | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
-  'mediaVideosCountMax': 56, // Integer | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
-  'authorId': [56], // [Integer] | This parameter is used for finding stories whose author id is the specified value.
+  'mediaImagesCountMin': 56, // Number | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
+  'mediaImagesCountMax': 56, // Number | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
+  'mediaVideosCountMin': 56, // Number | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
+  'mediaVideosCountMax': 56, // Number | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
+  'authorId': [56], // [Number] | This parameter is used for finding stories whose author id is the specified value.
   'authorName': "authorName_example", // String | This parameter is used for finding stories whose author full name contains the specified value.
-  'sourceId': [56], // [Integer] | This parameter is used for finding stories whose source id is the specified value.
+  'sourceId': [56], // [Number] | This parameter is used for finding stories whose source id is the specified value.
   'sourceName': ["sourceName_example"], // [String] | This parameter is used for finding stories whose source name contains the specified value.
   'sourceDomain': ["sourceDomain_example"], // [String] | This parameter is used for finding stories whose source domain is the specified value.
   'sourceLocationsCountry': ["sourceLocationsCountry_example"], // [String] | This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
@@ -408,16 +428,21 @@ var opts = {
   'sourceScopesState': ["sourceScopesState_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesCity': ["sourceScopesCity_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesLevel': ["sourceScopesLevel_example"], // [String] | This parameter is used for finding stories whose source scopes  is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
+  'sourceLinksInCountMin': 56, // Number | This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceLinksInCountMax': 56, // Number | This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceRankingsAlexaRankMin': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaRankMax': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaCountry': ["sourceRankingsAlexaCountry_example"], // [String] | This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
   'cluster': false, // Boolean | This parameter enables clustering for the returned stories.
   'clusterAlgorithm': "lingo", // String | This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms.
   '_return': ["_return_example"], // [String] | This parameter is used for specifying return fields.
-  'storyId': 789, // Integer | A story id
+  'storyId': 789, // Number | A story id
   'storyUrl': "storyUrl_example", // String | An article or webpage
   'storyTitle': "storyTitle_example", // String | Title of the article
   'storyBody': "storyBody_example", // String | Body of the article
   'boostBy': "boostBy_example", // String | This parameter is used for boosting the result by the specified value.
   'storyLanguage': "auto", // String | This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.
-  'perPage': 3 // Integer | This parameter is used for specifying number of items in each page.
+  'perPage': 3 // Number | This parameter is used for specifying number of items in each page.
 };
 
 var callback = function(error, data, response) {
@@ -434,7 +459,7 @@ apiInstance.listRelatedStories(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**[Integer]**](Integer.md)| This parameter is used for finding stroies by story id. | [optional] 
+ **id** | [**[Number]**](Number.md)| This parameter is used for finding stroies by story id. | [optional] 
  **title** | **String**| This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **body** | **String**| This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **text** | **String**| This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
@@ -444,7 +469,7 @@ Name | Type | Description  | Notes
  **categoriesTaxonomy** | **String**| This parameter is used for defining the type of the taxonomy for the rest of the categories queries. | [optional] 
  **categoriesConfident** | **Boolean**| This parameter is used for finding stories whose categories are confident. | [optional] [default to true]
  **categoriesId** | [**[String]**](String.md)| This parameter is used for finding stories by categories id. | [optional] 
- **categoriesLevel** | [**[Integer]**](Integer.md)| This parameter is used for finding stories by categories level. | [optional] 
+ **categoriesLevel** | [**[Number]**](Number.md)| This parameter is used for finding stories by categories level. | [optional] 
  **entitiesTitleText** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. | [optional] 
  **entitiesTitleType** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. | [optional] 
  **entitiesTitleLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in story titles. | [optional] 
@@ -453,13 +478,13 @@ Name | Type | Description  | Notes
  **entitiesBodyLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. | [optional] 
  **sentimentTitlePolarity** | **String**| This parameter is used for finding stories whose title sentiment is the specified value. | [optional] 
  **sentimentBodyPolarity** | **String**| This parameter is used for finding stories whose body sentiment is the specified value. | [optional] 
- **mediaImagesCountMin** | **Integer**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
- **mediaImagesCountMax** | **Integer**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
- **mediaVideosCountMin** | **Integer**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
- **mediaVideosCountMax** | **Integer**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
- **authorId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
+ **mediaImagesCountMin** | **Number**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
+ **mediaImagesCountMax** | **Number**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
+ **mediaVideosCountMin** | **Number**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
+ **mediaVideosCountMax** | **Number**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
+ **authorId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
  **authorName** | **String**| This parameter is used for finding stories whose author full name contains the specified value. | [optional] 
- **sourceId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
+ **sourceId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
  **sourceName** | [**[String]**](String.md)| This parameter is used for finding stories whose source name contains the specified value. | [optional] 
  **sourceDomain** | [**[String]**](String.md)| This parameter is used for finding stories whose source domain is the specified value. | [optional] 
  **sourceLocationsCountry** | [**[String]**](String.md)| This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
@@ -469,16 +494,21 @@ Name | Type | Description  | Notes
  **sourceScopesState** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesCity** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesLevel** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes  is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
+ **sourceLinksInCountMin** | **Number**| This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceLinksInCountMax** | **Number**| This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceRankingsAlexaRankMin** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaRankMax** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaCountry** | [**[String]**](String.md)| This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
  **cluster** | **Boolean**| This parameter enables clustering for the returned stories. | [optional] [default to false]
  **clusterAlgorithm** | **String**| This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms. | [optional] [default to lingo]
  **_return** | [**[String]**](String.md)| This parameter is used for specifying return fields. | [optional] 
- **storyId** | **Integer**| A story id | [optional] 
+ **storyId** | **Number**| A story id | [optional] 
  **storyUrl** | **String**| An article or webpage | [optional] 
  **storyTitle** | **String**| Title of the article | [optional] 
  **storyBody** | **String**| Body of the article | [optional] 
  **boostBy** | **String**| This parameter is used for boosting the result by the specified value. | [optional] 
  **storyLanguage** | **String**| This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. | [optional] [default to auto]
- **perPage** | **Integer**| This parameter is used for specifying number of items in each page. | [optional] [default to 3]
+ **perPage** | **Number**| This parameter is used for specifying number of items in each page. | [optional] [default to 3]
 
 ### Return type
 
@@ -516,7 +546,7 @@ var app_key = apiInstance.apiClient.authentications['app_key'];
 app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
-  'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
+  'id': [56], // [Number] | This parameter is used for finding stroies by story id.
   'title': "title_example", // String | This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'body': "body_example", // String | This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'text': "text_example", // String | This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
@@ -526,7 +556,7 @@ var opts = {
   'categoriesTaxonomy': "categoriesTaxonomy_example", // String | This parameter is used for defining the type of the taxonomy for the rest of the categories queries.
   'categoriesConfident': true, // Boolean | This parameter is used for finding stories whose categories are confident.
   'categoriesId': ["categoriesId_example"], // [String] | This parameter is used for finding stories by categories id.
-  'categoriesLevel': [56], // [Integer] | This parameter is used for finding stories by categories level.
+  'categoriesLevel': [56], // [Number] | This parameter is used for finding stories by categories level.
   'entitiesTitleText': ["entitiesTitleText_example"], // [String] | This parameter is used to find stories based on the specified entities `text` in story titles.
   'entitiesTitleType': ["entitiesTitleType_example"], // [String] | This parameter is used to find stories based on the specified entities `type` in story titles.
   'entitiesTitleLinksDbpedia': ["entitiesTitleLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in story titles.
@@ -535,13 +565,13 @@ var opts = {
   'entitiesBodyLinksDbpedia': ["entitiesBodyLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories.
   'sentimentTitlePolarity': "sentimentTitlePolarity_example", // String | This parameter is used for finding stories whose title sentiment is the specified value.
   'sentimentBodyPolarity': "sentimentBodyPolarity_example", // String | This parameter is used for finding stories whose body sentiment is the specified value.
-  'mediaImagesCountMin': 56, // Integer | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
-  'mediaImagesCountMax': 56, // Integer | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
-  'mediaVideosCountMin': 56, // Integer | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
-  'mediaVideosCountMax': 56, // Integer | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
-  'authorId': [56], // [Integer] | This parameter is used for finding stories whose author id is the specified value.
+  'mediaImagesCountMin': 56, // Number | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
+  'mediaImagesCountMax': 56, // Number | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
+  'mediaVideosCountMin': 56, // Number | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
+  'mediaVideosCountMax': 56, // Number | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
+  'authorId': [56], // [Number] | This parameter is used for finding stories whose author id is the specified value.
   'authorName': "authorName_example", // String | This parameter is used for finding stories whose author full name contains the specified value.
-  'sourceId': [56], // [Integer] | This parameter is used for finding stories whose source id is the specified value.
+  'sourceId': [56], // [Number] | This parameter is used for finding stories whose source id is the specified value.
   'sourceName': ["sourceName_example"], // [String] | This parameter is used for finding stories whose source name contains the specified value.
   'sourceDomain': ["sourceDomain_example"], // [String] | This parameter is used for finding stories whose source domain is the specified value.
   'sourceLocationsCountry': ["sourceLocationsCountry_example"], // [String] | This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
@@ -551,13 +581,18 @@ var opts = {
   'sourceScopesState': ["sourceScopesState_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesCity': ["sourceScopesCity_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesLevel': ["sourceScopesLevel_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
+  'sourceLinksInCountMin': 56, // Number | This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceLinksInCountMax': 56, // Number | This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceRankingsAlexaRankMin': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaRankMax': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaCountry': ["sourceRankingsAlexaCountry_example"], // [String] | This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
   'cluster': false, // Boolean | This parameter enables clustering for the returned stories.
   'clusterAlgorithm': "lingo", // String | This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms.
   '_return': ["_return_example"], // [String] | This parameter is used for specifying return fields.
   'sortBy': "published_at", // String | This parameter is used for changing the order column of the results.
   'sortDirection': "desc", // String | This parameter is used for changing the order direction of the result.
   'cursor': "*", // String | This parameter is used for finding a specific page.
-  'perPage': 10 // Integer | This parameter is used for specifying number of items in each page.
+  'perPage': 10 // Number | This parameter is used for specifying number of items in each page.
 };
 
 var callback = function(error, data, response) {
@@ -574,7 +609,7 @@ apiInstance.listStories(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**[Integer]**](Integer.md)| This parameter is used for finding stroies by story id. | [optional] 
+ **id** | [**[Number]**](Number.md)| This parameter is used for finding stroies by story id. | [optional] 
  **title** | **String**| This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **body** | **String**| This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **text** | **String**| This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
@@ -584,7 +619,7 @@ Name | Type | Description  | Notes
  **categoriesTaxonomy** | **String**| This parameter is used for defining the type of the taxonomy for the rest of the categories queries. | [optional] 
  **categoriesConfident** | **Boolean**| This parameter is used for finding stories whose categories are confident. | [optional] [default to true]
  **categoriesId** | [**[String]**](String.md)| This parameter is used for finding stories by categories id. | [optional] 
- **categoriesLevel** | [**[Integer]**](Integer.md)| This parameter is used for finding stories by categories level. | [optional] 
+ **categoriesLevel** | [**[Number]**](Number.md)| This parameter is used for finding stories by categories level. | [optional] 
  **entitiesTitleText** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. | [optional] 
  **entitiesTitleType** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. | [optional] 
  **entitiesTitleLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in story titles. | [optional] 
@@ -593,13 +628,13 @@ Name | Type | Description  | Notes
  **entitiesBodyLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. | [optional] 
  **sentimentTitlePolarity** | **String**| This parameter is used for finding stories whose title sentiment is the specified value. | [optional] 
  **sentimentBodyPolarity** | **String**| This parameter is used for finding stories whose body sentiment is the specified value. | [optional] 
- **mediaImagesCountMin** | **Integer**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
- **mediaImagesCountMax** | **Integer**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
- **mediaVideosCountMin** | **Integer**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
- **mediaVideosCountMax** | **Integer**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
- **authorId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
+ **mediaImagesCountMin** | **Number**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
+ **mediaImagesCountMax** | **Number**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
+ **mediaVideosCountMin** | **Number**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
+ **mediaVideosCountMax** | **Number**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
+ **authorId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
  **authorName** | **String**| This parameter is used for finding stories whose author full name contains the specified value. | [optional] 
- **sourceId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
+ **sourceId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
  **sourceName** | [**[String]**](String.md)| This parameter is used for finding stories whose source name contains the specified value. | [optional] 
  **sourceDomain** | [**[String]**](String.md)| This parameter is used for finding stories whose source domain is the specified value. | [optional] 
  **sourceLocationsCountry** | [**[String]**](String.md)| This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
@@ -609,13 +644,18 @@ Name | Type | Description  | Notes
  **sourceScopesState** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesCity** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesLevel** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
+ **sourceLinksInCountMin** | **Number**| This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceLinksInCountMax** | **Number**| This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceRankingsAlexaRankMin** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaRankMax** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaCountry** | [**[String]**](String.md)| This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
  **cluster** | **Boolean**| This parameter enables clustering for the returned stories. | [optional] [default to false]
  **clusterAlgorithm** | **String**| This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms. | [optional] [default to lingo]
  **_return** | [**[String]**](String.md)| This parameter is used for specifying return fields. | [optional] 
  **sortBy** | **String**| This parameter is used for changing the order column of the results. | [optional] [default to published_at]
  **sortDirection** | **String**| This parameter is used for changing the order direction of the result. | [optional] [default to desc]
  **cursor** | **String**| This parameter is used for finding a specific page. | [optional] [default to *]
- **perPage** | **Integer**| This parameter is used for specifying number of items in each page. | [optional] [default to 10]
+ **perPage** | **Number**| This parameter is used for specifying number of items in each page. | [optional] [default to 10]
 
 ### Return type
 
@@ -653,7 +693,7 @@ var app_key = apiInstance.apiClient.authentications['app_key'];
 app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
-  'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
+  'id': [56], // [Number] | This parameter is used for finding stroies by story id.
   'title': "title_example", // String | This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'body': "body_example", // String | This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'text': "text_example", // String | This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
@@ -661,7 +701,7 @@ var opts = {
   'categoriesTaxonomy': "categoriesTaxonomy_example", // String | This parameter is used for defining the type of the taxonomy for the rest of the categories queries.
   'categoriesConfident': true, // Boolean | This parameter is used for finding stories whose categories are confident.
   'categoriesId': ["categoriesId_example"], // [String] | This parameter is used for finding stories by categories id.
-  'categoriesLevel': [56], // [Integer] | This parameter is used for finding stories by categories level.
+  'categoriesLevel': [56], // [Number] | This parameter is used for finding stories by categories level.
   'entitiesTitleText': ["entitiesTitleText_example"], // [String] | This parameter is used to find stories based on the specified entities `text` in story titles.
   'entitiesTitleType': ["entitiesTitleType_example"], // [String] | This parameter is used to find stories based on the specified entities `type` in story titles.
   'entitiesTitleLinksDbpedia': ["entitiesTitleLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in story titles.
@@ -670,13 +710,13 @@ var opts = {
   'entitiesBodyLinksDbpedia': ["entitiesBodyLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories.
   'sentimentTitlePolarity': "sentimentTitlePolarity_example", // String | This parameter is used for finding stories whose title sentiment is the specified value.
   'sentimentBodyPolarity': "sentimentBodyPolarity_example", // String | This parameter is used for finding stories whose body sentiment is the specified value.
-  'mediaImagesCountMin': 56, // Integer | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
-  'mediaImagesCountMax': 56, // Integer | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
-  'mediaVideosCountMin': 56, // Integer | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
-  'mediaVideosCountMax': 56, // Integer | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
-  'authorId': [56], // [Integer] | This parameter is used for finding stories whose author id is the specified value.
+  'mediaImagesCountMin': 56, // Number | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
+  'mediaImagesCountMax': 56, // Number | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
+  'mediaVideosCountMin': 56, // Number | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
+  'mediaVideosCountMax': 56, // Number | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
+  'authorId': [56], // [Number] | This parameter is used for finding stories whose author id is the specified value.
   'authorName': "authorName_example", // String | This parameter is used for finding stories whose author full name contains the specified value.
-  'sourceId': [56], // [Integer] | This parameter is used for finding stories whose source id is the specified value.
+  'sourceId': [56], // [Number] | This parameter is used for finding stories whose source id is the specified value.
   'sourceName': ["sourceName_example"], // [String] | This parameter is used for finding stories whose source name contains the specified value.
   'sourceDomain': ["sourceDomain_example"], // [String] | This parameter is used for finding stories whose source domain is the specified value.
   'sourceLocationsCountry': ["sourceLocationsCountry_example"], // [String] | This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
@@ -686,6 +726,11 @@ var opts = {
   'sourceScopesState': ["sourceScopesState_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesCity': ["sourceScopesCity_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesLevel': ["sourceScopesLevel_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
+  'sourceLinksInCountMin': 56, // Number | This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceLinksInCountMax': 56, // Number | This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceRankingsAlexaRankMin': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaRankMax': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaCountry': ["sourceRankingsAlexaCountry_example"], // [String] | This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
   'publishedAtStart': "NOW-7DAYS/DAY", // String | This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).
   'publishedAtEnd': "NOW/DAY", // String | This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).
   'period': "+1DAY" // String | The size of each date range is expressed as an interval to be added to the lower bound. It supports Date Math Syntax. Valid options are `+` following an integer number greater than 0 and one of the Date Math keywords. e.g. `+1DAY`, `+2MINUTES` and `+1MONTH`. Here are [Supported keywords](https://newsapi.aylien.com/docs/working-with-dates#date-math).
@@ -705,7 +750,7 @@ apiInstance.listTimeSeries(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**[Integer]**](Integer.md)| This parameter is used for finding stroies by story id. | [optional] 
+ **id** | [**[Number]**](Number.md)| This parameter is used for finding stroies by story id. | [optional] 
  **title** | **String**| This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **body** | **String**| This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **text** | **String**| This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
@@ -713,7 +758,7 @@ Name | Type | Description  | Notes
  **categoriesTaxonomy** | **String**| This parameter is used for defining the type of the taxonomy for the rest of the categories queries. | [optional] 
  **categoriesConfident** | **Boolean**| This parameter is used for finding stories whose categories are confident. | [optional] [default to true]
  **categoriesId** | [**[String]**](String.md)| This parameter is used for finding stories by categories id. | [optional] 
- **categoriesLevel** | [**[Integer]**](Integer.md)| This parameter is used for finding stories by categories level. | [optional] 
+ **categoriesLevel** | [**[Number]**](Number.md)| This parameter is used for finding stories by categories level. | [optional] 
  **entitiesTitleText** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. | [optional] 
  **entitiesTitleType** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. | [optional] 
  **entitiesTitleLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in story titles. | [optional] 
@@ -722,13 +767,13 @@ Name | Type | Description  | Notes
  **entitiesBodyLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. | [optional] 
  **sentimentTitlePolarity** | **String**| This parameter is used for finding stories whose title sentiment is the specified value. | [optional] 
  **sentimentBodyPolarity** | **String**| This parameter is used for finding stories whose body sentiment is the specified value. | [optional] 
- **mediaImagesCountMin** | **Integer**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
- **mediaImagesCountMax** | **Integer**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
- **mediaVideosCountMin** | **Integer**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
- **mediaVideosCountMax** | **Integer**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
- **authorId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
+ **mediaImagesCountMin** | **Number**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
+ **mediaImagesCountMax** | **Number**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
+ **mediaVideosCountMin** | **Number**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
+ **mediaVideosCountMax** | **Number**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
+ **authorId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
  **authorName** | **String**| This parameter is used for finding stories whose author full name contains the specified value. | [optional] 
- **sourceId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
+ **sourceId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
  **sourceName** | [**[String]**](String.md)| This parameter is used for finding stories whose source name contains the specified value. | [optional] 
  **sourceDomain** | [**[String]**](String.md)| This parameter is used for finding stories whose source domain is the specified value. | [optional] 
  **sourceLocationsCountry** | [**[String]**](String.md)| This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
@@ -738,6 +783,11 @@ Name | Type | Description  | Notes
  **sourceScopesState** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesCity** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesLevel** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
+ **sourceLinksInCountMin** | **Number**| This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceLinksInCountMax** | **Number**| This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceRankingsAlexaRankMin** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaRankMax** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaCountry** | [**[String]**](String.md)| This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
  **publishedAtStart** | **String**| This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). | [optional] [default to NOW-7DAYS/DAY]
  **publishedAtEnd** | **String**| This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). | [optional] [default to NOW/DAY]
  **period** | **String**| The size of each date range is expressed as an interval to be added to the lower bound. It supports Date Math Syntax. Valid options are &#x60;+&#x60; following an integer number greater than 0 and one of the Date Math keywords. e.g. &#x60;+1DAY&#x60;, &#x60;+2MINUTES&#x60; and &#x60;+1MONTH&#x60;. Here are [Supported keywords](https://newsapi.aylien.com/docs/working-with-dates#date-math). | [optional] [default to +1DAY]
@@ -778,7 +828,7 @@ var app_key = apiInstance.apiClient.authentications['app_key'];
 app_key.apiKey = "YOUR_APP_KEY";
 
 var opts = { 
-  'id': [56], // [Integer] | This parameter is used for finding stroies by story id.
+  'id': [56], // [Number] | This parameter is used for finding stroies by story id.
   'title': "title_example", // String | This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'body': "body_example", // String | This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
   'text': "text_example", // String | This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators).
@@ -788,7 +838,7 @@ var opts = {
   'categoriesTaxonomy': "categoriesTaxonomy_example", // String | This parameter is used for defining the type of the taxonomy for the rest of the categories queries.
   'categoriesConfident': true, // Boolean | This parameter is used for finding stories whose categories are confident.
   'categoriesId': ["categoriesId_example"], // [String] | This parameter is used for finding stories by categories id.
-  'categoriesLevel': [56], // [Integer] | This parameter is used for finding stories by categories level.
+  'categoriesLevel': [56], // [Number] | This parameter is used for finding stories by categories level.
   'entitiesTitleText': ["entitiesTitleText_example"], // [String] | This parameter is used to find stories based on the specified entities `text` in story titles.
   'entitiesTitleType': ["entitiesTitleType_example"], // [String] | This parameter is used to find stories based on the specified entities `type` in story titles.
   'entitiesTitleLinksDbpedia': ["entitiesTitleLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in story titles.
@@ -797,13 +847,13 @@ var opts = {
   'entitiesBodyLinksDbpedia': ["entitiesBodyLinksDbpedia_example"], // [String] | This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories.
   'sentimentTitlePolarity': "sentimentTitlePolarity_example", // String | This parameter is used for finding stories whose title sentiment is the specified value.
   'sentimentBodyPolarity': "sentimentBodyPolarity_example", // String | This parameter is used for finding stories whose body sentiment is the specified value.
-  'mediaImagesCountMin': 56, // Integer | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
-  'mediaImagesCountMax': 56, // Integer | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
-  'mediaVideosCountMin': 56, // Integer | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
-  'mediaVideosCountMax': 56, // Integer | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
-  'authorId': [56], // [Integer] | This parameter is used for finding stories whose author id is the specified value.
+  'mediaImagesCountMin': 56, // Number | This parameter is used for finding stories whose number of images is greater than or equal to the specified value.
+  'mediaImagesCountMax': 56, // Number | This parameter is used for finding stories whose number of images is less than or equal to the specified value.
+  'mediaVideosCountMin': 56, // Number | This parameter is used for finding stories whose number of videos is greater than or equal to the specified value.
+  'mediaVideosCountMax': 56, // Number | This parameter is used for finding stories whose number of videos is less than or equal to the specified value.
+  'authorId': [56], // [Number] | This parameter is used for finding stories whose author id is the specified value.
   'authorName': "authorName_example", // String | This parameter is used for finding stories whose author full name contains the specified value.
-  'sourceId': [56], // [Integer] | This parameter is used for finding stories whose source id is the specified value.
+  'sourceId': [56], // [Number] | This parameter is used for finding stories whose source id is the specified value.
   'sourceName': ["sourceName_example"], // [String] | This parameter is used for finding stories whose source name contains the specified value.
   'sourceDomain': ["sourceDomain_example"], // [String] | This parameter is used for finding stories whose source domain is the specified value.
   'sourceLocationsCountry': ["sourceLocationsCountry_example"], // [String] | This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
@@ -813,6 +863,11 @@ var opts = {
   'sourceScopesState': ["sourceScopesState_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesCity': ["sourceScopesCity_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
   'sourceScopesLevel': ["sourceScopesLevel_example"], // [String] | This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations).
+  'sourceLinksInCountMin': 56, // Number | This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceLinksInCountMax': 56, // Number | This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count).
+  'sourceRankingsAlexaRankMin': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaRankMax': 56, // Number | This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
+  'sourceRankingsAlexaCountry': ["sourceRankingsAlexaCountry_example"], // [String] | This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks).
   'field': "field_example" // String | This parameter is used to specify the trend field.
 };
 
@@ -830,7 +885,7 @@ apiInstance.listTrends(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**[Integer]**](Integer.md)| This parameter is used for finding stroies by story id. | [optional] 
+ **id** | [**[Number]**](Number.md)| This parameter is used for finding stroies by story id. | [optional] 
  **title** | **String**| This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **body** | **String**| This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
  **text** | **String**| This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). | [optional] 
@@ -840,7 +895,7 @@ Name | Type | Description  | Notes
  **categoriesTaxonomy** | **String**| This parameter is used for defining the type of the taxonomy for the rest of the categories queries. | [optional] 
  **categoriesConfident** | **Boolean**| This parameter is used for finding stories whose categories are confident. | [optional] [default to true]
  **categoriesId** | [**[String]**](String.md)| This parameter is used for finding stories by categories id. | [optional] 
- **categoriesLevel** | [**[Integer]**](Integer.md)| This parameter is used for finding stories by categories level. | [optional] 
+ **categoriesLevel** | [**[Number]**](Number.md)| This parameter is used for finding stories by categories level. | [optional] 
  **entitiesTitleText** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. | [optional] 
  **entitiesTitleType** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. | [optional] 
  **entitiesTitleLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in story titles. | [optional] 
@@ -849,13 +904,13 @@ Name | Type | Description  | Notes
  **entitiesBodyLinksDbpedia** | [**[String]**](String.md)| This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. | [optional] 
  **sentimentTitlePolarity** | **String**| This parameter is used for finding stories whose title sentiment is the specified value. | [optional] 
  **sentimentBodyPolarity** | **String**| This parameter is used for finding stories whose body sentiment is the specified value. | [optional] 
- **mediaImagesCountMin** | **Integer**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
- **mediaImagesCountMax** | **Integer**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
- **mediaVideosCountMin** | **Integer**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
- **mediaVideosCountMax** | **Integer**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
- **authorId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
+ **mediaImagesCountMin** | **Number**| This parameter is used for finding stories whose number of images is greater than or equal to the specified value. | [optional] 
+ **mediaImagesCountMax** | **Number**| This parameter is used for finding stories whose number of images is less than or equal to the specified value. | [optional] 
+ **mediaVideosCountMin** | **Number**| This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. | [optional] 
+ **mediaVideosCountMax** | **Number**| This parameter is used for finding stories whose number of videos is less than or equal to the specified value. | [optional] 
+ **authorId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose author id is the specified value. | [optional] 
  **authorName** | **String**| This parameter is used for finding stories whose author full name contains the specified value. | [optional] 
- **sourceId** | [**[Integer]**](Integer.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
+ **sourceId** | [**[Number]**](Number.md)| This parameter is used for finding stories whose source id is the specified value. | [optional] 
  **sourceName** | [**[String]**](String.md)| This parameter is used for finding stories whose source name contains the specified value. | [optional] 
  **sourceDomain** | [**[String]**](String.md)| This parameter is used for finding stories whose source domain is the specified value. | [optional] 
  **sourceLocationsCountry** | [**[String]**](String.md)| This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
@@ -865,6 +920,11 @@ Name | Type | Description  | Notes
  **sourceScopesState** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesCity** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
  **sourceScopesLevel** | [**[String]**](String.md)| This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). | [optional] 
+ **sourceLinksInCountMin** | **Number**| This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceLinksInCountMax** | **Number**| This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). | [optional] 
+ **sourceRankingsAlexaRankMin** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaRankMax** | **Number**| This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
+ **sourceRankingsAlexaCountry** | [**[String]**](String.md)| This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). | [optional] 
  **field** | **String**| This parameter is used to specify the trend field. | [optional] 
 
 ### Return type

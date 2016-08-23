@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **score** | **Number** | The entity score | [optional] 
 **types** | **[String]** | An array of the dbpedia types | [optional] 
 **links** | [**EntityLinks**](EntityLinks.md) | Related links to the entity | [optional] 
-**indices** | **[[Integer]]** | The indices of the entity text | [optional] 
+**indices** | **[[Number]]** | The indices of the entity text | [optional] 
 
 

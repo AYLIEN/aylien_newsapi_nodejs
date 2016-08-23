@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bin** | **Integer** | Histogram bin | [optional] 
-**count** | **Integer** | Histogram bin size | [optional] 
+**bin** | **Number** | Histogram bin | [optional] 
+**count** | **Number** | Histogram bin size | [optional] 
 
 

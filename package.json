@@ -1,6 +1,6 @@
 {
   "name": "aylien-news-api",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "AYLIEN News API is the most powerful way of sourcing, searching and syndicating analyzed and enriched news content.",
   "license": "Apache-2.0",
   "author": "AYLIEN Inc.",
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/AYLIEN/aylien_newsapi_nodejs/issues"
   },
-  "homepage": "https://github.com/AYLIEN/aylien_newsapi_nodejs",
+  "homepage": "https://newsapi.aylien.com/",
   "devDependencies": {
     "mocha": "~2.3.4",
     "sinon": "1.17.3",

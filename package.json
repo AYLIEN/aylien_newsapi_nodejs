@@ -10,13 +10,18 @@
       "email": "hamed.r.nik@gmail.com"
     }
   ],
-  "keywords": [ "aylien", "news api", "news", "aylien news api"],
+  "keywords": [
+    "aylien",
+    "news api",
+    "news",
+    "aylien news api"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },
   "dependencies": {
-    "superagent": "1.7.1"
+    "superagent": "^5.1.0"
   },
   "repository": {
     "type": "git",
@@ -27,8 +32,8 @@
   },
   "homepage": "https://newsapi.aylien.com/",
   "devDependencies": {
+    "expect.js": "~0.3.1",
     "mocha": "~2.3.4",
-    "sinon": "1.17.3",
-    "expect.js": "~0.3.1"
+    "sinon": "1.17.3"
   }
 }

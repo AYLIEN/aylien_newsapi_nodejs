@@ -1,6 +1,7 @@
 # AylienNewsApi.Autocomplete
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | ID of the autocomplete | [optional] 

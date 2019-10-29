@@ -1,6 +1,7 @@
 # AylienNewsApi.ShareCounts
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **facebook** | [**[ShareCount]**](ShareCount.md) | Facebook shares count | [optional] 

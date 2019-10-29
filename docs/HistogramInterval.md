@@ -1,6 +1,7 @@
 # AylienNewsApi.HistogramInterval
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bin** | **Number** | Histogram bin | [optional] 

@@ -4,20 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**polarity** | **String** | Polarity of the sentiment | [optional] 
+**polarity** | [**SentimentPolarity**](SentimentPolarity.md) |  | [optional] 
 **score** | **Number** | Polarity score of the sentiment | [optional] 
-
-
-
-## Enum: PolarityEnum
-
-
-* `positive` (value: `"positive"`)
-
-* `neutral` (value: `"neutral"`)
-
-* `negative` (value: `"negative"`)
-
-
 
 

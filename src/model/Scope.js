@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import ScopeLevel from './ScopeLevel';
 
 /**
  * The Scope model module.
@@ -54,7 +55,7 @@ class Scope {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
             }
             if (data.hasOwnProperty('level')) {
-                obj['level'] = ApiClient.convertToType(data['level'], 'String');
+                obj['level'] = ScopeLevel.constructFromObject(data['level']);
             }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
@@ -79,8 +80,7 @@ Scope.prototype['city'] = undefined;
 Scope.prototype['country'] = undefined;
 
 /**
- * The scope by level
- * @member {module:model/Scope.LevelEnum} level
+ * @member {module:model/ScopeLevel} level
  */
 Scope.prototype['level'] = undefined;
 
@@ -92,33 +92,6 @@ Scope.prototype['state'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>level</code> property.
- * @enum {String}
- * @readonly
- */
-Scope['LevelEnum'] = {
-
-    /**
-     * value: "international"
-     * @const
-     */
-    "international": "international",
-
-    /**
-     * value: "national"
-     * @const
-     */
-    "national": "national",
-
-    /**
-     * value: "local"
-     * @const
-     */
-    "local": "local"
-};
 
 
 

@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CategoryLinks from './CategoryLinks';
+import CategoryTaxonomy from './CategoryTaxonomy';
 
 /**
  * The Category model module.
@@ -64,7 +65,7 @@ class Category {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
             }
             if (data.hasOwnProperty('taxonomy')) {
-                obj['taxonomy'] = ApiClient.convertToType(data['taxonomy'], 'String');
+                obj['taxonomy'] = CategoryTaxonomy.constructFromObject(data['taxonomy']);
             }
         }
         return obj;
@@ -103,34 +104,12 @@ Category.prototype['links'] = undefined;
 Category.prototype['score'] = undefined;
 
 /**
- * The taxonomy of the category
- * @member {module:model/Category.TaxonomyEnum} taxonomy
+ * @member {module:model/CategoryTaxonomy} taxonomy
  */
 Category.prototype['taxonomy'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>taxonomy</code> property.
- * @enum {String}
- * @readonly
- */
-Category['TaxonomyEnum'] = {
-
-    /**
-     * value: "iab-qag"
-     * @const
-     */
-    "iab-qag": "iab-qag",
-
-    /**
-     * value: "iptc-subjectcode"
-     * @const
-     */
-    "iptc-subjectcode": "iptc-subjectcode"
-};
 
 
 

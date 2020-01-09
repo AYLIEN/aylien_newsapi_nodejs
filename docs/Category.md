@@ -9,17 +9,6 @@ Name | Type | Description | Notes
 **level** | **Number** | The level of the category | [optional] 
 **links** | [**CategoryLinks**](CategoryLinks.md) |  | [optional] 
 **score** | **Number** | The score of the category | [optional] 
-**taxonomy** | **String** | The taxonomy of the category | [optional] 
-
-
-
-## Enum: TaxonomyEnum
-
-
-* `iab-qag` (value: `"iab-qag"`)
-
-* `iptc-subjectcode` (value: `"iptc-subjectcode"`)
-
-
+**taxonomy** | [**CategoryTaxonomy**](CategoryTaxonomy.md) |  | [optional] 
 
 

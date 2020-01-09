@@ -180,6 +180,8 @@ export default class DefaultApi {
      * @param {String} opts.translationsEnTitle This parameter is used for finding stories whose translation title contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnBody This parameter is used for finding stories whose translation body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnText This parameter is used for finding stories whose translation title or body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
+     * @param {Array.<String>} opts.linksPermalink This parameter is used to find stories based on their url. 
+     * @param {Array.<String>} opts.notLinksPermalink This parameter is used to exclude stories based on their url. 
      * @param {Array.<module:model/String>} opts.language This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {Array.<module:model/String>} opts.notLanguage This parameter is used for excluding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
@@ -282,6 +284,8 @@ export default class DefaultApi {
         'translations.en.title': opts['translationsEnTitle'],
         'translations.en.body': opts['translationsEnBody'],
         'translations.en.text': opts['translationsEnText'],
+        'links.permalink[]': this.apiClient.buildCollectionParam(opts['linksPermalink'], 'multi'),
+        '!links.permalink[]': this.apiClient.buildCollectionParam(opts['notLinksPermalink'], 'multi'),
         'language[]': this.apiClient.buildCollectionParam(opts['language'], 'multi'),
         '!language[]': this.apiClient.buildCollectionParam(opts['notLanguage'], 'multi'),
         'published_at.start': opts['publishedAtStart'],
@@ -403,6 +407,8 @@ export default class DefaultApi {
      * @param {String} opts.translationsEnTitle This parameter is used for finding stories whose translation title contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnBody This parameter is used for finding stories whose translation body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnText This parameter is used for finding stories whose translation title or body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
+     * @param {Array.<String>} opts.linksPermalink This parameter is used to find stories based on their url. 
+     * @param {Array.<String>} opts.notLinksPermalink This parameter is used to exclude stories based on their url. 
      * @param {Array.<module:model/String>} opts.language This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {Array.<module:model/String>} opts.notLanguage This parameter is used for excluding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
@@ -500,6 +506,8 @@ export default class DefaultApi {
         'translations.en.title': opts['translationsEnTitle'],
         'translations.en.body': opts['translationsEnBody'],
         'translations.en.text': opts['translationsEnText'],
+        'links.permalink[]': this.apiClient.buildCollectionParam(opts['linksPermalink'], 'multi'),
+        '!links.permalink[]': this.apiClient.buildCollectionParam(opts['notLinksPermalink'], 'multi'),
         'language[]': this.apiClient.buildCollectionParam(opts['language'], 'multi'),
         '!language[]': this.apiClient.buildCollectionParam(opts['notLanguage'], 'multi'),
         'published_at.start': opts['publishedAtStart'],
@@ -616,6 +624,8 @@ export default class DefaultApi {
      * @param {String} opts.translationsEnTitle This parameter is used for finding stories whose translation title contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnBody This parameter is used for finding stories whose translation body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnText This parameter is used for finding stories whose translation title or body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
+     * @param {Array.<String>} opts.linksPermalink This parameter is used to find stories based on their url. 
+     * @param {Array.<String>} opts.notLinksPermalink This parameter is used to exclude stories based on their url. 
      * @param {Array.<module:model/String>} opts.language This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {Array.<module:model/String>} opts.notLanguage This parameter is used for excluding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
@@ -718,6 +728,8 @@ export default class DefaultApi {
         'translations.en.title': opts['translationsEnTitle'],
         'translations.en.body': opts['translationsEnBody'],
         'translations.en.text': opts['translationsEnText'],
+        'links.permalink[]': this.apiClient.buildCollectionParam(opts['linksPermalink'], 'multi'),
+        '!links.permalink[]': this.apiClient.buildCollectionParam(opts['notLinksPermalink'], 'multi'),
         'language[]': this.apiClient.buildCollectionParam(opts['language'], 'multi'),
         '!language[]': this.apiClient.buildCollectionParam(opts['notLanguage'], 'multi'),
         'published_at.start': opts['publishedAtStart'],
@@ -841,6 +853,8 @@ export default class DefaultApi {
      * @param {String} opts.translationsEnText This parameter is used for finding stories whose translation title or body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {Array.<module:model/String>} opts.language This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {Array.<module:model/String>} opts.notLanguage This parameter is used for excluding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
+     * @param {Array.<String>} opts.linksPermalink This parameter is used to find stories based on their url. 
+     * @param {Array.<String>} opts.notLinksPermalink This parameter is used to exclude stories based on their url. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
      * @param {String} opts.publishedAtEnd This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
      * @param {module:model/String} opts.categoriesTaxonomy This parameter is used for defining the type of the taxonomy for the rest of the categories queries. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
@@ -940,6 +954,8 @@ export default class DefaultApi {
         'translations.en.text': opts['translationsEnText'],
         'language[]': this.apiClient.buildCollectionParam(opts['language'], 'multi'),
         '!language[]': this.apiClient.buildCollectionParam(opts['notLanguage'], 'multi'),
+        'links.permalink[]': this.apiClient.buildCollectionParam(opts['linksPermalink'], 'multi'),
+        '!links.permalink[]': this.apiClient.buildCollectionParam(opts['notLinksPermalink'], 'multi'),
         'published_at.start': opts['publishedAtStart'],
         'published_at.end': opts['publishedAtEnd'],
         'categories.taxonomy': opts['categoriesTaxonomy'],
@@ -1264,6 +1280,8 @@ export default class DefaultApi {
      * @param {String} opts.translationsEnTitle This parameter is used for finding stories whose translation title contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnBody This parameter is used for finding stories whose translation body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
      * @param {String} opts.translationsEnText This parameter is used for finding stories whose translation title or body contains a specific keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). 
+     * @param {Array.<String>} opts.linksPermalink This parameter is used to find stories based on their url. 
+     * @param {Array.<String>} opts.notLinksPermalink This parameter is used to exclude stories based on their url. 
      * @param {Array.<module:model/String>} opts.language This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {Array.<module:model/String>} opts.notLanguage This parameter is used for excluding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
@@ -1361,6 +1379,8 @@ export default class DefaultApi {
         'translations.en.title': opts['translationsEnTitle'],
         'translations.en.body': opts['translationsEnBody'],
         'translations.en.text': opts['translationsEnText'],
+        'links.permalink[]': this.apiClient.buildCollectionParam(opts['linksPermalink'], 'multi'),
+        '!links.permalink[]': this.apiClient.buildCollectionParam(opts['notLinksPermalink'], 'multi'),
         'language[]': this.apiClient.buildCollectionParam(opts['language'], 'multi'),
         '!language[]': this.apiClient.buildCollectionParam(opts['notLanguage'], 'multi'),
         'published_at.start': opts['publishedAtStart'],

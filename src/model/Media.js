@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import MediaFormat from './MediaFormat';
+import MediaType from './MediaType';
 
 /**
  * The Media model module.
@@ -51,13 +53,13 @@ class Media {
                 obj['content_length'] = ApiClient.convertToType(data['content_length'], 'Number');
             }
             if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+                obj['format'] = MediaFormat.constructFromObject(data['format']);
             }
             if (data.hasOwnProperty('height')) {
                 obj['height'] = ApiClient.convertToType(data['height'], 'Number');
             }
             if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+                obj['type'] = MediaType.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -79,8 +81,7 @@ class Media {
 Media.prototype['content_length'] = undefined;
 
 /**
- * The format of media
- * @member {module:model/Media.FormatEnum} format
+ * @member {module:model/MediaFormat} format
  */
 Media.prototype['format'] = undefined;
 
@@ -91,8 +92,7 @@ Media.prototype['format'] = undefined;
 Media.prototype['height'] = undefined;
 
 /**
- * The type of media
- * @member {module:model/Media.TypeEnum} type
+ * @member {module:model/MediaType} type
  */
 Media.prototype['type'] = undefined;
 
@@ -110,96 +110,6 @@ Media.prototype['width'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>format</code> property.
- * @enum {String}
- * @readonly
- */
-Media['FormatEnum'] = {
-
-    /**
-     * value: "BMP"
-     * @const
-     */
-    "BMP": "BMP",
-
-    /**
-     * value: "GIF"
-     * @const
-     */
-    "GIF": "GIF",
-
-    /**
-     * value: "JPEG"
-     * @const
-     */
-    "JPEG": "JPEG",
-
-    /**
-     * value: "PNG"
-     * @const
-     */
-    "PNG": "PNG",
-
-    /**
-     * value: "TIFF"
-     * @const
-     */
-    "TIFF": "TIFF",
-
-    /**
-     * value: "PSD"
-     * @const
-     */
-    "PSD": "PSD",
-
-    /**
-     * value: "ICO"
-     * @const
-     */
-    "ICO": "ICO",
-
-    /**
-     * value: "CUR"
-     * @const
-     */
-    "CUR": "CUR",
-
-    /**
-     * value: "WEBP"
-     * @const
-     */
-    "WEBP": "WEBP",
-
-    /**
-     * value: "SVG"
-     * @const
-     */
-    "SVG": "SVG"
-};
-
-
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-Media['TypeEnum'] = {
-
-    /**
-     * value: "image"
-     * @const
-     */
-    "image": "image",
-
-    /**
-     * value: "video"
-     * @const
-     */
-    "video": "video"
-};
 
 
 

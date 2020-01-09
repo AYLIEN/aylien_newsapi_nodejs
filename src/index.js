@@ -18,6 +18,7 @@ import Autocomplete from './model/Autocomplete';
 import Autocompletes from './model/Autocompletes';
 import Category from './model/Category';
 import CategoryLinks from './model/CategoryLinks';
+import CategoryTaxonomy from './model/CategoryTaxonomy';
 import Cluster from './model/Cluster';
 import Clusters from './model/Clusters';
 import Coverages from './model/Coverages';
@@ -31,12 +32,16 @@ import HistogramInterval from './model/HistogramInterval';
 import Histograms from './model/Histograms';
 import Location from './model/Location';
 import Media from './model/Media';
+import MediaFormat from './model/MediaFormat';
+import MediaType from './model/MediaType';
 import Rank from './model/Rank';
 import Rankings from './model/Rankings';
 import RelatedStories from './model/RelatedStories';
 import RepresentativeStory from './model/RepresentativeStory';
 import Scope from './model/Scope';
+import ScopeLevel from './model/ScopeLevel';
 import Sentiment from './model/Sentiment';
+import SentimentPolarity from './model/SentimentPolarity';
 import Sentiments from './model/Sentiments';
 import ShareCount from './model/ShareCount';
 import ShareCounts from './model/ShareCounts';
@@ -124,6 +129,12 @@ export {
     CategoryLinks,
 
     /**
+     * The CategoryTaxonomy model constructor.
+     * @property {module:model/CategoryTaxonomy}
+     */
+    CategoryTaxonomy,
+
+    /**
      * The Cluster model constructor.
      * @property {module:model/Cluster}
      */
@@ -202,6 +213,18 @@ export {
     Media,
 
     /**
+     * The MediaFormat model constructor.
+     * @property {module:model/MediaFormat}
+     */
+    MediaFormat,
+
+    /**
+     * The MediaType model constructor.
+     * @property {module:model/MediaType}
+     */
+    MediaType,
+
+    /**
      * The Rank model constructor.
      * @property {module:model/Rank}
      */
@@ -232,10 +255,22 @@ export {
     Scope,
 
     /**
+     * The ScopeLevel model constructor.
+     * @property {module:model/ScopeLevel}
+     */
+    ScopeLevel,
+
+    /**
      * The Sentiment model constructor.
      * @property {module:model/Sentiment}
      */
     Sentiment,
+
+    /**
+     * The SentimentPolarity model constructor.
+     * @property {module:model/SentimentPolarity}
+     */
+    SentimentPolarity,
 
     /**
      * The Sentiments model constructor.

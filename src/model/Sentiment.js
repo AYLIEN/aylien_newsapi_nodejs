@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import SentimentPolarity from './SentimentPolarity';
 
 /**
  * The Sentiment model module.
@@ -48,7 +49,7 @@ class Sentiment {
             obj = obj || new Sentiment();
 
             if (data.hasOwnProperty('polarity')) {
-                obj['polarity'] = ApiClient.convertToType(data['polarity'], 'String');
+                obj['polarity'] = SentimentPolarity.constructFromObject(data['polarity']);
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
@@ -61,8 +62,7 @@ class Sentiment {
 }
 
 /**
- * Polarity of the sentiment
- * @member {module:model/Sentiment.PolarityEnum} polarity
+ * @member {module:model/SentimentPolarity} polarity
  */
 Sentiment.prototype['polarity'] = undefined;
 
@@ -74,33 +74,6 @@ Sentiment.prototype['score'] = undefined;
 
 
 
-
-
-/**
- * Allowed values for the <code>polarity</code> property.
- * @enum {String}
- * @readonly
- */
-Sentiment['PolarityEnum'] = {
-
-    /**
-     * value: "positive"
-     * @const
-     */
-    "positive": "positive",
-
-    /**
-     * value: "neutral"
-     * @const
-     */
-    "neutral": "neutral",
-
-    /**
-     * value: "negative"
-     * @const
-     */
-    "negative": "negative"
-};
 
 
 

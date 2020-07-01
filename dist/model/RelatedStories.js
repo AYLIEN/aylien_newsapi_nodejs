@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RelatedStories model module.
  * @module model/RelatedStories
- * @version 3.0.0
+ * @version 4.0.0
  */
-var RelatedStories =
-/*#__PURE__*/
-function () {
+var RelatedStories = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelatedStories</code>.
    * @alias module:model/RelatedStories
@@ -60,18 +58,50 @@ function () {
 
         if (data.hasOwnProperty('related_stories')) {
           obj['related_stories'] = _ApiClient["default"].convertToType(data['related_stories'], [_Story["default"]]);
+
+          if ('related_stories' !== 'relatedStories') {
+            Object.defineProperty(obj, 'relatedStories', {
+              get: function get() {
+                return obj['related_stories'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('story_body')) {
           obj['story_body'] = _ApiClient["default"].convertToType(data['story_body'], 'String');
+
+          if ('story_body' !== 'storyBody') {
+            Object.defineProperty(obj, 'storyBody', {
+              get: function get() {
+                return obj['story_body'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('story_language')) {
           obj['story_language'] = _ApiClient["default"].convertToType(data['story_language'], 'String');
+
+          if ('story_language' !== 'storyLanguage') {
+            Object.defineProperty(obj, 'storyLanguage', {
+              get: function get() {
+                return obj['story_language'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('story_title')) {
           obj['story_title'] = _ApiClient["default"].convertToType(data['story_title'], 'String');
+
+          if ('story_title' !== 'storyTitle') {
+            Object.defineProperty(obj, 'storyTitle', {
+              get: function get() {
+                return obj['story_title'];
+              }
+            });
+          }
         }
       }
 

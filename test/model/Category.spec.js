@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property label (base name: "label")', function() {
+      // uncomment below and update the code to test the property label
+      //var instane = new AylienNewsApi.Category();
+      //expect(instance).to.be();
+    });
+
     it('should have the property level (base name: "level")', function() {
       // uncomment below and update the code to test the property level
       //var instane = new AylienNewsApi.Category();

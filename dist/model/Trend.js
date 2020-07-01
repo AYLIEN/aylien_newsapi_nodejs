@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Trend =
-/*#__PURE__*/
-function () {
+var Trend = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Trend</code>.
    * @alias module:model/Trend
@@ -58,10 +56,26 @@ function () {
 
         if (data.hasOwnProperty('count')) {
           obj['count'] = _ApiClient["default"].convertToType(data['count'], 'Number');
+
+          if ('count' !== 'count') {
+            Object.defineProperty(obj, 'count', {
+              get: function get() {
+                return obj['count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('value')) {
           obj['value'] = _ApiClient["default"].convertToType(data['value'], 'String');
+
+          if ('value' !== 'value') {
+            Object.defineProperty(obj, 'value', {
+              get: function get() {
+                return obj['value'];
+              }
+            });
+          }
         }
       }
 

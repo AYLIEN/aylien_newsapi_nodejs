@@ -17,7 +17,7 @@ import EntityLinks from './EntityLinks';
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Entity {
     /**
@@ -50,18 +50,58 @@ class Entity {
 
             if (data.hasOwnProperty('indices')) {
                 obj['indices'] = ApiClient.convertToType(data['indices'], [['Number']]);
+
+                if ('indices' !== 'indices') {
+                  Object.defineProperty(obj, 'indices', {
+                    get() {
+                      return obj['indices'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = EntityLinks.constructFromObject(data['links']);
+
+                if ('links' !== 'links') {
+                  Object.defineProperty(obj, 'links', {
+                    get() {
+                      return obj['links'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
+
+                if ('score' !== 'score') {
+                  Object.defineProperty(obj, 'score', {
+                    get() {
+                      return obj['score'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('text')) {
                 obj['text'] = ApiClient.convertToType(data['text'], 'String');
+
+                if ('text' !== 'text') {
+                  Object.defineProperty(obj, 'text', {
+                    get() {
+                      return obj['text'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('types')) {
                 obj['types'] = ApiClient.convertToType(data['types'], ['String']);
+
+                if ('types' !== 'types') {
+                  Object.defineProperty(obj, 'types', {
+                    get() {
+                      return obj['types'];
+                    }
+                  });
+                }
             }
         }
         return obj;

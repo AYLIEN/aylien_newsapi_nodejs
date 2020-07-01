@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Rankings model module.
  * @module model/Rankings
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Rankings =
-/*#__PURE__*/
-function () {
+var Rankings = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Rankings</code>.
    * @alias module:model/Rankings
@@ -60,6 +58,14 @@ function () {
 
         if (data.hasOwnProperty('alexa')) {
           obj['alexa'] = _ApiClient["default"].convertToType(data['alexa'], [_Rank["default"]]);
+
+          if ('alexa' !== 'alexa') {
+            Object.defineProperty(obj, 'alexa', {
+              get: function get() {
+                return obj['alexa'];
+              }
+            });
+          }
         }
       }
 

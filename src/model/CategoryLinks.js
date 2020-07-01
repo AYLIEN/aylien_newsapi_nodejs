@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryLinks model module.
  * @module model/CategoryLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
 class CategoryLinks {
     /**
@@ -49,9 +49,25 @@ class CategoryLinks {
 
             if (data.hasOwnProperty('parent')) {
                 obj['parent'] = ApiClient.convertToType(data['parent'], 'String');
+
+                if ('parent' !== 'parent') {
+                  Object.defineProperty(obj, 'parent', {
+                    get() {
+                      return obj['parent'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('self')) {
                 obj['self'] = ApiClient.convertToType(data['self'], 'String');
+
+                if ('self' !== 'self') {
+                  Object.defineProperty(obj, 'self', {
+                    get() {
+                      return obj['self'];
+                    }
+                  });
+                }
             }
         }
         return obj;

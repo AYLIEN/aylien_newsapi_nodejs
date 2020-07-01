@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Author model module.
  * @module model/Author
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Author =
-/*#__PURE__*/
-function () {
+var Author = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Author</code>.
    * @alias module:model/Author
@@ -58,14 +56,38 @@ function () {
 
         if (data.hasOwnProperty('avatar_url')) {
           obj['avatar_url'] = _ApiClient["default"].convertToType(data['avatar_url'], 'String');
+
+          if ('avatar_url' !== 'avatarUrl') {
+            Object.defineProperty(obj, 'avatarUrl', {
+              get: function get() {
+                return obj['avatar_url'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+
+          if ('name' !== 'name') {
+            Object.defineProperty(obj, 'name', {
+              get: function get() {
+                return obj['name'];
+              }
+            });
+          }
         }
       }
 

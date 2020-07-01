@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Sentiment model module.
  * @module model/Sentiment
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Sentiment =
-/*#__PURE__*/
-function () {
+var Sentiment = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Sentiment</code>.
    * @alias module:model/Sentiment
@@ -60,10 +58,26 @@ function () {
 
         if (data.hasOwnProperty('polarity')) {
           obj['polarity'] = _SentimentPolarity["default"].constructFromObject(data['polarity']);
+
+          if ('polarity' !== 'polarity') {
+            Object.defineProperty(obj, 'polarity', {
+              get: function get() {
+                return obj['polarity'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('score')) {
           obj['score'] = _ApiClient["default"].convertToType(data['score'], 'Number');
+
+          if ('score' !== 'score') {
+            Object.defineProperty(obj, 'score', {
+              get: function get() {
+                return obj['score'];
+              }
+            });
+          }
         }
       }
 

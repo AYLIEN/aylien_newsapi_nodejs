@@ -17,7 +17,7 @@ import SentimentPolarity from './SentimentPolarity';
 /**
  * The Sentiment model module.
  * @module model/Sentiment
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Sentiment {
     /**
@@ -50,9 +50,25 @@ class Sentiment {
 
             if (data.hasOwnProperty('polarity')) {
                 obj['polarity'] = SentimentPolarity.constructFromObject(data['polarity']);
+
+                if ('polarity' !== 'polarity') {
+                  Object.defineProperty(obj, 'polarity', {
+                    get() {
+                      return obj['polarity'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
+
+                if ('score' !== 'score') {
+                  Object.defineProperty(obj, 'score', {
+                    get() {
+                      return obj['score'];
+                    }
+                  });
+                }
             }
         }
         return obj;

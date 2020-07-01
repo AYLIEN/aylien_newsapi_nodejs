@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ShareCount model module.
  * @module model/ShareCount
- * @version 3.0.0
+ * @version 4.0.0
  */
-var ShareCount =
-/*#__PURE__*/
-function () {
+var ShareCount = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ShareCount</code>.
    * @alias module:model/ShareCount
@@ -58,10 +56,26 @@ function () {
 
         if (data.hasOwnProperty('count')) {
           obj['count'] = _ApiClient["default"].convertToType(data['count'], 'Number');
+
+          if ('count' !== 'count') {
+            Object.defineProperty(obj, 'count', {
+              get: function get() {
+                return obj['count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('fetched_at')) {
           obj['fetched_at'] = _ApiClient["default"].convertToType(data['fetched_at'], 'Date');
+
+          if ('fetched_at' !== 'fetchedAt') {
+            Object.defineProperty(obj, 'fetchedAt', {
+              get: function get() {
+                return obj['fetched_at'];
+              }
+            });
+          }
         }
       }
 

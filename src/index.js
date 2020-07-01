@@ -21,7 +21,6 @@ import CategoryLinks from './model/CategoryLinks';
 import CategoryTaxonomy from './model/CategoryTaxonomy';
 import Cluster from './model/Cluster';
 import Clusters from './model/Clusters';
-import Coverages from './model/Coverages';
 import Entities from './model/Entities';
 import Entity from './model/Entity';
 import EntityLinks from './model/EntityLinks';
@@ -50,8 +49,8 @@ import Stories from './model/Stories';
 import Story from './model/Story';
 import StoryCluster from './model/StoryCluster';
 import StoryLinks from './model/StoryLinks';
+import StoryTranslation from './model/StoryTranslation';
 import StoryTranslations from './model/StoryTranslations';
-import StoryTranslationsEn from './model/StoryTranslationsEn';
 import Summary from './model/Summary';
 import TimeSeries from './model/TimeSeries';
 import TimeSeriesList from './model/TimeSeriesList';
@@ -89,7 +88,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 3.0.0
+* @version 4.0.0
 */
 export {
     /**
@@ -145,12 +144,6 @@ export {
      * @property {module:model/Clusters}
      */
     Clusters,
-
-    /**
-     * The Coverages model constructor.
-     * @property {module:model/Coverages}
-     */
-    Coverages,
 
     /**
      * The Entities model constructor.
@@ -321,16 +314,16 @@ export {
     StoryLinks,
 
     /**
+     * The StoryTranslation model constructor.
+     * @property {module:model/StoryTranslation}
+     */
+    StoryTranslation,
+
+    /**
      * The StoryTranslations model constructor.
      * @property {module:model/StoryTranslations}
      */
     StoryTranslations,
-
-    /**
-     * The StoryTranslationsEn model constructor.
-     * @property {module:model/StoryTranslationsEn}
-     */
-    StoryTranslationsEn,
 
     /**
      * The Summary model constructor.

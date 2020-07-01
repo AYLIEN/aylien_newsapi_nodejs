@@ -22,9 +22,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 * @enum {}
 * @readonly
 */
-var MediaFormat =
-/*#__PURE__*/
-function () {
+var MediaFormat = /*#__PURE__*/function () {
   function MediaFormat() {
     _classCallCheck(this, MediaFormat);
 

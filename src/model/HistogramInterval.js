@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistogramInterval model module.
  * @module model/HistogramInterval
- * @version 3.0.0
+ * @version 4.0.0
  */
 class HistogramInterval {
     /**
@@ -49,9 +49,25 @@ class HistogramInterval {
 
             if (data.hasOwnProperty('bin')) {
                 obj['bin'] = ApiClient.convertToType(data['bin'], 'Number');
+
+                if ('bin' !== 'bin') {
+                  Object.defineProperty(obj, 'bin', {
+                    get() {
+                      return obj['bin'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+
+                if ('count' !== 'count') {
+                  Object.defineProperty(obj, 'count', {
+                    get() {
+                      return obj['count'];
+                    }
+                  });
+                }
             }
         }
         return obj;

@@ -57,12 +57,6 @@ Object.defineProperty(exports, "Clusters", {
     return _Clusters["default"];
   }
 });
-Object.defineProperty(exports, "Coverages", {
-  enumerable: true,
-  get: function get() {
-    return _Coverages["default"];
-  }
-});
 Object.defineProperty(exports, "Entities", {
   enumerable: true,
   get: function get() {
@@ -231,16 +225,16 @@ Object.defineProperty(exports, "StoryLinks", {
     return _StoryLinks["default"];
   }
 });
+Object.defineProperty(exports, "StoryTranslation", {
+  enumerable: true,
+  get: function get() {
+    return _StoryTranslation["default"];
+  }
+});
 Object.defineProperty(exports, "StoryTranslations", {
   enumerable: true,
   get: function get() {
     return _StoryTranslations["default"];
-  }
-});
-Object.defineProperty(exports, "StoryTranslationsEn", {
-  enumerable: true,
-  get: function get() {
-    return _StoryTranslationsEn["default"];
   }
 });
 Object.defineProperty(exports, "Summary", {
@@ -298,8 +292,6 @@ var _Cluster = _interopRequireDefault(require("./model/Cluster"));
 
 var _Clusters = _interopRequireDefault(require("./model/Clusters"));
 
-var _Coverages = _interopRequireDefault(require("./model/Coverages"));
-
 var _Entities = _interopRequireDefault(require("./model/Entities"));
 
 var _Entity = _interopRequireDefault(require("./model/Entity"));
@@ -356,9 +348,9 @@ var _StoryCluster = _interopRequireDefault(require("./model/StoryCluster"));
 
 var _StoryLinks = _interopRequireDefault(require("./model/StoryLinks"));
 
-var _StoryTranslations = _interopRequireDefault(require("./model/StoryTranslations"));
+var _StoryTranslation = _interopRequireDefault(require("./model/StoryTranslation"));
 
-var _StoryTranslationsEn = _interopRequireDefault(require("./model/StoryTranslationsEn"));
+var _StoryTranslations = _interopRequireDefault(require("./model/StoryTranslations"));
 
 var _Summary = _interopRequireDefault(require("./model/Summary"));
 

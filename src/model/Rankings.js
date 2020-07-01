@@ -17,7 +17,7 @@ import Rank from './Rank';
 /**
  * The Rankings model module.
  * @module model/Rankings
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Rankings {
     /**
@@ -50,6 +50,14 @@ class Rankings {
 
             if (data.hasOwnProperty('alexa')) {
                 obj['alexa'] = ApiClient.convertToType(data['alexa'], [Rank]);
+
+                if ('alexa' !== 'alexa') {
+                  Object.defineProperty(obj, 'alexa', {
+                    get() {
+                      return obj['alexa'];
+                    }
+                  });
+                }
             }
         }
         return obj;

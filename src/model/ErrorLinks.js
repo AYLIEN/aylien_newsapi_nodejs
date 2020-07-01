@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorLinks model module.
  * @module model/ErrorLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
 class ErrorLinks {
     /**
@@ -49,6 +49,14 @@ class ErrorLinks {
 
             if (data.hasOwnProperty('about')) {
                 obj['about'] = ApiClient.convertToType(data['about'], 'String');
+
+                if ('about' !== 'about') {
+                  Object.defineProperty(obj, 'about', {
+                    get() {
+                      return obj['about'];
+                    }
+                  });
+                }
             }
         }
         return obj;

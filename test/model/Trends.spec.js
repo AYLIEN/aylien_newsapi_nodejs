@@ -66,6 +66,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property publishedAtEnd (base name: "published_at.end")', function() {
+      // uncomment below and update the code to test the property publishedAtEnd
+      //var instane = new AylienNewsApi.Trends();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property publishedAtStart (base name: "published_at.start")', function() {
+      // uncomment below and update the code to test the property publishedAtStart
+      //var instane = new AylienNewsApi.Trends();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

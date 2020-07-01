@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ErrorLinks model module.
  * @module model/ErrorLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
-var ErrorLinks =
-/*#__PURE__*/
-function () {
+var ErrorLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ErrorLinks</code>.
    * @alias module:model/ErrorLinks
@@ -58,6 +56,14 @@ function () {
 
         if (data.hasOwnProperty('about')) {
           obj['about'] = _ApiClient["default"].convertToType(data['about'], 'String');
+
+          if ('about' !== 'about') {
+            Object.defineProperty(obj, 'about', {
+              get: function get() {
+                return obj['about'];
+              }
+            });
+          }
         }
       }
 

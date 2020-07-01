@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The ShareCounts model module.
  * @module model/ShareCounts
- * @version 3.0.0
+ * @version 4.0.0
  */
-var ShareCounts =
-/*#__PURE__*/
-function () {
+var ShareCounts = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ShareCounts</code>.
    * @alias module:model/ShareCounts
@@ -60,18 +58,50 @@ function () {
 
         if (data.hasOwnProperty('facebook')) {
           obj['facebook'] = _ApiClient["default"].convertToType(data['facebook'], [_ShareCount["default"]]);
+
+          if ('facebook' !== 'facebook') {
+            Object.defineProperty(obj, 'facebook', {
+              get: function get() {
+                return obj['facebook'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('google_plus')) {
           obj['google_plus'] = _ApiClient["default"].convertToType(data['google_plus'], [_ShareCount["default"]]);
+
+          if ('google_plus' !== 'googlePlus') {
+            Object.defineProperty(obj, 'googlePlus', {
+              get: function get() {
+                return obj['google_plus'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('linkedin')) {
           obj['linkedin'] = _ApiClient["default"].convertToType(data['linkedin'], [_ShareCount["default"]]);
+
+          if ('linkedin' !== 'linkedin') {
+            Object.defineProperty(obj, 'linkedin', {
+              get: function get() {
+                return obj['linkedin'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('reddit')) {
           obj['reddit'] = _ApiClient["default"].convertToType(data['reddit'], [_ShareCount["default"]]);
+
+          if ('reddit' !== 'reddit') {
+            Object.defineProperty(obj, 'reddit', {
+              get: function get() {
+                return obj['reddit'];
+              }
+            });
+          }
         }
       }
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RepresentativeStory model module.
  * @module model/RepresentativeStory
- * @version 3.0.0
+ * @version 4.0.0
  */
 class RepresentativeStory {
     /**
@@ -49,15 +49,47 @@ class RepresentativeStory {
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+
+                if ('id' !== 'id') {
+                  Object.defineProperty(obj, 'id', {
+                    get() {
+                      return obj['id'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('permalink')) {
                 obj['permalink'] = ApiClient.convertToType(data['permalink'], 'String');
+
+                if ('permalink' !== 'permalink') {
+                  Object.defineProperty(obj, 'permalink', {
+                    get() {
+                      return obj['permalink'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('published_at')) {
                 obj['published_at'] = ApiClient.convertToType(data['published_at'], 'Date');
+
+                if ('published_at' !== 'publishedAt') {
+                  Object.defineProperty(obj, 'publishedAt', {
+                    get() {
+                      return obj['published_at'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
+
+                if ('title' !== 'title') {
+                  Object.defineProperty(obj, 'title', {
+                    get() {
+                      return obj['title'];
+                    }
+                  });
+                }
             }
         }
         return obj;

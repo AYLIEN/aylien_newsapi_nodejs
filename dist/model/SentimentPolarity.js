@@ -22,9 +22,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 * @enum {}
 * @readonly
 */
-var SentimentPolarity =
-/*#__PURE__*/
-function () {
+var SentimentPolarity = /*#__PURE__*/function () {
   function SentimentPolarity() {
     _classCallCheck(this, SentimentPolarity);
 

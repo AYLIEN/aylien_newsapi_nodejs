@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Category model module.
  * @module model/Category
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Category =
-/*#__PURE__*/
-function () {
+var Category = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Category</code>.
    * @alias module:model/Category
@@ -62,26 +60,86 @@ function () {
 
         if (data.hasOwnProperty('confident')) {
           obj['confident'] = _ApiClient["default"].convertToType(data['confident'], 'Boolean');
+
+          if ('confident' !== 'confident') {
+            Object.defineProperty(obj, 'confident', {
+              get: function get() {
+                return obj['confident'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
+        }
+
+        if (data.hasOwnProperty('label')) {
+          obj['label'] = _ApiClient["default"].convertToType(data['label'], 'String');
+
+          if ('label' !== 'label') {
+            Object.defineProperty(obj, 'label', {
+              get: function get() {
+                return obj['label'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('level')) {
           obj['level'] = _ApiClient["default"].convertToType(data['level'], 'Number');
+
+          if ('level' !== 'level') {
+            Object.defineProperty(obj, 'level', {
+              get: function get() {
+                return obj['level'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _CategoryLinks["default"].constructFromObject(data['links']);
+
+          if ('links' !== 'links') {
+            Object.defineProperty(obj, 'links', {
+              get: function get() {
+                return obj['links'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('score')) {
           obj['score'] = _ApiClient["default"].convertToType(data['score'], 'Number');
+
+          if ('score' !== 'score') {
+            Object.defineProperty(obj, 'score', {
+              get: function get() {
+                return obj['score'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('taxonomy')) {
           obj['taxonomy'] = _CategoryTaxonomy["default"].constructFromObject(data['taxonomy']);
+
+          if ('taxonomy' !== 'taxonomy') {
+            Object.defineProperty(obj, 'taxonomy', {
+              get: function get() {
+                return obj['taxonomy'];
+              }
+            });
+          }
         }
       }
 
@@ -104,6 +162,12 @@ Category.prototype['confident'] = undefined;
  */
 
 Category.prototype['id'] = undefined;
+/**
+ * The label of the category
+ * @member {String} label
+ */
+
+Category.prototype['label'] = undefined;
 /**
  * The level of the category
  * @member {Number} level

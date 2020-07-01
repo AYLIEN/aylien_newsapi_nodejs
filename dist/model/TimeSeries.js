@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TimeSeries model module.
  * @module model/TimeSeries
- * @version 3.0.0
+ * @version 4.0.0
  */
-var TimeSeries =
-/*#__PURE__*/
-function () {
+var TimeSeries = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TimeSeries</code>.
    * @alias module:model/TimeSeries
@@ -58,10 +56,26 @@ function () {
 
         if (data.hasOwnProperty('count')) {
           obj['count'] = _ApiClient["default"].convertToType(data['count'], 'Number');
+
+          if ('count' !== 'count') {
+            Object.defineProperty(obj, 'count', {
+              get: function get() {
+                return obj['count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('published_at')) {
           obj['published_at'] = _ApiClient["default"].convertToType(data['published_at'], 'Date');
+
+          if ('published_at' !== 'publishedAt') {
+            Object.defineProperty(obj, 'publishedAt', {
+              get: function get() {
+                return obj['published_at'];
+              }
+            });
+          }
         }
       }
 

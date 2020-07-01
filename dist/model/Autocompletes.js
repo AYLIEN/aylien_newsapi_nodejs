@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Autocompletes model module.
  * @module model/Autocompletes
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Autocompletes =
-/*#__PURE__*/
-function () {
+var Autocompletes = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Autocompletes</code>.
    * @alias module:model/Autocompletes
@@ -60,6 +58,14 @@ function () {
 
         if (data.hasOwnProperty('autocompletes')) {
           obj['autocompletes'] = _ApiClient["default"].convertToType(data['autocompletes'], [_Autocomplete["default"]]);
+
+          if ('autocompletes' !== 'autocompletes') {
+            Object.defineProperty(obj, 'autocompletes', {
+              get: function get() {
+                return obj['autocompletes'];
+              }
+            });
+          }
         }
       }
 

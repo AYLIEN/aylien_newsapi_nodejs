@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Sentiments model module.
  * @module model/Sentiments
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Sentiments =
-/*#__PURE__*/
-function () {
+var Sentiments = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Sentiments</code>.
    * @alias module:model/Sentiments
@@ -60,10 +58,26 @@ function () {
 
         if (data.hasOwnProperty('body')) {
           obj['body'] = _Sentiment["default"].constructFromObject(data['body']);
+
+          if ('body' !== 'body') {
+            Object.defineProperty(obj, 'body', {
+              get: function get() {
+                return obj['body'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _Sentiment["default"].constructFromObject(data['title']);
+
+          if ('title' !== 'title') {
+            Object.defineProperty(obj, 'title', {
+              get: function get() {
+                return obj['title'];
+              }
+            });
+          }
         }
       }
 

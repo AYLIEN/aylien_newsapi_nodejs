@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The CategoryLinks model module.
  * @module model/CategoryLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
-var CategoryLinks =
-/*#__PURE__*/
-function () {
+var CategoryLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CategoryLinks</code>.
    * @alias module:model/CategoryLinks
@@ -58,10 +56,26 @@ function () {
 
         if (data.hasOwnProperty('parent')) {
           obj['parent'] = _ApiClient["default"].convertToType(data['parent'], 'String');
+
+          if ('parent' !== 'parent') {
+            Object.defineProperty(obj, 'parent', {
+              get: function get() {
+                return obj['parent'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('self')) {
           obj['self'] = _ApiClient["default"].convertToType(data['self'], 'String');
+
+          if ('self' !== 'self') {
+            Object.defineProperty(obj, 'self', {
+              get: function get() {
+                return obj['self'];
+              }
+            });
+          }
         }
       }
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Autocomplete model module.
  * @module model/Autocomplete
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Autocomplete {
     /**
@@ -49,9 +49,25 @@ class Autocomplete {
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+
+                if ('id' !== 'id') {
+                  Object.defineProperty(obj, 'id', {
+                    get() {
+                      return obj['id'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('text')) {
                 obj['text'] = ApiClient.convertToType(data['text'], 'String');
+
+                if ('text' !== 'text') {
+                  Object.defineProperty(obj, 'text', {
+                    get() {
+                      return obj['text'];
+                    }
+                  });
+                }
             }
         }
         return obj;

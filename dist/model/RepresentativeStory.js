@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The RepresentativeStory model module.
  * @module model/RepresentativeStory
- * @version 3.0.0
+ * @version 4.0.0
  */
-var RepresentativeStory =
-/*#__PURE__*/
-function () {
+var RepresentativeStory = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RepresentativeStory</code>.
    * @alias module:model/RepresentativeStory
@@ -58,18 +56,50 @@ function () {
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('permalink')) {
           obj['permalink'] = _ApiClient["default"].convertToType(data['permalink'], 'String');
+
+          if ('permalink' !== 'permalink') {
+            Object.defineProperty(obj, 'permalink', {
+              get: function get() {
+                return obj['permalink'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('published_at')) {
           obj['published_at'] = _ApiClient["default"].convertToType(data['published_at'], 'Date');
+
+          if ('published_at' !== 'publishedAt') {
+            Object.defineProperty(obj, 'publishedAt', {
+              get: function get() {
+                return obj['published_at'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], 'String');
+
+          if ('title' !== 'title') {
+            Object.defineProperty(obj, 'title', {
+              get: function get() {
+                return obj['title'];
+              }
+            });
+          }
         }
       }
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryLinks model module.
  * @module model/StoryLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
 class StoryLinks {
     /**
@@ -49,15 +49,47 @@ class StoryLinks {
 
             if (data.hasOwnProperty('canonical')) {
                 obj['canonical'] = ApiClient.convertToType(data['canonical'], 'String');
-            }
-            if (data.hasOwnProperty('coverages')) {
-                obj['coverages'] = ApiClient.convertToType(data['coverages'], 'String');
+
+                if ('canonical' !== 'canonical') {
+                  Object.defineProperty(obj, 'canonical', {
+                    get() {
+                      return obj['canonical'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('permalink')) {
                 obj['permalink'] = ApiClient.convertToType(data['permalink'], 'String');
+
+                if ('permalink' !== 'permalink') {
+                  Object.defineProperty(obj, 'permalink', {
+                    get() {
+                      return obj['permalink'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('related_stories')) {
                 obj['related_stories'] = ApiClient.convertToType(data['related_stories'], 'String');
+
+                if ('related_stories' !== 'relatedStories') {
+                  Object.defineProperty(obj, 'relatedStories', {
+                    get() {
+                      return obj['related_stories'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('clusters')) {
+                obj['clusters'] = ApiClient.convertToType(data['clusters'], 'String');
+
+                if ('clusters' !== 'clusters') {
+                  Object.defineProperty(obj, 'clusters', {
+                    get() {
+                      return obj['clusters'];
+                    }
+                  });
+                }
             }
         }
         return obj;
@@ -73,12 +105,6 @@ class StoryLinks {
 StoryLinks.prototype['canonical'] = undefined;
 
 /**
- * The coverages URL
- * @member {String} coverages
- */
-StoryLinks.prototype['coverages'] = undefined;
-
-/**
  * The story permalink URL
  * @member {String} permalink
  */
@@ -89,6 +115,12 @@ StoryLinks.prototype['permalink'] = undefined;
  * @member {String} related_stories
  */
 StoryLinks.prototype['related_stories'] = undefined;
+
+/**
+ * The clusters endpoint URL for this story
+ * @member {String} clusters
+ */
+StoryLinks.prototype['clusters'] = undefined;
 
 
 

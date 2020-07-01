@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Clusters model module.
  * @module model/Clusters
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Clusters =
-/*#__PURE__*/
-function () {
+var Clusters = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Clusters</code>.
    * @alias module:model/Clusters
@@ -60,14 +58,38 @@ function () {
 
         if (data.hasOwnProperty('cluster_count')) {
           obj['cluster_count'] = _ApiClient["default"].convertToType(data['cluster_count'], 'Number');
+
+          if ('cluster_count' !== 'clusterCount') {
+            Object.defineProperty(obj, 'clusterCount', {
+              get: function get() {
+                return obj['cluster_count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('clusters')) {
           obj['clusters'] = _ApiClient["default"].convertToType(data['clusters'], [_Cluster["default"]]);
+
+          if ('clusters' !== 'clusters') {
+            Object.defineProperty(obj, 'clusters', {
+              get: function get() {
+                return obj['clusters'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('next_page_cursor')) {
           obj['next_page_cursor'] = _ApiClient["default"].convertToType(data['next_page_cursor'], 'String');
+
+          if ('next_page_cursor' !== 'nextPageCursor') {
+            Object.defineProperty(obj, 'nextPageCursor', {
+              get: function get() {
+                return obj['next_page_cursor'];
+              }
+            });
+          }
         }
       }
 

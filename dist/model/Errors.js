@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Errors model module.
  * @module model/Errors
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Errors =
-/*#__PURE__*/
-function () {
+var Errors = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Errors</code>.
    * @alias module:model/Errors
@@ -60,6 +58,14 @@ function () {
 
         if (data.hasOwnProperty('errors')) {
           obj['errors'] = _ApiClient["default"].convertToType(data['errors'], [_Error["default"]]);
+
+          if ('errors' !== 'errors') {
+            Object.defineProperty(obj, 'errors', {
+              get: function get() {
+                return obj['errors'];
+              }
+            });
+          }
         }
       }
 

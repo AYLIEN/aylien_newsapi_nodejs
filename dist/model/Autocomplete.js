@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Autocomplete model module.
  * @module model/Autocomplete
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Autocomplete =
-/*#__PURE__*/
-function () {
+var Autocomplete = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Autocomplete</code>.
    * @alias module:model/Autocomplete
@@ -58,10 +56,26 @@ function () {
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('text')) {
           obj['text'] = _ApiClient["default"].convertToType(data['text'], 'String');
+
+          if ('text' !== 'text') {
+            Object.defineProperty(obj, 'text', {
+              get: function get() {
+                return obj['text'];
+              }
+            });
+          }
         }
       }
 

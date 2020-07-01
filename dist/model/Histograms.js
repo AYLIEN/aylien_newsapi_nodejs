@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Histograms model module.
  * @module model/Histograms
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Histograms =
-/*#__PURE__*/
-function () {
+var Histograms = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Histograms</code>.
    * @alias module:model/Histograms
@@ -60,22 +58,86 @@ function () {
 
         if (data.hasOwnProperty('field')) {
           obj['field'] = _ApiClient["default"].convertToType(data['field'], 'String');
+
+          if ('field' !== 'field') {
+            Object.defineProperty(obj, 'field', {
+              get: function get() {
+                return obj['field'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('interval.end')) {
           obj['interval.end'] = _ApiClient["default"].convertToType(data['interval.end'], 'Number');
+
+          if ('interval.end' !== 'intervalEnd') {
+            Object.defineProperty(obj, 'intervalEnd', {
+              get: function get() {
+                return obj['interval.end'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('interval.start')) {
           obj['interval.start'] = _ApiClient["default"].convertToType(data['interval.start'], 'Number');
+
+          if ('interval.start' !== 'intervalStart') {
+            Object.defineProperty(obj, 'intervalStart', {
+              get: function get() {
+                return obj['interval.start'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('interval.width')) {
           obj['interval.width'] = _ApiClient["default"].convertToType(data['interval.width'], 'Number');
+
+          if ('interval.width' !== 'intervalWidth') {
+            Object.defineProperty(obj, 'intervalWidth', {
+              get: function get() {
+                return obj['interval.width'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('intervals')) {
           obj['intervals'] = _ApiClient["default"].convertToType(data['intervals'], [_HistogramInterval["default"]]);
+
+          if ('intervals' !== 'intervals') {
+            Object.defineProperty(obj, 'intervals', {
+              get: function get() {
+                return obj['intervals'];
+              }
+            });
+          }
+        }
+
+        if (data.hasOwnProperty('published_at.end')) {
+          obj['published_at.end'] = _ApiClient["default"].convertToType(data['published_at.end'], 'Date');
+
+          if ('published_at.end' !== 'publishedAtEnd') {
+            Object.defineProperty(obj, 'publishedAtEnd', {
+              get: function get() {
+                return obj['published_at.end'];
+              }
+            });
+          }
+        }
+
+        if (data.hasOwnProperty('published_at.start')) {
+          obj['published_at.start'] = _ApiClient["default"].convertToType(data['published_at.start'], 'Date');
+
+          if ('published_at.start' !== 'publishedAtStart') {
+            Object.defineProperty(obj, 'publishedAtStart', {
+              get: function get() {
+                return obj['published_at.start'];
+              }
+            });
+          }
         }
       }
 
@@ -115,5 +177,17 @@ Histograms.prototype['interval.width'] = undefined;
  */
 
 Histograms.prototype['intervals'] = undefined;
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+
+Histograms.prototype['published_at.end'] = undefined;
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+
+Histograms.prototype['published_at.start'] = undefined;
 var _default = Histograms;
 exports["default"] = _default;

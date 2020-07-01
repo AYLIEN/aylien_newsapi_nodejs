@@ -24,11 +24,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Source model module.
  * @module model/Source
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Source =
-/*#__PURE__*/
-function () {
+var Source = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Source</code>.
    * @alias module:model/Source
@@ -64,46 +62,134 @@ function () {
 
         if (data.hasOwnProperty('description')) {
           obj['description'] = _ApiClient["default"].convertToType(data['description'], 'String');
+
+          if ('description' !== 'description') {
+            Object.defineProperty(obj, 'description', {
+              get: function get() {
+                return obj['description'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('domain')) {
           obj['domain'] = _ApiClient["default"].convertToType(data['domain'], 'String');
+
+          if ('domain' !== 'domain') {
+            Object.defineProperty(obj, 'domain', {
+              get: function get() {
+                return obj['domain'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('home_page_url')) {
           obj['home_page_url'] = _ApiClient["default"].convertToType(data['home_page_url'], 'String');
+
+          if ('home_page_url' !== 'homePageUrl') {
+            Object.defineProperty(obj, 'homePageUrl', {
+              get: function get() {
+                return obj['home_page_url'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('links_in_count')) {
           obj['links_in_count'] = _ApiClient["default"].convertToType(data['links_in_count'], 'Number');
+
+          if ('links_in_count' !== 'linksInCount') {
+            Object.defineProperty(obj, 'linksInCount', {
+              get: function get() {
+                return obj['links_in_count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('locations')) {
           obj['locations'] = _ApiClient["default"].convertToType(data['locations'], [_Location["default"]]);
+
+          if ('locations' !== 'locations') {
+            Object.defineProperty(obj, 'locations', {
+              get: function get() {
+                return obj['locations'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('logo_url')) {
           obj['logo_url'] = _ApiClient["default"].convertToType(data['logo_url'], 'String');
+
+          if ('logo_url' !== 'logoUrl') {
+            Object.defineProperty(obj, 'logoUrl', {
+              get: function get() {
+                return obj['logo_url'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+
+          if ('name' !== 'name') {
+            Object.defineProperty(obj, 'name', {
+              get: function get() {
+                return obj['name'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('rankings')) {
           obj['rankings'] = _Rankings["default"].constructFromObject(data['rankings']);
+
+          if ('rankings' !== 'rankings') {
+            Object.defineProperty(obj, 'rankings', {
+              get: function get() {
+                return obj['rankings'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('scopes')) {
           obj['scopes'] = _ApiClient["default"].convertToType(data['scopes'], [_Scope["default"]]);
+
+          if ('scopes' !== 'scopes') {
+            Object.defineProperty(obj, 'scopes', {
+              get: function get() {
+                return obj['scopes'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], 'String');
+
+          if ('title' !== 'title') {
+            Object.defineProperty(obj, 'title', {
+              get: function get() {
+                return obj['title'];
+              }
+            });
+          }
         }
       }
 

@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Location model module.
  * @module model/Location
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Location =
-/*#__PURE__*/
-function () {
+var Location = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Location</code>.
    * @alias module:model/Location
@@ -58,14 +56,38 @@ function () {
 
         if (data.hasOwnProperty('city')) {
           obj['city'] = _ApiClient["default"].convertToType(data['city'], 'String');
+
+          if ('city' !== 'city') {
+            Object.defineProperty(obj, 'city', {
+              get: function get() {
+                return obj['city'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('country')) {
           obj['country'] = _ApiClient["default"].convertToType(data['country'], 'String');
+
+          if ('country' !== 'country') {
+            Object.defineProperty(obj, 'country', {
+              get: function get() {
+                return obj['country'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('state')) {
           obj['state'] = _ApiClient["default"].convertToType(data['state'], 'String');
+
+          if ('state' !== 'state') {
+            Object.defineProperty(obj, 'state', {
+              get: function get() {
+                return obj['state'];
+              }
+            });
+          }
         }
       }
 

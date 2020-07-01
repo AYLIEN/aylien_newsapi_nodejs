@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EntityLinks model module.
  * @module model/EntityLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
 class EntityLinks {
     /**
@@ -49,6 +49,14 @@ class EntityLinks {
 
             if (data.hasOwnProperty('dbpedia')) {
                 obj['dbpedia'] = ApiClient.convertToType(data['dbpedia'], 'String');
+
+                if ('dbpedia' !== 'dbpedia') {
+                  Object.defineProperty(obj, 'dbpedia', {
+                    get() {
+                      return obj['dbpedia'];
+                    }
+                  });
+                }
             }
         }
         return obj;

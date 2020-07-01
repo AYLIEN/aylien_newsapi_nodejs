@@ -17,7 +17,7 @@ import ScopeLevel from './ScopeLevel';
 /**
  * The Scope model module.
  * @module model/Scope
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Scope {
     /**
@@ -50,15 +50,47 @@ class Scope {
 
             if (data.hasOwnProperty('city')) {
                 obj['city'] = ApiClient.convertToType(data['city'], 'String');
+
+                if ('city' !== 'city') {
+                  Object.defineProperty(obj, 'city', {
+                    get() {
+                      return obj['city'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
+
+                if ('country' !== 'country') {
+                  Object.defineProperty(obj, 'country', {
+                    get() {
+                      return obj['country'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('level')) {
                 obj['level'] = ScopeLevel.constructFromObject(data['level']);
+
+                if ('level' !== 'level') {
+                  Object.defineProperty(obj, 'level', {
+                    get() {
+                      return obj['level'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
+
+                if ('state' !== 'state') {
+                  Object.defineProperty(obj, 'state', {
+                    get() {
+                      return obj['state'];
+                    }
+                  });
+                }
             }
         }
         return obj;

@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The HistogramInterval model module.
  * @module model/HistogramInterval
- * @version 3.0.0
+ * @version 4.0.0
  */
-var HistogramInterval =
-/*#__PURE__*/
-function () {
+var HistogramInterval = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HistogramInterval</code>.
    * @alias module:model/HistogramInterval
@@ -58,10 +56,26 @@ function () {
 
         if (data.hasOwnProperty('bin')) {
           obj['bin'] = _ApiClient["default"].convertToType(data['bin'], 'Number');
+
+          if ('bin' !== 'bin') {
+            Object.defineProperty(obj, 'bin', {
+              get: function get() {
+                return obj['bin'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('count')) {
           obj['count'] = _ApiClient["default"].convertToType(data['count'], 'Number');
+
+          if ('count' !== 'count') {
+            Object.defineProperty(obj, 'count', {
+              get: function get() {
+                return obj['count'];
+              }
+            });
+          }
         }
       }
 

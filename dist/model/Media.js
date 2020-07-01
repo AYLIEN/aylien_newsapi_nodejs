@@ -22,11 +22,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Media model module.
  * @module model/Media
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Media =
-/*#__PURE__*/
-function () {
+var Media = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Media</code>.
    * @alias module:model/Media
@@ -62,26 +60,74 @@ function () {
 
         if (data.hasOwnProperty('content_length')) {
           obj['content_length'] = _ApiClient["default"].convertToType(data['content_length'], 'Number');
+
+          if ('content_length' !== 'contentLength') {
+            Object.defineProperty(obj, 'contentLength', {
+              get: function get() {
+                return obj['content_length'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('format')) {
           obj['format'] = _MediaFormat["default"].constructFromObject(data['format']);
+
+          if ('format' !== 'format') {
+            Object.defineProperty(obj, 'format', {
+              get: function get() {
+                return obj['format'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('height')) {
           obj['height'] = _ApiClient["default"].convertToType(data['height'], 'Number');
+
+          if ('height' !== 'height') {
+            Object.defineProperty(obj, 'height', {
+              get: function get() {
+                return obj['height'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _MediaType["default"].constructFromObject(data['type']);
+
+          if ('type' !== 'type') {
+            Object.defineProperty(obj, 'type', {
+              get: function get() {
+                return obj['type'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('url')) {
           obj['url'] = _ApiClient["default"].convertToType(data['url'], 'String');
+
+          if ('url' !== 'url') {
+            Object.defineProperty(obj, 'url', {
+              get: function get() {
+                return obj['url'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('width')) {
           obj['width'] = _ApiClient["default"].convertToType(data['width'], 'Number');
+
+          if ('width' !== 'width') {
+            Object.defineProperty(obj, 'width', {
+              get: function get() {
+                return obj['width'];
+              }
+            });
+          }
         }
       }
 

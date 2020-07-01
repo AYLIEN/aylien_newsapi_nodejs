@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Rank model module.
  * @module model/Rank
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Rank =
-/*#__PURE__*/
-function () {
+var Rank = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Rank</code>.
    * @alias module:model/Rank
@@ -58,14 +56,38 @@ function () {
 
         if (data.hasOwnProperty('country')) {
           obj['country'] = _ApiClient["default"].convertToType(data['country'], 'String');
+
+          if ('country' !== 'country') {
+            Object.defineProperty(obj, 'country', {
+              get: function get() {
+                return obj['country'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('fetched_at')) {
           obj['fetched_at'] = _ApiClient["default"].convertToType(data['fetched_at'], 'Date');
+
+          if ('fetched_at' !== 'fetchedAt') {
+            Object.defineProperty(obj, 'fetchedAt', {
+              get: function get() {
+                return obj['fetched_at'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('rank')) {
           obj['rank'] = _ApiClient["default"].convertToType(data['rank'], 'Number');
+
+          if ('rank' !== 'rank') {
+            Object.defineProperty(obj, 'rank', {
+              get: function get() {
+                return obj['rank'];
+              }
+            });
+          }
         }
       }
 

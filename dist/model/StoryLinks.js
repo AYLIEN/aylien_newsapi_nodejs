@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StoryLinks model module.
  * @module model/StoryLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
-var StoryLinks =
-/*#__PURE__*/
-function () {
+var StoryLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>StoryLinks</code>.
    * @alias module:model/StoryLinks
@@ -58,18 +56,50 @@ function () {
 
         if (data.hasOwnProperty('canonical')) {
           obj['canonical'] = _ApiClient["default"].convertToType(data['canonical'], 'String');
-        }
 
-        if (data.hasOwnProperty('coverages')) {
-          obj['coverages'] = _ApiClient["default"].convertToType(data['coverages'], 'String');
+          if ('canonical' !== 'canonical') {
+            Object.defineProperty(obj, 'canonical', {
+              get: function get() {
+                return obj['canonical'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('permalink')) {
           obj['permalink'] = _ApiClient["default"].convertToType(data['permalink'], 'String');
+
+          if ('permalink' !== 'permalink') {
+            Object.defineProperty(obj, 'permalink', {
+              get: function get() {
+                return obj['permalink'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('related_stories')) {
           obj['related_stories'] = _ApiClient["default"].convertToType(data['related_stories'], 'String');
+
+          if ('related_stories' !== 'relatedStories') {
+            Object.defineProperty(obj, 'relatedStories', {
+              get: function get() {
+                return obj['related_stories'];
+              }
+            });
+          }
+        }
+
+        if (data.hasOwnProperty('clusters')) {
+          obj['clusters'] = _ApiClient["default"].convertToType(data['clusters'], 'String');
+
+          if ('clusters' !== 'clusters') {
+            Object.defineProperty(obj, 'clusters', {
+              get: function get() {
+                return obj['clusters'];
+              }
+            });
+          }
         }
       }
 
@@ -87,12 +117,6 @@ function () {
 
 StoryLinks.prototype['canonical'] = undefined;
 /**
- * The coverages URL
- * @member {String} coverages
- */
-
-StoryLinks.prototype['coverages'] = undefined;
-/**
  * The story permalink URL
  * @member {String} permalink
  */
@@ -104,5 +128,11 @@ StoryLinks.prototype['permalink'] = undefined;
  */
 
 StoryLinks.prototype['related_stories'] = undefined;
+/**
+ * The clusters endpoint URL for this story
+ * @member {String} clusters
+ */
+
+StoryLinks.prototype['clusters'] = undefined;
 var _default = StoryLinks;
 exports["default"] = _default;

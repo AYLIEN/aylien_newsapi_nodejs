@@ -17,7 +17,7 @@ import Autocomplete from './Autocomplete';
 /**
  * The Autocompletes model module.
  * @module model/Autocompletes
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Autocompletes {
     /**
@@ -50,6 +50,14 @@ class Autocompletes {
 
             if (data.hasOwnProperty('autocompletes')) {
                 obj['autocompletes'] = ApiClient.convertToType(data['autocompletes'], [Autocomplete]);
+
+                if ('autocompletes' !== 'autocompletes') {
+                  Object.defineProperty(obj, 'autocompletes', {
+                    get() {
+                      return obj['autocompletes'];
+                    }
+                  });
+                }
             }
         }
         return obj;

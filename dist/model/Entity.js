@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Entity =
-/*#__PURE__*/
-function () {
+var Entity = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Entity</code>.
    * @alias module:model/Entity
@@ -60,22 +58,62 @@ function () {
 
         if (data.hasOwnProperty('indices')) {
           obj['indices'] = _ApiClient["default"].convertToType(data['indices'], [['Number']]);
+
+          if ('indices' !== 'indices') {
+            Object.defineProperty(obj, 'indices', {
+              get: function get() {
+                return obj['indices'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _EntityLinks["default"].constructFromObject(data['links']);
+
+          if ('links' !== 'links') {
+            Object.defineProperty(obj, 'links', {
+              get: function get() {
+                return obj['links'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('score')) {
           obj['score'] = _ApiClient["default"].convertToType(data['score'], 'Number');
+
+          if ('score' !== 'score') {
+            Object.defineProperty(obj, 'score', {
+              get: function get() {
+                return obj['score'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('text')) {
           obj['text'] = _ApiClient["default"].convertToType(data['text'], 'String');
+
+          if ('text' !== 'text') {
+            Object.defineProperty(obj, 'text', {
+              get: function get() {
+                return obj['text'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('types')) {
           obj['types'] = _ApiClient["default"].convertToType(data['types'], ['String']);
+
+          if ('types' !== 'types') {
+            Object.defineProperty(obj, 'types', {
+              get: function get() {
+                return obj['types'];
+              }
+            });
+          }
         }
       }
 

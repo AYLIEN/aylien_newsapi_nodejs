@@ -22,9 +22,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 * @enum {}
 * @readonly
 */
-var ScopeLevel =
-/*#__PURE__*/
-function () {
+var ScopeLevel = /*#__PURE__*/function () {
   function ScopeLevel() {
     _classCallCheck(this, ScopeLevel);
 

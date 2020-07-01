@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**en** | [**StoryTranslationsEn**](StoryTranslationsEn.md) |  | [optional] 
+**en** | [**StoryTranslation**](StoryTranslation.md) |  | [optional] 
 
 

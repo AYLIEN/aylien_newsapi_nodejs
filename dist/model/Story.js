@@ -38,11 +38,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Story model module.
  * @module model/Story
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Story =
-/*#__PURE__*/
-function () {
+var Story = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Story</code>.
    * @alias module:model/Story
@@ -78,90 +76,266 @@ function () {
 
         if (data.hasOwnProperty('author')) {
           obj['author'] = _Author["default"].constructFromObject(data['author']);
+
+          if ('author' !== 'author') {
+            Object.defineProperty(obj, 'author', {
+              get: function get() {
+                return obj['author'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('body')) {
           obj['body'] = _ApiClient["default"].convertToType(data['body'], 'String');
+
+          if ('body' !== 'body') {
+            Object.defineProperty(obj, 'body', {
+              get: function get() {
+                return obj['body'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('categories')) {
           obj['categories'] = _ApiClient["default"].convertToType(data['categories'], [_Category["default"]]);
+
+          if ('categories' !== 'categories') {
+            Object.defineProperty(obj, 'categories', {
+              get: function get() {
+                return obj['categories'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('characters_count')) {
           obj['characters_count'] = _ApiClient["default"].convertToType(data['characters_count'], 'Number');
+
+          if ('characters_count' !== 'charactersCount') {
+            Object.defineProperty(obj, 'charactersCount', {
+              get: function get() {
+                return obj['characters_count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('clusters')) {
           obj['clusters'] = _ApiClient["default"].convertToType(data['clusters'], ['Number']);
+
+          if ('clusters' !== 'clusters') {
+            Object.defineProperty(obj, 'clusters', {
+              get: function get() {
+                return obj['clusters'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('entities')) {
           obj['entities'] = _Entities["default"].constructFromObject(data['entities']);
+
+          if ('entities' !== 'entities') {
+            Object.defineProperty(obj, 'entities', {
+              get: function get() {
+                return obj['entities'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('hashtags')) {
           obj['hashtags'] = _ApiClient["default"].convertToType(data['hashtags'], ['String']);
+
+          if ('hashtags' !== 'hashtags') {
+            Object.defineProperty(obj, 'hashtags', {
+              get: function get() {
+                return obj['hashtags'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('keywords')) {
           obj['keywords'] = _ApiClient["default"].convertToType(data['keywords'], ['String']);
+
+          if ('keywords' !== 'keywords') {
+            Object.defineProperty(obj, 'keywords', {
+              get: function get() {
+                return obj['keywords'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('language')) {
           obj['language'] = _ApiClient["default"].convertToType(data['language'], 'String');
+
+          if ('language' !== 'language') {
+            Object.defineProperty(obj, 'language', {
+              get: function get() {
+                return obj['language'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _StoryLinks["default"].constructFromObject(data['links']);
+
+          if ('links' !== 'links') {
+            Object.defineProperty(obj, 'links', {
+              get: function get() {
+                return obj['links'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('media')) {
           obj['media'] = _ApiClient["default"].convertToType(data['media'], [_Media["default"]]);
+
+          if ('media' !== 'media') {
+            Object.defineProperty(obj, 'media', {
+              get: function get() {
+                return obj['media'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('paragraphs_count')) {
           obj['paragraphs_count'] = _ApiClient["default"].convertToType(data['paragraphs_count'], 'Number');
+
+          if ('paragraphs_count' !== 'paragraphsCount') {
+            Object.defineProperty(obj, 'paragraphsCount', {
+              get: function get() {
+                return obj['paragraphs_count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('published_at')) {
           obj['published_at'] = _ApiClient["default"].convertToType(data['published_at'], 'Date');
+
+          if ('published_at' !== 'publishedAt') {
+            Object.defineProperty(obj, 'publishedAt', {
+              get: function get() {
+                return obj['published_at'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('sentences_count')) {
           obj['sentences_count'] = _ApiClient["default"].convertToType(data['sentences_count'], 'Number');
+
+          if ('sentences_count' !== 'sentencesCount') {
+            Object.defineProperty(obj, 'sentencesCount', {
+              get: function get() {
+                return obj['sentences_count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('sentiment')) {
           obj['sentiment'] = _Sentiments["default"].constructFromObject(data['sentiment']);
+
+          if ('sentiment' !== 'sentiment') {
+            Object.defineProperty(obj, 'sentiment', {
+              get: function get() {
+                return obj['sentiment'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('social_shares_count')) {
           obj['social_shares_count'] = _ShareCounts["default"].constructFromObject(data['social_shares_count']);
+
+          if ('social_shares_count' !== 'socialSharesCount') {
+            Object.defineProperty(obj, 'socialSharesCount', {
+              get: function get() {
+                return obj['social_shares_count'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('source')) {
           obj['source'] = _Source["default"].constructFromObject(data['source']);
+
+          if ('source' !== 'source') {
+            Object.defineProperty(obj, 'source', {
+              get: function get() {
+                return obj['source'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('summary')) {
           obj['summary'] = _Summary["default"].constructFromObject(data['summary']);
+
+          if ('summary' !== 'summary') {
+            Object.defineProperty(obj, 'summary', {
+              get: function get() {
+                return obj['summary'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], 'String');
+
+          if ('title' !== 'title') {
+            Object.defineProperty(obj, 'title', {
+              get: function get() {
+                return obj['title'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('translations')) {
           obj['translations'] = _StoryTranslations["default"].constructFromObject(data['translations']);
+
+          if ('translations' !== 'translations') {
+            Object.defineProperty(obj, 'translations', {
+              get: function get() {
+                return obj['translations'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('words_count')) {
           obj['words_count'] = _ApiClient["default"].convertToType(data['words_count'], 'Number');
+
+          if ('words_count' !== 'wordsCount') {
+            Object.defineProperty(obj, 'wordsCount', {
+              get: function get() {
+                return obj['words_count'];
+              }
+            });
+          }
         }
       }
 

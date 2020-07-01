@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StoryCluster model module.
  * @module model/StoryCluster
- * @version 3.0.0
+ * @version 4.0.0
  */
-var StoryCluster =
-/*#__PURE__*/
-function () {
+var StoryCluster = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>StoryCluster</code>.
    * @alias module:model/StoryCluster
@@ -58,22 +56,62 @@ function () {
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'Number');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('phrases')) {
           obj['phrases'] = _ApiClient["default"].convertToType(data['phrases'], ['String']);
+
+          if ('phrases' !== 'phrases') {
+            Object.defineProperty(obj, 'phrases', {
+              get: function get() {
+                return obj['phrases'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('score')) {
           obj['score'] = _ApiClient["default"].convertToType(data['score'], 'Number');
+
+          if ('score' !== 'score') {
+            Object.defineProperty(obj, 'score', {
+              get: function get() {
+                return obj['score'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('size')) {
           obj['size'] = _ApiClient["default"].convertToType(data['size'], 'Number');
+
+          if ('size' !== 'size') {
+            Object.defineProperty(obj, 'size', {
+              get: function get() {
+                return obj['size'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('stories')) {
           obj['stories'] = _ApiClient["default"].convertToType(data['stories'], ['Number']);
+
+          if ('stories' !== 'stories') {
+            Object.defineProperty(obj, 'stories', {
+              get: function get() {
+                return obj['stories'];
+              }
+            });
+          }
         }
       }
 

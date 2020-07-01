@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Trend {
     /**
@@ -49,9 +49,25 @@ class Trend {
 
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
+
+                if ('count' !== 'count') {
+                  Object.defineProperty(obj, 'count', {
+                    get() {
+                      return obj['count'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
+
+                if ('value' !== 'value') {
+                  Object.defineProperty(obj, 'value', {
+                    get() {
+                      return obj['value'];
+                    }
+                  });
+                }
             }
         }
         return obj;

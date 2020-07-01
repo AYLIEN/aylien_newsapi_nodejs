@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Trends model module.
  * @module model/Trends
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Trends =
-/*#__PURE__*/
-function () {
+var Trends = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Trends</code>.
    * @alias module:model/Trends
@@ -60,10 +58,50 @@ function () {
 
         if (data.hasOwnProperty('field')) {
           obj['field'] = _ApiClient["default"].convertToType(data['field'], 'String');
+
+          if ('field' !== 'field') {
+            Object.defineProperty(obj, 'field', {
+              get: function get() {
+                return obj['field'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('trends')) {
           obj['trends'] = _ApiClient["default"].convertToType(data['trends'], [_Trend["default"]]);
+
+          if ('trends' !== 'trends') {
+            Object.defineProperty(obj, 'trends', {
+              get: function get() {
+                return obj['trends'];
+              }
+            });
+          }
+        }
+
+        if (data.hasOwnProperty('published_at.end')) {
+          obj['published_at.end'] = _ApiClient["default"].convertToType(data['published_at.end'], 'Date');
+
+          if ('published_at.end' !== 'publishedAtEnd') {
+            Object.defineProperty(obj, 'publishedAtEnd', {
+              get: function get() {
+                return obj['published_at.end'];
+              }
+            });
+          }
+        }
+
+        if (data.hasOwnProperty('published_at.start')) {
+          obj['published_at.start'] = _ApiClient["default"].convertToType(data['published_at.start'], 'Date');
+
+          if ('published_at.start' !== 'publishedAtStart') {
+            Object.defineProperty(obj, 'publishedAtStart', {
+              get: function get() {
+                return obj['published_at.start'];
+              }
+            });
+          }
         }
       }
 
@@ -86,5 +124,17 @@ Trends.prototype['field'] = undefined;
  */
 
 Trends.prototype['trends'] = undefined;
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+
+Trends.prototype['published_at.end'] = undefined;
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+
+Trends.prototype['published_at.start'] = undefined;
 var _default = Trends;
 exports["default"] = _default;

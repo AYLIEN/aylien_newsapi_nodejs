@@ -17,7 +17,7 @@ import Error from './Error';
 /**
  * The Errors model module.
  * @module model/Errors
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Errors {
     /**
@@ -50,6 +50,14 @@ class Errors {
 
             if (data.hasOwnProperty('errors')) {
                 obj['errors'] = ApiClient.convertToType(data['errors'], [Error]);
+
+                if ('errors' !== 'errors') {
+                  Object.defineProperty(obj, 'errors', {
+                    get() {
+                      return obj['errors'];
+                    }
+                  });
+                }
             }
         }
         return obj;

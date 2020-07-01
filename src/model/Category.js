@@ -18,7 +18,7 @@ import CategoryTaxonomy from './CategoryTaxonomy';
 /**
  * The Category model module.
  * @module model/Category
- * @version 3.0.0
+ * @version 4.0.0
  */
 class Category {
     /**
@@ -51,21 +51,80 @@ class Category {
 
             if (data.hasOwnProperty('confident')) {
                 obj['confident'] = ApiClient.convertToType(data['confident'], 'Boolean');
+
+                if ('confident' !== 'confident') {
+                  Object.defineProperty(obj, 'confident', {
+                    get() {
+                      return obj['confident'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+
+                if ('id' !== 'id') {
+                  Object.defineProperty(obj, 'id', {
+                    get() {
+                      return obj['id'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('label')) {
+                obj['label'] = ApiClient.convertToType(data['label'], 'String');
+
+                if ('label' !== 'label') {
+                  Object.defineProperty(obj, 'label', {
+                    get() {
+                      return obj['label'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('level')) {
                 obj['level'] = ApiClient.convertToType(data['level'], 'Number');
+
+                if ('level' !== 'level') {
+                  Object.defineProperty(obj, 'level', {
+                    get() {
+                      return obj['level'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = CategoryLinks.constructFromObject(data['links']);
+
+                if ('links' !== 'links') {
+                  Object.defineProperty(obj, 'links', {
+                    get() {
+                      return obj['links'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
+
+                if ('score' !== 'score') {
+                  Object.defineProperty(obj, 'score', {
+                    get() {
+                      return obj['score'];
+                    }
+                  });
+                }
             }
             if (data.hasOwnProperty('taxonomy')) {
                 obj['taxonomy'] = CategoryTaxonomy.constructFromObject(data['taxonomy']);
+
+                if ('taxonomy' !== 'taxonomy') {
+                  Object.defineProperty(obj, 'taxonomy', {
+                    get() {
+                      return obj['taxonomy'];
+                    }
+                  });
+                }
             }
         }
         return obj;
@@ -85,6 +144,12 @@ Category.prototype['confident'] = undefined;
  * @member {String} id
  */
 Category.prototype['id'] = undefined;
+
+/**
+ * The label of the category
+ * @member {String} label
+ */
+Category.prototype['label'] = undefined;
 
 /**
  * The level of the category

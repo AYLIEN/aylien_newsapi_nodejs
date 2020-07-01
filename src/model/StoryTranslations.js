@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import StoryTranslationsEn from './StoryTranslationsEn';
+import StoryTranslation from './StoryTranslation';
 
 /**
  * The StoryTranslations model module.
  * @module model/StoryTranslations
- * @version 3.0.0
+ * @version 4.0.0
  */
 class StoryTranslations {
     /**
@@ -50,7 +50,15 @@ class StoryTranslations {
             obj = obj || new StoryTranslations();
 
             if (data.hasOwnProperty('en')) {
-                obj['en'] = StoryTranslationsEn.constructFromObject(data['en']);
+                obj['en'] = StoryTranslation.constructFromObject(data['en']);
+
+                if ('en' !== 'en') {
+                  Object.defineProperty(obj, 'en', {
+                    get() {
+                      return obj['en'];
+                    }
+                  });
+                }
             }
         }
         return obj;
@@ -60,7 +68,7 @@ class StoryTranslations {
 }
 
 /**
- * @member {module:model/StoryTranslationsEn} en
+ * @member {module:model/StoryTranslation} en
  */
 StoryTranslations.prototype['en'] = undefined;
 

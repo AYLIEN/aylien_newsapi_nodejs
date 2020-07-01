@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property coverages (base name: "coverages")', function() {
-      // uncomment below and update the code to test the property coverages
-      //var instane = new AylienNewsApi.StoryLinks();
-      //expect(instance).to.be();
-    });
-
     it('should have the property permalink (base name: "permalink")', function() {
       // uncomment below and update the code to test the property permalink
       //var instane = new AylienNewsApi.StoryLinks();
@@ -74,6 +68,12 @@
 
     it('should have the property relatedStories (base name: "related_stories")', function() {
       // uncomment below and update the code to test the property relatedStories
+      //var instane = new AylienNewsApi.StoryLinks();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property clusters (base name: "clusters")', function() {
+      // uncomment below and update the code to test the property clusters
       //var instane = new AylienNewsApi.StoryLinks();
       //expect(instance).to.be();
     });

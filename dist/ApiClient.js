@@ -11,7 +11,7 @@ var _querystring = _interopRequireDefault(require("querystring"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -21,7 +21,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 /**
 * @module ApiClient
-* @version 3.0.0
+* @version 4.0.0
 */
 
 /**
@@ -31,9 +31,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 * @alias module:ApiClient
 * @class
 */
-var ApiClient =
-/*#__PURE__*/
-function () {
+var ApiClient = /*#__PURE__*/function () {
   function ApiClient() {
     _classCallCheck(this, ApiClient);
 
@@ -464,8 +462,6 @@ function () {
         if (contentType != 'multipart/form-data') {
           request.type(contentType);
         }
-      } else if (!request.header['Content-Type']) {
-        request.type('application/json');
       }
 
       if (contentType === 'application/x-www-form-urlencoded') {
@@ -484,6 +480,10 @@ function () {
           }
         }
       } else if (bodyParam !== null && bodyParam !== undefined) {
+        if (!request.header['Content-Type']) {
+          request.type('application/json');
+        }
+
         request.send(bodyParam);
       }
 

@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _StoryTranslationsEn = _interopRequireDefault(require("./StoryTranslationsEn"));
+var _StoryTranslation = _interopRequireDefault(require("./StoryTranslation"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The StoryTranslations model module.
  * @module model/StoryTranslations
- * @version 3.0.0
+ * @version 4.0.0
  */
-var StoryTranslations =
-/*#__PURE__*/
-function () {
+var StoryTranslations = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>StoryTranslations</code>.
    * Translations of the story. Each language has it&#39;s own key and object
@@ -60,7 +58,15 @@ function () {
         obj = obj || new StoryTranslations();
 
         if (data.hasOwnProperty('en')) {
-          obj['en'] = _StoryTranslationsEn["default"].constructFromObject(data['en']);
+          obj['en'] = _StoryTranslation["default"].constructFromObject(data['en']);
+
+          if ('en' !== 'en') {
+            Object.defineProperty(obj, 'en', {
+              get: function get() {
+                return obj['en'];
+              }
+            });
+          }
         }
       }
 
@@ -71,7 +77,7 @@ function () {
   return StoryTranslations;
 }();
 /**
- * @member {module:model/StoryTranslationsEn} en
+ * @member {module:model/StoryTranslation} en
  */
 
 

@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Error model module.
  * @module model/Error
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Error =
-/*#__PURE__*/
-function () {
+var Error = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Error</code>.
    * @alias module:model/Error
@@ -60,26 +58,74 @@ function () {
 
         if (data.hasOwnProperty('code')) {
           obj['code'] = _ApiClient["default"].convertToType(data['code'], 'String');
+
+          if ('code' !== 'code') {
+            Object.defineProperty(obj, 'code', {
+              get: function get() {
+                return obj['code'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('detail')) {
           obj['detail'] = _ApiClient["default"].convertToType(data['detail'], 'String');
+
+          if ('detail' !== 'detail') {
+            Object.defineProperty(obj, 'detail', {
+              get: function get() {
+                return obj['detail'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+
+          if ('id' !== 'id') {
+            Object.defineProperty(obj, 'id', {
+              get: function get() {
+                return obj['id'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _ErrorLinks["default"].constructFromObject(data['links']);
+
+          if ('links' !== 'links') {
+            Object.defineProperty(obj, 'links', {
+              get: function get() {
+                return obj['links'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+
+          if ('status' !== 'status') {
+            Object.defineProperty(obj, 'status', {
+              get: function get() {
+                return obj['status'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], 'String');
+
+          if ('title' !== 'title') {
+            Object.defineProperty(obj, 'title', {
+              get: function get() {
+                return obj['title'];
+              }
+            });
+          }
         }
       }
 

@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The EntityLinks model module.
  * @module model/EntityLinks
- * @version 3.0.0
+ * @version 4.0.0
  */
-var EntityLinks =
-/*#__PURE__*/
-function () {
+var EntityLinks = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>EntityLinks</code>.
    * @alias module:model/EntityLinks
@@ -58,6 +56,14 @@ function () {
 
         if (data.hasOwnProperty('dbpedia')) {
           obj['dbpedia'] = _ApiClient["default"].convertToType(data['dbpedia'], 'String');
+
+          if ('dbpedia' !== 'dbpedia') {
+            Object.defineProperty(obj, 'dbpedia', {
+              get: function get() {
+                return obj['dbpedia'];
+              }
+            });
+          }
         }
       }
 

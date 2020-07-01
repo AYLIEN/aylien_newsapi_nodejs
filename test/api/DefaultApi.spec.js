@@ -68,16 +68,6 @@
         done();
       });
     });
-    describe('listCoverages', function() {
-      it('should call listCoverages successfully', function(done) {
-        //uncomment below and update the code to test listCoverages
-        //instance.listCoverages(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('listHistograms', function() {
       it('should call listHistograms successfully', function(done) {
         //uncomment below and update the code to test listHistograms
@@ -88,10 +78,20 @@
         done();
       });
     });
-    describe('listRelatedStories', function() {
-      it('should call listRelatedStories successfully', function(done) {
-        //uncomment below and update the code to test listRelatedStories
-        //instance.listRelatedStories(function(error) {
+    describe('listRelatedStoriesGet', function() {
+      it('should call listRelatedStoriesGet successfully', function(done) {
+        //uncomment below and update the code to test listRelatedStoriesGet
+        //instance.listRelatedStoriesGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listRelatedStoriesPost', function() {
+      it('should call listRelatedStoriesPost successfully', function(done) {
+        //uncomment below and update the code to test listRelatedStoriesPost
+        //instance.listRelatedStoriesPost(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

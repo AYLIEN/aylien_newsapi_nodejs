@@ -18,11 +18,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Summary model module.
  * @module model/Summary
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Summary =
-/*#__PURE__*/
-function () {
+var Summary = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Summary</code>.
    * @alias module:model/Summary
@@ -58,6 +56,14 @@ function () {
 
         if (data.hasOwnProperty('sentences')) {
           obj['sentences'] = _ApiClient["default"].convertToType(data['sentences'], ['String']);
+
+          if ('sentences' !== 'sentences') {
+            Object.defineProperty(obj, 'sentences', {
+              get: function get() {
+                return obj['sentences'];
+              }
+            });
+          }
         }
       }
 

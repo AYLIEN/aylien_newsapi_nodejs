@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Scope model module.
  * @module model/Scope
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Scope =
-/*#__PURE__*/
-function () {
+var Scope = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Scope</code>.
    * @alias module:model/Scope
@@ -60,18 +58,50 @@ function () {
 
         if (data.hasOwnProperty('city')) {
           obj['city'] = _ApiClient["default"].convertToType(data['city'], 'String');
+
+          if ('city' !== 'city') {
+            Object.defineProperty(obj, 'city', {
+              get: function get() {
+                return obj['city'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('country')) {
           obj['country'] = _ApiClient["default"].convertToType(data['country'], 'String');
+
+          if ('country' !== 'country') {
+            Object.defineProperty(obj, 'country', {
+              get: function get() {
+                return obj['country'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('level')) {
           obj['level'] = _ScopeLevel["default"].constructFromObject(data['level']);
+
+          if ('level' !== 'level') {
+            Object.defineProperty(obj, 'level', {
+              get: function get() {
+                return obj['level'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('state')) {
           obj['state'] = _ApiClient["default"].convertToType(data['state'], 'String');
+
+          if ('state' !== 'state') {
+            Object.defineProperty(obj, 'state', {
+              get: function get() {
+                return obj['state'];
+              }
+            });
+          }
         }
       }
 

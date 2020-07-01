@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The TimeSeriesList model module.
  * @module model/TimeSeriesList
- * @version 3.0.0
+ * @version 4.0.0
  */
-var TimeSeriesList =
-/*#__PURE__*/
-function () {
+var TimeSeriesList = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TimeSeriesList</code>.
    * @alias module:model/TimeSeriesList
@@ -60,18 +58,50 @@ function () {
 
         if (data.hasOwnProperty('period')) {
           obj['period'] = _ApiClient["default"].convertToType(data['period'], 'String');
+
+          if ('period' !== 'period') {
+            Object.defineProperty(obj, 'period', {
+              get: function get() {
+                return obj['period'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('published_at.end')) {
           obj['published_at.end'] = _ApiClient["default"].convertToType(data['published_at.end'], 'Date');
+
+          if ('published_at.end' !== 'publishedAtEnd') {
+            Object.defineProperty(obj, 'publishedAtEnd', {
+              get: function get() {
+                return obj['published_at.end'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('published_at.start')) {
           obj['published_at.start'] = _ApiClient["default"].convertToType(data['published_at.start'], 'Date');
+
+          if ('published_at.start' !== 'publishedAtStart') {
+            Object.defineProperty(obj, 'publishedAtStart', {
+              get: function get() {
+                return obj['published_at.start'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('time_series')) {
           obj['time_series'] = _ApiClient["default"].convertToType(data['time_series'], [_TimeSeries["default"]]);
+
+          if ('time_series' !== 'timeSeries') {
+            Object.defineProperty(obj, 'timeSeries', {
+              get: function get() {
+                return obj['time_series'];
+              }
+            });
+          }
         }
       }
 

@@ -20,11 +20,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 /**
  * The Entities model module.
  * @module model/Entities
- * @version 3.0.0
+ * @version 4.0.0
  */
-var Entities =
-/*#__PURE__*/
-function () {
+var Entities = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>Entities</code>.
    * @alias module:model/Entities
@@ -60,10 +58,26 @@ function () {
 
         if (data.hasOwnProperty('body')) {
           obj['body'] = _ApiClient["default"].convertToType(data['body'], [_Entity["default"]]);
+
+          if ('body' !== 'body') {
+            Object.defineProperty(obj, 'body', {
+              get: function get() {
+                return obj['body'];
+              }
+            });
+          }
         }
 
         if (data.hasOwnProperty('title')) {
           obj['title'] = _ApiClient["default"].convertToType(data['title'], [_Entity["default"]]);
+
+          if ('title' !== 'title') {
+            Object.defineProperty(obj, 'title', {
+              get: function get() {
+                return obj['title'];
+              }
+            });
+          }
         }
       }
 

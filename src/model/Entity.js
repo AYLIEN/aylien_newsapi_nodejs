@@ -17,7 +17,7 @@ import EntityLinks from './EntityLinks';
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Entity {
     /**

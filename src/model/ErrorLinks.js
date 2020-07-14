@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorLinks model module.
  * @module model/ErrorLinks
- * @version 4.0.0
+ * @version 4.1.0
  */
 class ErrorLinks {
     /**
@@ -58,6 +58,17 @@ class ErrorLinks {
                   });
                 }
             }
+            if (data.hasOwnProperty('docs')) {
+                obj['docs'] = ApiClient.convertToType(data['docs'], 'String');
+
+                if ('docs' !== 'docs') {
+                  Object.defineProperty(obj, 'docs', {
+                    get() {
+                      return obj['docs'];
+                    }
+                  });
+                }
+            }
         }
         return obj;
     }
@@ -69,6 +80,11 @@ class ErrorLinks {
  * @member {String} about
  */
 ErrorLinks.prototype['about'] = undefined;
+
+/**
+ * @member {String} docs
+ */
+ErrorLinks.prototype['docs'] = undefined;
 
 
 

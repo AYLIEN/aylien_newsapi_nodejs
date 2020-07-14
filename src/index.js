@@ -56,6 +56,7 @@ import TimeSeries from './model/TimeSeries';
 import TimeSeriesList from './model/TimeSeriesList';
 import Trend from './model/Trend';
 import Trends from './model/Trends';
+import Warning from './model/Warning';
 import DefaultApi from './api/DefaultApi';
 
 
@@ -88,7 +89,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.0
+* @version 4.1.0
 */
 export {
     /**
@@ -354,6 +355,12 @@ export {
      * @property {module:model/Trends}
      */
     Trends,
+
+    /**
+     * The Warning model constructor.
+     * @property {module:model/Warning}
+     */
+    Warning,
 
     /**
     * The DefaultApi service constructor.

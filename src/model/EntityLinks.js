@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EntityLinks model module.
  * @module model/EntityLinks
- * @version 4.0.0
+ * @version 4.1.0
  */
 class EntityLinks {
     /**

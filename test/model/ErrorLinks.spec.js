@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property docs (base name: "docs")', function() {
+      // uncomment below and update the code to test the property docs
+      //var instane = new AylienNewsApi.ErrorLinks();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

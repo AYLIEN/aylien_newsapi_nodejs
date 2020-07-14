@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import Story from './Story';
+import Warning from './Warning';
 
 /**
  * The Stories model module.
  * @module model/Stories
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Stories {
     /**
@@ -92,6 +93,17 @@ class Stories {
                   });
                 }
             }
+            if (data.hasOwnProperty('warnings')) {
+                obj['warnings'] = ApiClient.convertToType(data['warnings'], [Warning]);
+
+                if ('warnings' !== 'warnings') {
+                  Object.defineProperty(obj, 'warnings', {
+                    get() {
+                      return obj['warnings'];
+                    }
+                  });
+                }
+            }
         }
         return obj;
     }
@@ -122,6 +134,12 @@ Stories.prototype['published_at.end'] = undefined;
  * @member {Date} published_at.start
  */
 Stories.prototype['published_at.start'] = undefined;
+
+/**
+ * Notifies about possible issues that occurred when searching for stories
+ * @member {Array.<module:model/Warning>} warnings
+ */
+Stories.prototype['warnings'] = undefined;
 
 
 

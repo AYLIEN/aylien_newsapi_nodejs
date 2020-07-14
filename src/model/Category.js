@@ -18,7 +18,7 @@ import CategoryTaxonomy from './CategoryTaxonomy';
 /**
  * The Category model module.
  * @module model/Category
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Category {
     /**

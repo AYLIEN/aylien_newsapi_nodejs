@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new AylienNewsApi.Stories();
+    instance = new AylienNewsApi.Warning();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,28 @@
       object[property] = value;
   }
 
-  describe('Stories', function() {
-    it('should create an instance of Stories', function() {
-      // uncomment below and update the code to test Stories
-      //var instane = new AylienNewsApi.Stories();
-      //expect(instance).to.be.a(AylienNewsApi.Stories);
+  describe('Warning', function() {
+    it('should create an instance of Warning', function() {
+      // uncomment below and update the code to test Warning
+      //var instane = new AylienNewsApi.Warning();
+      //expect(instance).to.be.a(AylienNewsApi.Warning);
     });
 
-    it('should have the property nextPageCursor (base name: "next_page_cursor")', function() {
-      // uncomment below and update the code to test the property nextPageCursor
-      //var instane = new AylienNewsApi.Stories();
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
+      //var instane = new AylienNewsApi.Warning();
       //expect(instance).to.be();
     });
 
-    it('should have the property stories (base name: "stories")', function() {
-      // uncomment below and update the code to test the property stories
-      //var instane = new AylienNewsApi.Stories();
+    it('should have the property links (base name: "links")', function() {
+      // uncomment below and update the code to test the property links
+      //var instane = new AylienNewsApi.Warning();
       //expect(instance).to.be();
     });
 
-    it('should have the property publishedAtEnd (base name: "published_at.end")', function() {
-      // uncomment below and update the code to test the property publishedAtEnd
-      //var instane = new AylienNewsApi.Stories();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property publishedAtStart (base name: "published_at.start")', function() {
-      // uncomment below and update the code to test the property publishedAtStart
-      //var instane = new AylienNewsApi.Stories();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property warnings (base name: "warnings")', function() {
-      // uncomment below and update the code to test the property warnings
-      //var instane = new AylienNewsApi.Stories();
+    it('should have the property detail (base name: "detail")', function() {
+      // uncomment below and update the code to test the property detail
+      //var instane = new AylienNewsApi.Warning();
       //expect(instance).to.be();
     });
 

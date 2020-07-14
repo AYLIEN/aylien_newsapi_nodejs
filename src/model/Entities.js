@@ -17,7 +17,7 @@ import Entity from './Entity';
 /**
  * The Entities model module.
  * @module model/Entities
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Entities {
     /**

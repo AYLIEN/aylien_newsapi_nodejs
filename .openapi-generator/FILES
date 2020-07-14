@@ -44,6 +44,7 @@ docs/TimeSeries.md
 docs/TimeSeriesList.md
 docs/Trend.md
 docs/Trends.md
+docs/Warning.md
 git_push.sh
 mocha.opts
 package.json
@@ -93,6 +94,7 @@ src/model/TimeSeries.js
 src/model/TimeSeriesList.js
 src/model/Trend.js
 src/model/Trends.js
+src/model/Warning.js
 test/api/DefaultApi.spec.js
 test/model/Author.spec.js
 test/model/Autocomplete.spec.js
@@ -137,3 +139,4 @@ test/model/TimeSeries.spec.js
 test/model/TimeSeriesList.spec.js
 test/model/Trend.spec.js
 test/model/Trends.spec.js
+test/model/Warning.spec.js

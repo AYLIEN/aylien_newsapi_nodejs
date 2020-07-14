@@ -25,7 +25,7 @@ import Trends from '../model/Trends';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 4.0.0
+* @version 4.1.0
 */
 export default class DefaultApi {
 

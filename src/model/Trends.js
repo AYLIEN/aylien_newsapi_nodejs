@@ -17,7 +17,7 @@ import Trend from './Trend';
 /**
  * The Trends model module.
  * @module model/Trends
- * @version 4.0.0
+ * @version 4.1.0
  */
 class Trends {
     /**

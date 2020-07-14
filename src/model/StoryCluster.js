@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryCluster model module.
  * @module model/StoryCluster
- * @version 4.0.0
+ * @version 4.1.0
  */
 class StoryCluster {
     /**

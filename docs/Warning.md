@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**ModelString**](ModelString.md) | The identfier of the warning, represents its origin. | [optional] 
+**id** | **String** | The identfier of the warning, represents its origin. | [optional] 
 **links** | [**ErrorLinks**](ErrorLinks.md) |  | [optional] 
-**detail** | [**ModelString**](ModelString.md) | The detailed description of the warning. | [optional] 
+**detail** | **String** | The detailed description of the warning. | [optional] 
 
 

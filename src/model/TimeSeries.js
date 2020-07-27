@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TimeSeries model module.
  * @module model/TimeSeries
- * @version 4.1.0
+ * @version 4.1.1
  */
 class TimeSeries {
     /**

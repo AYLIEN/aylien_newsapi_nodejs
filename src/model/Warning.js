@@ -13,12 +13,11 @@
 
 import ApiClient from '../ApiClient';
 import ErrorLinks from './ErrorLinks';
-import ModelString from './ModelString';
 
 /**
  * The Warning model module.
  * @module model/Warning
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Warning {
     /**
@@ -50,7 +49,7 @@ class Warning {
             obj = obj || new Warning();
 
             if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], ModelString);
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
 
                 if ('id' !== 'id') {
                   Object.defineProperty(obj, 'id', {
@@ -72,7 +71,7 @@ class Warning {
                 }
             }
             if (data.hasOwnProperty('detail')) {
-                obj['detail'] = ApiClient.convertToType(data['detail'], ModelString);
+                obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
 
                 if ('detail' !== 'detail') {
                   Object.defineProperty(obj, 'detail', {
@@ -91,7 +90,7 @@ class Warning {
 
 /**
  * The identfier of the warning, represents its origin.
- * @member {module:model/ModelString} id
+ * @member {String} id
  */
 Warning.prototype['id'] = undefined;
 
@@ -102,7 +101,7 @@ Warning.prototype['links'] = undefined;
 
 /**
  * The detailed description of the warning.
- * @member {module:model/ModelString} detail
+ * @member {String} detail
  */
 Warning.prototype['detail'] = undefined;
 

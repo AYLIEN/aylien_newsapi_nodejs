@@ -17,7 +17,7 @@ import Cluster from './Cluster';
 /**
  * The Clusters model module.
  * @module model/Clusters
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Clusters {
     /**

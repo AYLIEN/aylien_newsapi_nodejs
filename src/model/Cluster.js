@@ -18,7 +18,7 @@ import RepresentativeStory from './RepresentativeStory';
 /**
  * The Cluster model module.
  * @module model/Cluster
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Cluster {
     /**

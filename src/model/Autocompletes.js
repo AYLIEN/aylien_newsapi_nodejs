@@ -17,7 +17,7 @@ import Autocomplete from './Autocomplete';
 /**
  * The Autocompletes model module.
  * @module model/Autocompletes
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Autocompletes {
     /**

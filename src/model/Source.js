@@ -19,7 +19,7 @@ import Scope from './Scope';
 /**
  * The Source model module.
  * @module model/Source
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Source {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryTranslation model module.
  * @module model/StoryTranslation
- * @version 4.1.0
+ * @version 4.1.1
  */
 class StoryTranslation {
     /**

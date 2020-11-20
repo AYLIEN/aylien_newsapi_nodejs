@@ -13,11 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import EntityLinks from './EntityLinks';
+import EntitySentiment from './EntitySentiment';
+import EntitySurfaceForm from './EntitySurfaceForm';
 
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 4.1.1
+ * @version 4.3.0
  */
 class Entity {
     /**
@@ -48,6 +50,17 @@ class Entity {
         if (data) {
             obj = obj || new Entity();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+
+                if ('id' !== 'id') {
+                  Object.defineProperty(obj, 'id', {
+                    get() {
+                      return obj['id'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('indices')) {
                 obj['indices'] = ApiClient.convertToType(data['indices'], [['Number']]);
 
@@ -70,13 +83,35 @@ class Entity {
                   });
                 }
             }
-            if (data.hasOwnProperty('score')) {
-                obj['score'] = ApiClient.convertToType(data['score'], 'Number');
+            if (data.hasOwnProperty('sentiment')) {
+                obj['sentiment'] = EntitySentiment.constructFromObject(data['sentiment']);
 
-                if ('score' !== 'score') {
-                  Object.defineProperty(obj, 'score', {
+                if ('sentiment' !== 'sentiment') {
+                  Object.defineProperty(obj, 'sentiment', {
                     get() {
-                      return obj['score'];
+                      return obj['sentiment'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('stock_ticker')) {
+                obj['stock_ticker'] = ApiClient.convertToType(data['stock_ticker'], 'String');
+
+                if ('stock_ticker' !== 'stockTicker') {
+                  Object.defineProperty(obj, 'stockTicker', {
+                    get() {
+                      return obj['stock_ticker'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('surface_forms')) {
+                obj['surface_forms'] = ApiClient.convertToType(data['surface_forms'], [EntitySurfaceForm]);
+
+                if ('surface_forms' !== 'surfaceForms') {
+                  Object.defineProperty(obj, 'surfaceForms', {
+                    get() {
+                      return obj['surface_forms'];
                     }
                   });
                 }
@@ -111,6 +146,12 @@ class Entity {
 }
 
 /**
+ * The unique ID of the entity
+ * @member {String} id
+ */
+Entity.prototype['id'] = undefined;
+
+/**
  * The indices of the entity text
  * @member {Array.<Array.<Number>>} indices
  */
@@ -122,10 +163,20 @@ Entity.prototype['indices'] = undefined;
 Entity.prototype['links'] = undefined;
 
 /**
- * The entity score
- * @member {Number} score
+ * @member {module:model/EntitySentiment} sentiment
  */
-Entity.prototype['score'] = undefined;
+Entity.prototype['sentiment'] = undefined;
+
+/**
+ * The stock_ticker of the entity (might be null)
+ * @member {String} stock_ticker
+ */
+Entity.prototype['stock_ticker'] = undefined;
+
+/**
+ * @member {Array.<module:model/EntitySurfaceForm>} surface_forms
+ */
+Entity.prototype['surface_forms'] = undefined;
 
 /**
  * The entity text
@@ -134,7 +185,7 @@ Entity.prototype['score'] = undefined;
 Entity.prototype['text'] = undefined;
 
 /**
- * An array of the dbpedia types
+ * An array of the entity types
  * @member {Array.<String>} types
  */
 Entity.prototype['types'] = undefined;

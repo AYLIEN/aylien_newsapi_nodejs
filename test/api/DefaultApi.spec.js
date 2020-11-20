@@ -48,6 +48,16 @@
   }
 
   describe('DefaultApi', function() {
+    describe('advancedListStories', function() {
+      it('should call advancedListStories successfully', function(done) {
+        //uncomment below and update the code to test advancedListStories
+        //instance.advancedListStories(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('listAutocompletes', function() {
       it('should call listAutocompletes successfully', function(done) {
         //uncomment below and update the code to test listAutocompletes

@@ -17,7 +17,7 @@ import ErrorLinks from './ErrorLinks';
 /**
  * The Warning model module.
  * @module model/Warning
- * @version 4.1.1
+ * @version 4.3.0
  */
 class Warning {
     /**
@@ -48,6 +48,17 @@ class Warning {
         if (data) {
             obj = obj || new Warning();
 
+            if (data.hasOwnProperty('detail')) {
+                obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
+
+                if ('detail' !== 'detail') {
+                  Object.defineProperty(obj, 'detail', {
+                    get() {
+                      return obj['detail'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
 
@@ -70,23 +81,18 @@ class Warning {
                   });
                 }
             }
-            if (data.hasOwnProperty('detail')) {
-                obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
-
-                if ('detail' !== 'detail') {
-                  Object.defineProperty(obj, 'detail', {
-                    get() {
-                      return obj['detail'];
-                    }
-                  });
-                }
-            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * The detailed description of the warning.
+ * @member {String} detail
+ */
+Warning.prototype['detail'] = undefined;
 
 /**
  * The identfier of the warning, represents its origin.
@@ -98,12 +104,6 @@ Warning.prototype['id'] = undefined;
  * @member {module:model/ErrorLinks} links
  */
 Warning.prototype['links'] = undefined;
-
-/**
- * The detailed description of the warning.
- * @member {String} detail
- */
-Warning.prototype['detail'] = undefined;
 
 
 

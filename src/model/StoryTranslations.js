@@ -17,7 +17,7 @@ import StoryTranslation from './StoryTranslation';
 /**
  * The StoryTranslations model module.
  * @module model/StoryTranslations
- * @version 4.1.1
+ * @version 4.3.0
  */
 class StoryTranslations {
     /**

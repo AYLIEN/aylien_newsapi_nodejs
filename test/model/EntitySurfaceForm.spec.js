@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new AylienNewsApi.Trends();
+    instance = new AylienNewsApi.EntitySurfaceForm();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,22 @@
       object[property] = value;
   }
 
-  describe('Trends', function() {
-    it('should create an instance of Trends', function() {
-      // uncomment below and update the code to test Trends
-      //var instane = new AylienNewsApi.Trends();
-      //expect(instance).to.be.a(AylienNewsApi.Trends);
+  describe('EntitySurfaceForm', function() {
+    it('should create an instance of EntitySurfaceForm', function() {
+      // uncomment below and update the code to test EntitySurfaceForm
+      //var instane = new AylienNewsApi.EntitySurfaceForm();
+      //expect(instance).to.be.a(AylienNewsApi.EntitySurfaceForm);
     });
 
-    it('should have the property field (base name: "field")', function() {
-      // uncomment below and update the code to test the property field
-      //var instane = new AylienNewsApi.Trends();
+    it('should have the property indices (base name: "indices")', function() {
+      // uncomment below and update the code to test the property indices
+      //var instane = new AylienNewsApi.EntitySurfaceForm();
       //expect(instance).to.be();
     });
 
-    it('should have the property publishedAtEnd (base name: "published_at.end")', function() {
-      // uncomment below and update the code to test the property publishedAtEnd
-      //var instane = new AylienNewsApi.Trends();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property publishedAtStart (base name: "published_at.start")', function() {
-      // uncomment below and update the code to test the property publishedAtStart
-      //var instane = new AylienNewsApi.Trends();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property trends (base name: "trends")', function() {
-      // uncomment below and update the code to test the property trends
-      //var instane = new AylienNewsApi.Trends();
+    it('should have the property text (base name: "text")', function() {
+      // uncomment below and update the code to test the property text
+      //var instane = new AylienNewsApi.EntitySurfaceForm();
       //expect(instance).to.be();
     });
 

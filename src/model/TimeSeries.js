@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import AggregatedSentiment from './AggregatedSentiment';
 
 /**
  * The TimeSeries model module.
  * @module model/TimeSeries
- * @version 4.1.1
+ * @version 4.3.0
  */
 class TimeSeries {
     /**
@@ -69,6 +70,17 @@ class TimeSeries {
                   });
                 }
             }
+            if (data.hasOwnProperty('sentiment')) {
+                obj['sentiment'] = AggregatedSentiment.constructFromObject(data['sentiment']);
+
+                if ('sentiment' !== 'sentiment') {
+                  Object.defineProperty(obj, 'sentiment', {
+                    get() {
+                      return obj['sentiment'];
+                    }
+                  });
+                }
+            }
         }
         return obj;
     }
@@ -87,6 +99,11 @@ TimeSeries.prototype['count'] = undefined;
  * @member {Date} published_at
  */
 TimeSeries.prototype['published_at'] = undefined;
+
+/**
+ * @member {module:model/AggregatedSentiment} sentiment
+ */
+TimeSeries.prototype['sentiment'] = undefined;
 
 
 

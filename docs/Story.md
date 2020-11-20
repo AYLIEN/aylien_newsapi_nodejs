@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **id** | **Number** | ID of the story which is a unique identification | [optional] 
 **keywords** | **[String]** | Extracted keywords mentioned in the story title or body | [optional] 
 **language** | **String** | Language of the story | [optional] 
+**licenseType** | **Number** | License type of the story | [optional] 
 **links** | [**StoryLinks**](StoryLinks.md) |  | [optional] 
 **media** | [**[Media]**](Media.md) | An array of extracted media such as images and videos | [optional] 
 **paragraphsCount** | **Number** | Paragraph count of the story body | [optional] 

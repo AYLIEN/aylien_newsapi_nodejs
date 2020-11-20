@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The CategoryLinks model module.
- * @module model/CategoryLinks
+ * The EntitySurfaceForm model module.
+ * @module model/EntitySurfaceForm
  * @version 4.3.0
  */
-class CategoryLinks {
+class EntitySurfaceForm {
     /**
-     * Constructs a new <code>CategoryLinks</code>.
-     * @alias module:model/CategoryLinks
+     * Constructs a new <code>EntitySurfaceForm</code>.
+     * @alias module:model/EntitySurfaceForm
      */
     constructor() { 
         
-        CategoryLinks.initialize(this);
+        EntitySurfaceForm.initialize(this);
     }
 
     /**
@@ -37,34 +37,34 @@ class CategoryLinks {
     }
 
     /**
-     * Constructs a <code>CategoryLinks</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EntitySurfaceForm</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/CategoryLinks} obj Optional instance to populate.
-     * @return {module:model/CategoryLinks} The populated <code>CategoryLinks</code> instance.
+     * @param {module:model/EntitySurfaceForm} obj Optional instance to populate.
+     * @return {module:model/EntitySurfaceForm} The populated <code>EntitySurfaceForm</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new CategoryLinks();
+            obj = obj || new EntitySurfaceForm();
 
-            if (data.hasOwnProperty('parent')) {
-                obj['parent'] = ApiClient.convertToType(data['parent'], 'String');
+            if (data.hasOwnProperty('indices')) {
+                obj['indices'] = ApiClient.convertToType(data['indices'], [['Number']]);
 
-                if ('parent' !== 'parent') {
-                  Object.defineProperty(obj, 'parent', {
+                if ('indices' !== 'indices') {
+                  Object.defineProperty(obj, 'indices', {
                     get() {
-                      return obj['parent'];
+                      return obj['indices'];
                     }
                   });
                 }
             }
-            if (data.hasOwnProperty('self')) {
-                obj['self'] = ApiClient.convertToType(data['self'], 'String');
+            if (data.hasOwnProperty('text')) {
+                obj['text'] = ApiClient.convertToType(data['text'], 'String');
 
-                if ('self' !== 'self') {
-                  Object.defineProperty(obj, 'self', {
+                if ('text' !== 'text') {
+                  Object.defineProperty(obj, 'text', {
                     get() {
-                      return obj['self'];
+                      return obj['text'];
                     }
                   });
                 }
@@ -77,21 +77,21 @@ class CategoryLinks {
 }
 
 /**
- * A URL pointing to the parent category
- * @member {String} parent
+ * The indices of the entity text
+ * @member {Array.<Array.<Number>>} indices
  */
-CategoryLinks.prototype['parent'] = undefined;
+EntitySurfaceForm.prototype['indices'] = undefined;
 
 /**
- * A URL pointing to the category
- * @member {String} self
+ * The entity text
+ * @member {String} text
  */
-CategoryLinks.prototype['self'] = undefined;
+EntitySurfaceForm.prototype['text'] = undefined;
 
 
 
 
 
 
-export default CategoryLinks;
+export default EntitySurfaceForm;
 

@@ -13,6 +13,7 @@
 
 
 import ApiClient from './ApiClient';
+import AggregatedSentiment from './model/AggregatedSentiment';
 import Author from './model/Author';
 import Autocomplete from './model/Autocomplete';
 import Autocompletes from './model/Autocompletes';
@@ -24,6 +25,8 @@ import Clusters from './model/Clusters';
 import Entities from './model/Entities';
 import Entity from './model/Entity';
 import EntityLinks from './model/EntityLinks';
+import EntitySentiment from './model/EntitySentiment';
+import EntitySurfaceForm from './model/EntitySurfaceForm';
 import Error from './model/Error';
 import ErrorLinks from './model/ErrorLinks';
 import Errors from './model/Errors';
@@ -89,7 +92,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.1.1
+* @version 4.3.0
 */
 export {
     /**
@@ -97,6 +100,12 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The AggregatedSentiment model constructor.
+     * @property {module:model/AggregatedSentiment}
+     */
+    AggregatedSentiment,
 
     /**
      * The Author model constructor.
@@ -163,6 +172,18 @@ export {
      * @property {module:model/EntityLinks}
      */
     EntityLinks,
+
+    /**
+     * The EntitySentiment model constructor.
+     * @property {module:model/EntitySentiment}
+     */
+    EntitySentiment,
+
+    /**
+     * The EntitySurfaceForm model constructor.
+     * @property {module:model/EntitySurfaceForm}
+     */
+    EntitySurfaceForm,
 
     /**
      * The Error model constructor.

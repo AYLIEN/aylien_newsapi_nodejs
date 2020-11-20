@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import AggregatedSentiment from './AggregatedSentiment';
 
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 4.1.1
+ * @version 4.3.0
  */
 class Trend {
     /**
@@ -58,6 +59,17 @@ class Trend {
                   });
                 }
             }
+            if (data.hasOwnProperty('sentiment')) {
+                obj['sentiment'] = AggregatedSentiment.constructFromObject(data['sentiment']);
+
+                if ('sentiment' !== 'sentiment') {
+                  Object.defineProperty(obj, 'sentiment', {
+                    get() {
+                      return obj['sentiment'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('value')) {
                 obj['value'] = ApiClient.convertToType(data['value'], 'String');
 
@@ -81,6 +93,11 @@ class Trend {
  * @member {Number} count
  */
 Trend.prototype['count'] = undefined;
+
+/**
+ * @member {module:model/AggregatedSentiment} sentiment
+ */
+Trend.prototype['sentiment'] = undefined;
 
 /**
  * The value of the trend

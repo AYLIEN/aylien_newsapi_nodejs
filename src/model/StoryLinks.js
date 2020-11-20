@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryLinks model module.
  * @module model/StoryLinks
- * @version 4.1.1
+ * @version 4.3.0
  */
 class StoryLinks {
     /**
@@ -58,6 +58,17 @@ class StoryLinks {
                   });
                 }
             }
+            if (data.hasOwnProperty('clusters')) {
+                obj['clusters'] = ApiClient.convertToType(data['clusters'], 'String');
+
+                if ('clusters' !== 'clusters') {
+                  Object.defineProperty(obj, 'clusters', {
+                    get() {
+                      return obj['clusters'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('permalink')) {
                 obj['permalink'] = ApiClient.convertToType(data['permalink'], 'String');
 
@@ -80,17 +91,6 @@ class StoryLinks {
                   });
                 }
             }
-            if (data.hasOwnProperty('clusters')) {
-                obj['clusters'] = ApiClient.convertToType(data['clusters'], 'String');
-
-                if ('clusters' !== 'clusters') {
-                  Object.defineProperty(obj, 'clusters', {
-                    get() {
-                      return obj['clusters'];
-                    }
-                  });
-                }
-            }
         }
         return obj;
     }
@@ -105,6 +105,12 @@ class StoryLinks {
 StoryLinks.prototype['canonical'] = undefined;
 
 /**
+ * The clusters endpoint URL for this story
+ * @member {String} clusters
+ */
+StoryLinks.prototype['clusters'] = undefined;
+
+/**
  * The story permalink URL
  * @member {String} permalink
  */
@@ -115,12 +121,6 @@ StoryLinks.prototype['permalink'] = undefined;
  * @member {String} related_stories
  */
 StoryLinks.prototype['related_stories'] = undefined;
-
-/**
- * The clusters endpoint URL for this story
- * @member {String} clusters
- */
-StoryLinks.prototype['clusters'] = undefined;
 
 
 

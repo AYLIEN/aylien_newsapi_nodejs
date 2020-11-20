@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EntityLinks model module.
  * @module model/EntityLinks
- * @version 4.1.1
+ * @version 4.3.0
  */
 class EntityLinks {
     /**
@@ -58,6 +58,28 @@ class EntityLinks {
                   });
                 }
             }
+            if (data.hasOwnProperty('wikidata')) {
+                obj['wikidata'] = ApiClient.convertToType(data['wikidata'], 'String');
+
+                if ('wikidata' !== 'wikidata') {
+                  Object.defineProperty(obj, 'wikidata', {
+                    get() {
+                      return obj['wikidata'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('wikipedia')) {
+                obj['wikipedia'] = ApiClient.convertToType(data['wikipedia'], 'String');
+
+                if ('wikipedia' !== 'wikipedia') {
+                  Object.defineProperty(obj, 'wikipedia', {
+                    get() {
+                      return obj['wikipedia'];
+                    }
+                  });
+                }
+            }
         }
         return obj;
     }
@@ -66,10 +88,22 @@ class EntityLinks {
 }
 
 /**
- * A dbpedia resource URL
+ * A dbpedia resource URL (deprecated)
  * @member {String} dbpedia
  */
 EntityLinks.prototype['dbpedia'] = undefined;
+
+/**
+ * A wikidata resource URL
+ * @member {String} wikidata
+ */
+EntityLinks.prototype['wikidata'] = undefined;
+
+/**
+ * A wikipedia resource URL
+ * @member {String} wikipedia
+ */
+EntityLinks.prototype['wikipedia'] = undefined;
 
 
 

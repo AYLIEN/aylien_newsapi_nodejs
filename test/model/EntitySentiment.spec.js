@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new AylienNewsApi.Trends();
+    instance = new AylienNewsApi.EntitySentiment();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,34 +47,22 @@
       object[property] = value;
   }
 
-  describe('Trends', function() {
-    it('should create an instance of Trends', function() {
-      // uncomment below and update the code to test Trends
-      //var instane = new AylienNewsApi.Trends();
-      //expect(instance).to.be.a(AylienNewsApi.Trends);
+  describe('EntitySentiment', function() {
+    it('should create an instance of EntitySentiment', function() {
+      // uncomment below and update the code to test EntitySentiment
+      //var instane = new AylienNewsApi.EntitySentiment();
+      //expect(instance).to.be.a(AylienNewsApi.EntitySentiment);
     });
 
-    it('should have the property field (base name: "field")', function() {
-      // uncomment below and update the code to test the property field
-      //var instane = new AylienNewsApi.Trends();
+    it('should have the property confidence (base name: "confidence")', function() {
+      // uncomment below and update the code to test the property confidence
+      //var instane = new AylienNewsApi.EntitySentiment();
       //expect(instance).to.be();
     });
 
-    it('should have the property publishedAtEnd (base name: "published_at.end")', function() {
-      // uncomment below and update the code to test the property publishedAtEnd
-      //var instane = new AylienNewsApi.Trends();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property publishedAtStart (base name: "published_at.start")', function() {
-      // uncomment below and update the code to test the property publishedAtStart
-      //var instane = new AylienNewsApi.Trends();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property trends (base name: "trends")', function() {
-      // uncomment below and update the code to test the property trends
-      //var instane = new AylienNewsApi.Trends();
+    it('should have the property polarity (base name: "polarity")', function() {
+      // uncomment below and update the code to test the property polarity
+      //var instane = new AylienNewsApi.EntitySentiment();
       //expect(instance).to.be();
     });
 

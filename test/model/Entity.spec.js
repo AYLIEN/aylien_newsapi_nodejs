@@ -66,8 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property score (base name: "score")', function() {
-      // uncomment below and update the code to test the property score
+    it('should have the property sentiment (base name: "sentiment")', function() {
+      // uncomment below and update the code to test the property sentiment
+      //var instane = new AylienNewsApi.Entity();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property stockTicker (base name: "stock_ticker")', function() {
+      // uncomment below and update the code to test the property stockTicker
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });

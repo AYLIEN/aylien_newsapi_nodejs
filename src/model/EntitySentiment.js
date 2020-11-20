@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import SentimentPolarity from './SentimentPolarity';
 
 /**
- * The Sentiment model module.
- * @module model/Sentiment
+ * The EntitySentiment model module.
+ * @module model/EntitySentiment
  * @version 4.3.0
  */
-class Sentiment {
+class EntitySentiment {
     /**
-     * Constructs a new <code>Sentiment</code>.
-     * @alias module:model/Sentiment
+     * Constructs a new <code>EntitySentiment</code>.
+     * @alias module:model/EntitySentiment
      */
     constructor() { 
         
-        Sentiment.initialize(this);
+        EntitySentiment.initialize(this);
     }
 
     /**
@@ -38,16 +38,27 @@ class Sentiment {
     }
 
     /**
-     * Constructs a <code>Sentiment</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EntitySentiment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Sentiment} obj Optional instance to populate.
-     * @return {module:model/Sentiment} The populated <code>Sentiment</code> instance.
+     * @param {module:model/EntitySentiment} obj Optional instance to populate.
+     * @return {module:model/EntitySentiment} The populated <code>EntitySentiment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Sentiment();
+            obj = obj || new EntitySentiment();
 
+            if (data.hasOwnProperty('confidence')) {
+                obj['confidence'] = ApiClient.convertToType(data['confidence'], 'Number');
+
+                if ('confidence' !== 'confidence') {
+                  Object.defineProperty(obj, 'confidence', {
+                    get() {
+                      return obj['confidence'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('polarity')) {
                 obj['polarity'] = SentimentPolarity.constructFromObject(data['polarity']);
 
@@ -55,17 +66,6 @@ class Sentiment {
                   Object.defineProperty(obj, 'polarity', {
                     get() {
                       return obj['polarity'];
-                    }
-                  });
-                }
-            }
-            if (data.hasOwnProperty('score')) {
-                obj['score'] = ApiClient.convertToType(data['score'], 'Number');
-
-                if ('score' !== 'score') {
-                  Object.defineProperty(obj, 'score', {
-                    get() {
-                      return obj['score'];
                     }
                   });
                 }
@@ -78,20 +78,20 @@ class Sentiment {
 }
 
 /**
- * @member {module:model/SentimentPolarity} polarity
+ * Polarity confidence of the sentiment
+ * @member {Number} confidence
  */
-Sentiment.prototype['polarity'] = undefined;
+EntitySentiment.prototype['confidence'] = undefined;
 
 /**
- * Polarity score of the sentiment
- * @member {Number} score
+ * @member {module:model/SentimentPolarity} polarity
  */
-Sentiment.prototype['score'] = undefined;
+EntitySentiment.prototype['polarity'] = undefined;
 
 
 
 
 
 
-export default Sentiment;
+export default EntitySentiment;
 

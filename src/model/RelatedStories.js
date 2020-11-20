@@ -17,7 +17,7 @@ import Story from './Story';
 /**
  * The RelatedStories model module.
  * @module model/RelatedStories
- * @version 4.1.1
+ * @version 4.3.0
  */
 class RelatedStories {
     /**
@@ -48,6 +48,28 @@ class RelatedStories {
         if (data) {
             obj = obj || new RelatedStories();
 
+            if (data.hasOwnProperty('published_at.end')) {
+                obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
+
+                if ('published_at.end' !== 'publishedAtEnd') {
+                  Object.defineProperty(obj, 'publishedAtEnd', {
+                    get() {
+                      return obj['published_at.end'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('published_at.start')) {
+                obj['published_at.start'] = ApiClient.convertToType(data['published_at.start'], 'Date');
+
+                if ('published_at.start' !== 'publishedAtStart') {
+                  Object.defineProperty(obj, 'publishedAtStart', {
+                    get() {
+                      return obj['published_at.start'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('related_stories')) {
                 obj['related_stories'] = ApiClient.convertToType(data['related_stories'], [Story]);
 
@@ -92,34 +114,24 @@ class RelatedStories {
                   });
                 }
             }
-            if (data.hasOwnProperty('published_at.end')) {
-                obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
-
-                if ('published_at.end' !== 'publishedAtEnd') {
-                  Object.defineProperty(obj, 'publishedAtEnd', {
-                    get() {
-                      return obj['published_at.end'];
-                    }
-                  });
-                }
-            }
-            if (data.hasOwnProperty('published_at.start')) {
-                obj['published_at.start'] = ApiClient.convertToType(data['published_at.start'], 'Date');
-
-                if ('published_at.start' !== 'publishedAtStart') {
-                  Object.defineProperty(obj, 'publishedAtStart', {
-                    get() {
-                      return obj['published_at.start'];
-                    }
-                  });
-                }
-            }
         }
         return obj;
     }
 
 
 }
+
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+RelatedStories.prototype['published_at.end'] = undefined;
+
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+RelatedStories.prototype['published_at.start'] = undefined;
 
 /**
  * An array of related stories for the input story
@@ -144,18 +156,6 @@ RelatedStories.prototype['story_language'] = undefined;
  * @member {String} story_title
  */
 RelatedStories.prototype['story_title'] = undefined;
-
-/**
- * The end of a period in which searched stories were published
- * @member {Date} published_at.end
- */
-RelatedStories.prototype['published_at.end'] = undefined;
-
-/**
- * The start of a period in which searched stories were published
- * @member {Date} published_at.start
- */
-RelatedStories.prototype['published_at.start'] = undefined;
 
 
 

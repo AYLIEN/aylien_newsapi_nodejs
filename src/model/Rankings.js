@@ -17,7 +17,7 @@ import Rank from './Rank';
 /**
  * The Rankings model module.
  * @module model/Rankings
- * @version 4.1.1
+ * @version 4.3.0
  */
 class Rankings {
     /**

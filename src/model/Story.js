@@ -26,7 +26,7 @@ import Summary from './Summary';
 /**
  * The Story model module.
  * @module model/Story
- * @version 4.1.1
+ * @version 4.3.0
  */
 class Story {
     /**
@@ -163,6 +163,17 @@ class Story {
                   Object.defineProperty(obj, 'language', {
                     get() {
                       return obj['language'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('license_type')) {
+                obj['license_type'] = ApiClient.convertToType(data['license_type'], 'Number');
+
+                if ('license_type' !== 'licenseType') {
+                  Object.defineProperty(obj, 'licenseType', {
+                    get() {
+                      return obj['license_type'];
                     }
                   });
                 }
@@ -363,6 +374,12 @@ Story.prototype['keywords'] = undefined;
  * @member {String} language
  */
 Story.prototype['language'] = undefined;
+
+/**
+ * License type of the story
+ * @member {Number} license_type
+ */
+Story.prototype['license_type'] = undefined;
 
 /**
  * @member {module:model/StoryLinks} links

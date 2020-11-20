@@ -18,7 +18,7 @@ import Warning from './Warning';
 /**
  * The Stories model module.
  * @module model/Stories
- * @version 4.1.1
+ * @version 4.3.0
  */
 class Stories {
     /**
@@ -60,17 +60,6 @@ class Stories {
                   });
                 }
             }
-            if (data.hasOwnProperty('stories')) {
-                obj['stories'] = ApiClient.convertToType(data['stories'], [Story]);
-
-                if ('stories' !== 'stories') {
-                  Object.defineProperty(obj, 'stories', {
-                    get() {
-                      return obj['stories'];
-                    }
-                  });
-                }
-            }
             if (data.hasOwnProperty('published_at.end')) {
                 obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
 
@@ -89,6 +78,17 @@ class Stories {
                   Object.defineProperty(obj, 'publishedAtStart', {
                     get() {
                       return obj['published_at.start'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('stories')) {
+                obj['stories'] = ApiClient.convertToType(data['stories'], [Story]);
+
+                if ('stories' !== 'stories') {
+                  Object.defineProperty(obj, 'stories', {
+                    get() {
+                      return obj['stories'];
                     }
                   });
                 }
@@ -118,12 +118,6 @@ class Stories {
 Stories.prototype['next_page_cursor'] = undefined;
 
 /**
- * An array of stories
- * @member {Array.<module:model/Story>} stories
- */
-Stories.prototype['stories'] = undefined;
-
-/**
  * The end of a period in which searched stories were published
  * @member {Date} published_at.end
  */
@@ -134,6 +128,12 @@ Stories.prototype['published_at.end'] = undefined;
  * @member {Date} published_at.start
  */
 Stories.prototype['published_at.start'] = undefined;
+
+/**
+ * An array of stories
+ * @member {Array.<module:model/Story>} stories
+ */
+Stories.prototype['stories'] = undefined;
 
 /**
  * Notifies about possible issues that occurred when searching for stories

@@ -1,0 +1,21 @@
+{
+  "name": "@nicolo-ribaudo/chokidar-2",
+  "version": "2.1.8",
+  "description": "A wrapper around chokidar@2 to be able to specify both @2 and @3 as dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chokidar": "2.1.8"
+  },
+  "author": "Nicolò Ribaudo <nicolo.ribaudo@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicolo-ribaudo/chokidar-2"
+  }
+}

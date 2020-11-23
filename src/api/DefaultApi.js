@@ -347,6 +347,7 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMin This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. 
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
+     * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {Number} opts.intervalStart This parameter is used for setting the start data point of histogram intervals. 
      * @param {Number} opts.intervalEnd This parameter is used for setting the end data point of histogram intervals. 
      * @param {Number} opts.intervalWidth This parameter is used for setting the width of histogram intervals. 
@@ -469,6 +470,7 @@ export default class DefaultApi {
         'social_shares_count.reddit.min': opts['socialSharesCountRedditMin'],
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
+        'query': opts['query'],
         'interval.start': opts['intervalStart'],
         'interval.end': opts['intervalEnd'],
         'interval.width': opts['intervalWidth'],
@@ -613,6 +615,7 @@ export default class DefaultApi {
      * @param {String} opts.storyUrl An article or webpage
      * @param {String} opts.storyTitle Title of the article
      * @param {String} opts.storyBody Body of the article
+     * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:model/String} opts.boostBy This parameter is used for boosting the result by the specified value. 
      * @param {module:model/String} opts.storyLanguage This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.  (default to 'auto')
      * @param {Number} opts.perPage This parameter is used for specifying number of items in each page.  (default to 3)
@@ -739,6 +742,7 @@ export default class DefaultApi {
         'story_url': opts['storyUrl'],
         'story_title': opts['storyTitle'],
         'story_body': opts['storyBody'],
+        'query': opts['query'],
         'boost_by': opts['boostBy'],
         'story_language': opts['storyLanguage'],
         'per_page': opts['perPage']
@@ -882,6 +886,7 @@ export default class DefaultApi {
      * @param {String} opts.storyUrl An article or webpage
      * @param {String} opts.storyTitle Title of the article
      * @param {String} opts.storyBody Body of the article
+     * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:model/String} opts.boostBy This parameter is used for boosting the result by the specified value. 
      * @param {module:model/String} opts.storyLanguage This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.  (default to 'auto')
      * @param {Number} opts.perPage This parameter is used for specifying number of items in each page.  (default to 3)
@@ -1008,6 +1013,7 @@ export default class DefaultApi {
         'story_url': opts['storyUrl'],
         'story_title': opts['storyTitle'],
         'story_body': opts['storyBody'],
+        'query': opts['query'],
         'boost_by': opts['boostBy'],
         'story_language': opts['storyLanguage'],
         'per_page': opts['perPage']
@@ -1149,6 +1155,7 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
      * @param {Array.<module:model/String>} opts._return This parameter is used for specifying return fields.
+     * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:model/String} opts.sortBy This parameter is used for changing the order column of the results. You can read about sorting results [here](https://newsapi.aylien.com/docs/sorting-results).  (default to 'published_at')
      * @param {module:model/String} opts.sortDirection This parameter is used for changing the order direction of the result. You can read about sorting results [here](https://newsapi.aylien.com/docs/sorting-results).  (default to 'desc')
      * @param {String} opts.cursor This parameter is used for finding a specific page. You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results).  (default to '*')
@@ -1272,6 +1279,7 @@ export default class DefaultApi {
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
         'return[]': this.apiClient.buildCollectionParam(opts['_return'], 'multi'),
+        'query': opts['query'],
         'sort_by': opts['sortBy'],
         'sort_direction': opts['sortDirection'],
         'cursor': opts['cursor'],
@@ -1409,6 +1417,7 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMin This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. 
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
+     * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).  (default to 'NOW-7DAYS/DAY')
      * @param {String} opts.publishedAtEnd This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).  (default to 'NOW/DAY')
      * @param {String} opts.period The size of each date range is expressed as an interval to be added to the lower bound. It supports Date Math Syntax. Valid options are `+` following an integer number greater than 0 and one of the Date Math keywords. e.g. `+1DAY`, `+2MINUTES` and `+1MONTH`. Here are [Supported keywords](https://newsapi.aylien.com/docs/working-with-dates#date-math).  (default to '+1DAY')
@@ -1526,6 +1535,7 @@ export default class DefaultApi {
         'social_shares_count.reddit.min': opts['socialSharesCountRedditMin'],
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
+        'query': opts['query'],
         'published_at.start': opts['publishedAtStart'],
         'published_at.end': opts['publishedAtEnd'],
         'period': opts['period']
@@ -1667,6 +1677,7 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMin This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. 
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
+     * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:api/DefaultApi~listTrendsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Trends}
      */
@@ -1789,6 +1800,7 @@ export default class DefaultApi {
         'social_shares_count.reddit.min': opts['socialSharesCountRedditMin'],
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
+        'query': opts['query'],
         'field': field
       };
       let headerParams = {

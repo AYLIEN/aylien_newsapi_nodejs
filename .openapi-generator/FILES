@@ -101,5 +101,3 @@ src/model/TimeSeriesList.js
 src/model/Trend.js
 src/model/Trends.js
 src/model/Warning.js
-test/model/AggregatedSentiment.spec.js
-test/model/EntitySurfaceForm.spec.js

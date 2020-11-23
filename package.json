@@ -1,6 +1,6 @@
 {
   "name": "aylien-news-api",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "description": "The_AYLIEN_News_API_is_the_most_powerful_way_of_sourcing_searching_and_syndicating_analyzed_and_enriched_news_content__It_is_accessed_by_sending_HTTP_requests_to_our_server_which_returns_information_to_your_client_",
   "license": "Apache License, Version 2.0",
   "main": "dist/index.js",

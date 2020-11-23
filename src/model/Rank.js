@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Rank model module.
  * @module model/Rank
- * @version 4.3.0
+ * @version 4.3.1
  */
 class Rank {
     /**

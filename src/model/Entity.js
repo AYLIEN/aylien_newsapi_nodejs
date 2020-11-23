@@ -19,7 +19,7 @@ import EntitySurfaceForm from './EntitySurfaceForm';
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 4.3.0
+ * @version 4.3.1
  */
 class Entity {
     /**

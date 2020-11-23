@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EntitySurfaceForm model module.
  * @module model/EntitySurfaceForm
- * @version 4.3.0
+ * @version 4.3.1
  */
 class EntitySurfaceForm {
     /**

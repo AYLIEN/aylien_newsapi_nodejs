@@ -18,7 +18,7 @@ import MediaType from './MediaType';
 /**
  * The Media model module.
  * @module model/Media
- * @version 4.3.0
+ * @version 4.3.1
  */
 class Media {
     /**

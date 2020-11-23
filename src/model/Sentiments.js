@@ -17,7 +17,7 @@ import Sentiment from './Sentiment';
 /**
  * The Sentiments model module.
  * @module model/Sentiments
- * @version 4.3.0
+ * @version 4.3.1
  */
 class Sentiments {
     /**

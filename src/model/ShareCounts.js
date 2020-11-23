@@ -17,7 +17,7 @@ import ShareCount from './ShareCount';
 /**
  * The ShareCounts model module.
  * @module model/ShareCounts
- * @version 4.3.0
+ * @version 4.3.1
  */
 class ShareCounts {
     /**

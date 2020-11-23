@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CategoryLinks model module.
  * @module model/CategoryLinks
- * @version 4.3.0
+ * @version 4.3.1
  */
 class CategoryLinks {
     /**

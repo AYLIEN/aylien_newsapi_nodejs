@@ -17,7 +17,7 @@ import AggregatedSentiment from './AggregatedSentiment';
 /**
  * The TimeSeries model module.
  * @module model/TimeSeries
- * @version 4.3.0
+ * @version 4.3.1
  */
 class TimeSeries {
     /**

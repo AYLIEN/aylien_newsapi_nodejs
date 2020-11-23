@@ -17,7 +17,7 @@ import ErrorLinks from './ErrorLinks';
 /**
  * The Error model module.
  * @module model/Error
- * @version 4.3.0
+ * @version 4.3.1
  */
 class Error {
     /**

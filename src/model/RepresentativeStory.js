@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RepresentativeStory model module.
  * @module model/RepresentativeStory
- * @version 4.3.0
+ * @version 4.3.1
  */
 class RepresentativeStory {
     /**

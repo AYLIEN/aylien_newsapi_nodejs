@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryLinks model module.
  * @module model/StoryLinks
- * @version 4.3.1
+ * @version 4.4.0
  */
 class StoryLinks {
     /**

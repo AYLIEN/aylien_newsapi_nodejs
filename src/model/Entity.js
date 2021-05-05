@@ -19,7 +19,7 @@ import EntitySurfaceForm from './EntitySurfaceForm';
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 4.3.1
+ * @version 4.4.0
  */
 class Entity {
     /**
@@ -79,6 +79,17 @@ class Entity {
                   Object.defineProperty(obj, 'links', {
                     get() {
                       return obj['links'];
+                    }
+                  });
+                }
+            }
+            if (data.hasOwnProperty('prominence_score')) {
+                obj['prominence_score'] = ApiClient.convertToType(data['prominence_score'], 'Number');
+
+                if ('prominence_score' !== 'prominenceScore') {
+                  Object.defineProperty(obj, 'prominenceScore', {
+                    get() {
+                      return obj['prominence_score'];
                     }
                   });
                 }
@@ -161,6 +172,12 @@ Entity.prototype['indices'] = undefined;
  * @member {module:model/EntityLinks} links
  */
 Entity.prototype['links'] = undefined;
+
+/**
+ * Describes how relevant an entity is to the article
+ * @member {Number} prominence_score
+ */
+Entity.prototype['prominence_score'] = undefined;
 
 /**
  * @member {module:model/EntitySentiment} sentiment

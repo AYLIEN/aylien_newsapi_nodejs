@@ -54,6 +54,12 @@
       //expect(instance).to.be.a(AylienNewsApi.EntitySurfaceForm);
     });
 
+    it('should have the property frequency (base name: "frequency")', function() {
+      // uncomment below and update the code to test the property frequency
+      //var instane = new AylienNewsApi.EntitySurfaceForm();
+      //expect(instance).to.be();
+    });
+
     it('should have the property indices (base name: "indices")', function() {
       // uncomment below and update the code to test the property indices
       //var instane = new AylienNewsApi.EntitySurfaceForm();

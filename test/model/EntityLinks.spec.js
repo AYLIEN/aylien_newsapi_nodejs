@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property wikidata (base name: "wikidata")', function() {
+      // uncomment below and update the code to test the property wikidata
+      //var instane = new AylienNewsApi.EntityLinks();
+      //expect(instance).to.be();
+    });
+
     it('should have the property wikipedia (base name: "wikipedia")', function() {
       // uncomment below and update the code to test the property wikipedia
       //var instane = new AylienNewsApi.EntityLinks();

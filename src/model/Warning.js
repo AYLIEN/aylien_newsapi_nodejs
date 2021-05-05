@@ -17,7 +17,7 @@ import ErrorLinks from './ErrorLinks';
 /**
  * The Warning model module.
  * @module model/Warning
- * @version 4.3.1
+ * @version 4.4.0
  */
 class Warning {
     /**

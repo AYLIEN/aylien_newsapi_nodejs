@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sentiment (base name: "sentiment")', function() {
+      // uncomment below and update the code to test the property sentiment
+      //var instane = new AylienNewsApi.TimeSeries();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EntitySurfaceForm model module.
  * @module model/EntitySurfaceForm
- * @version 4.3.1
+ * @version 4.4.0
  */
 class EntitySurfaceForm {
     /**
@@ -47,6 +47,17 @@ class EntitySurfaceForm {
         if (data) {
             obj = obj || new EntitySurfaceForm();
 
+            if (data.hasOwnProperty('frequency')) {
+                obj['frequency'] = ApiClient.convertToType(data['frequency'], 'Number');
+
+                if ('frequency' !== 'frequency') {
+                  Object.defineProperty(obj, 'frequency', {
+                    get() {
+                      return obj['frequency'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('indices')) {
                 obj['indices'] = ApiClient.convertToType(data['indices'], [['Number']]);
 
@@ -75,6 +86,12 @@ class EntitySurfaceForm {
 
 
 }
+
+/**
+ * Amount of entity surface form mentions in the article
+ * @member {Number} frequency
+ */
+EntitySurfaceForm.prototype['frequency'] = undefined;
 
 /**
  * The indices of the entity text

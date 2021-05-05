@@ -92,7 +92,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.3.1
+* @version 4.4.0
 */
 export {
     /**

@@ -114,6 +114,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property licenseType (base name: "license_type")', function() {
+      // uncomment below and update the code to test the property licenseType
+      //var instane = new AylienNewsApi.Story();
+      //expect(instance).to.be();
+    });
+
     it('should have the property links (base name: "links")', function() {
       // uncomment below and update the code to test the property links
       //var instane = new AylienNewsApi.Story();

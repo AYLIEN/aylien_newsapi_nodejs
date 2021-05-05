@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistogramInterval model module.
  * @module model/HistogramInterval
- * @version 4.3.1
+ * @version 4.4.0
  */
 class HistogramInterval {
     /**

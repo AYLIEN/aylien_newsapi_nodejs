@@ -17,7 +17,7 @@ import ScopeLevel from './ScopeLevel';
 /**
  * The Scope model module.
  * @module model/Scope
- * @version 4.3.1
+ * @version 4.4.0
  */
 class Scope {
     /**

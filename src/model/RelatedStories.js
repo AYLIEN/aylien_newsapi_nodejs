@@ -17,7 +17,7 @@ import Story from './Story';
 /**
  * The RelatedStories model module.
  * @module model/RelatedStories
- * @version 4.3.1
+ * @version 4.4.0
  */
 class RelatedStories {
     /**

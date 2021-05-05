@@ -17,7 +17,7 @@ import AggregatedSentiment from './AggregatedSentiment';
 /**
  * The Trend model module.
  * @module model/Trend
- * @version 4.3.1
+ * @version 4.4.0
  */
 class Trend {
     /**

@@ -25,7 +25,7 @@ import Trends from '../model/Trends';
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 4.3.1
+* @version 4.4.0
 */
 export default class DefaultApi {
 
@@ -347,6 +347,8 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMin This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. 
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
+     * @param {String} opts.aql This parameter is used to supply a query in AYLIEN Query Language. 
+     * @param {String} opts.aqlDefaultField This parameter is used to supply an optional default field name used in the AQL query.  (default to 'text')
      * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {Number} opts.intervalStart This parameter is used for setting the start data point of histogram intervals. 
      * @param {Number} opts.intervalEnd This parameter is used for setting the end data point of histogram intervals. 
@@ -470,6 +472,8 @@ export default class DefaultApi {
         'social_shares_count.reddit.min': opts['socialSharesCountRedditMin'],
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
+        'aql': opts['aql'],
+        'aql_default_field': opts['aqlDefaultField'],
         'query': opts['query'],
         'interval.start': opts['intervalStart'],
         'interval.end': opts['intervalEnd'],
@@ -615,6 +619,8 @@ export default class DefaultApi {
      * @param {String} opts.storyUrl An article or webpage
      * @param {String} opts.storyTitle Title of the article
      * @param {String} opts.storyBody Body of the article
+     * @param {String} opts.aql This parameter is used to supply a query in AYLIEN Query Language. 
+     * @param {String} opts.aqlDefaultField This parameter is used to supply an optional default field name used in the AQL query.  (default to 'text')
      * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:model/String} opts.boostBy This parameter is used for boosting the result by the specified value. 
      * @param {module:model/String} opts.storyLanguage This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.  (default to 'auto')
@@ -742,6 +748,8 @@ export default class DefaultApi {
         'story_url': opts['storyUrl'],
         'story_title': opts['storyTitle'],
         'story_body': opts['storyBody'],
+        'aql': opts['aql'],
+        'aql_default_field': opts['aqlDefaultField'],
         'query': opts['query'],
         'boost_by': opts['boostBy'],
         'story_language': opts['storyLanguage'],
@@ -886,6 +894,8 @@ export default class DefaultApi {
      * @param {String} opts.storyUrl An article or webpage
      * @param {String} opts.storyTitle Title of the article
      * @param {String} opts.storyBody Body of the article
+     * @param {String} opts.aql This parameter is used to supply a query in AYLIEN Query Language. 
+     * @param {String} opts.aqlDefaultField This parameter is used to supply an optional default field name used in the AQL query.  (default to 'text')
      * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:model/String} opts.boostBy This parameter is used for boosting the result by the specified value. 
      * @param {module:model/String} opts.storyLanguage This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.  (default to 'auto')
@@ -1013,6 +1023,8 @@ export default class DefaultApi {
         'story_url': opts['storyUrl'],
         'story_title': opts['storyTitle'],
         'story_body': opts['storyBody'],
+        'aql': opts['aql'],
+        'aql_default_field': opts['aqlDefaultField'],
         'query': opts['query'],
         'boost_by': opts['boostBy'],
         'story_language': opts['storyLanguage'],
@@ -1155,6 +1167,8 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
      * @param {Array.<module:model/String>} opts._return This parameter is used for specifying return fields.
+     * @param {String} opts.aql This parameter is used to supply a query in AYLIEN Query Language. 
+     * @param {String} opts.aqlDefaultField This parameter is used to supply an optional default field name used in the AQL query.  (default to 'text')
      * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:model/String} opts.sortBy This parameter is used for changing the order column of the results. You can read about sorting results [here](https://newsapi.aylien.com/docs/sorting-results).  (default to 'published_at')
      * @param {module:model/String} opts.sortDirection This parameter is used for changing the order direction of the result. You can read about sorting results [here](https://newsapi.aylien.com/docs/sorting-results).  (default to 'desc')
@@ -1279,6 +1293,8 @@ export default class DefaultApi {
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
         'return[]': this.apiClient.buildCollectionParam(opts['_return'], 'multi'),
+        'aql': opts['aql'],
+        'aql_default_field': opts['aqlDefaultField'],
         'query': opts['query'],
         'sort_by': opts['sortBy'],
         'sort_direction': opts['sortDirection'],
@@ -1417,6 +1433,8 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMin This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. 
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
+     * @param {String} opts.aql This parameter is used to supply a query in AYLIEN Query Language. 
+     * @param {String} opts.aqlDefaultField This parameter is used to supply an optional default field name used in the AQL query.  (default to 'text')
      * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {String} opts.publishedAtStart This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).  (default to 'NOW-7DAYS/DAY')
      * @param {String} opts.publishedAtEnd This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).  (default to 'NOW/DAY')
@@ -1535,6 +1553,8 @@ export default class DefaultApi {
         'social_shares_count.reddit.min': opts['socialSharesCountRedditMin'],
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
+        'aql': opts['aql'],
+        'aql_default_field': opts['aqlDefaultField'],
         'query': opts['query'],
         'published_at.start': opts['publishedAtStart'],
         'published_at.end': opts['publishedAtEnd'],
@@ -1677,6 +1697,8 @@ export default class DefaultApi {
      * @param {Number} opts.socialSharesCountRedditMin This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. 
      * @param {Number} opts.socialSharesCountRedditMax This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. 
      * @param {Array.<String>} opts.clusters This parameter is used for finding stories with belonging to one of clusters in a specific set of clusters You can read more about working with clustering [here](https://newsapi.aylien.com/docs/working-with-clustering). 
+     * @param {String} opts.aql This parameter is used to supply a query in AYLIEN Query Language. 
+     * @param {String} opts.aqlDefaultField This parameter is used to supply an optional default field name used in the AQL query.  (default to 'text')
      * @param {String} opts.query This parameter is used to make an advanced query using $and, $or, $not logical operators and $eq for exact match, $text for a text search and $lt, $gt, $lte, $gte for range queries. value must be a json string. 
      * @param {module:api/DefaultApi~listTrendsCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Trends}
@@ -1800,6 +1822,8 @@ export default class DefaultApi {
         'social_shares_count.reddit.min': opts['socialSharesCountRedditMin'],
         'social_shares_count.reddit.max': opts['socialSharesCountRedditMax'],
         'clusters[]': this.apiClient.buildCollectionParam(opts['clusters'], 'multi'),
+        'aql': opts['aql'],
+        'aql_default_field': opts['aqlDefaultField'],
         'query': opts['query'],
         'field': field
       };

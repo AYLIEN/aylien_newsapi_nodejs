@@ -17,7 +17,7 @@ import Error from './Error';
 /**
  * The Errors model module.
  * @module model/Errors
- * @version 4.3.1
+ * @version 4.4.0
  */
 class Errors {
     /**

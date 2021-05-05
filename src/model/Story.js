@@ -26,7 +26,7 @@ import Summary from './Summary';
 /**
  * The Story model module.
  * @module model/Story
- * @version 4.3.1
+ * @version 4.4.0
  */
 class Story {
     /**

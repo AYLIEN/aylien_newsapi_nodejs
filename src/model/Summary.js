@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Summary model module.
  * @module model/Summary
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Summary {
     /**

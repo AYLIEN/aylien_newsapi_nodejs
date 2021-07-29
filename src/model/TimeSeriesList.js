@@ -17,7 +17,7 @@ import TimeSeries from './TimeSeries';
 /**
  * The TimeSeriesList model module.
  * @module model/TimeSeriesList
- * @version 4.4.0
+ * @version 4.5.0
  */
 class TimeSeriesList {
     /**

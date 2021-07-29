@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(AylienNewsApi.Entity);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
     it('should have the property indices (base name: "indices")', function() {
       // uncomment below and update the code to test the property indices
       //var instane = new AylienNewsApi.Entity();
@@ -72,26 +66,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property prominenceScore (base name: "prominence_score")', function() {
-      // uncomment below and update the code to test the property prominenceScore
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sentiment (base name: "sentiment")', function() {
-      // uncomment below and update the code to test the property sentiment
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property stockTicker (base name: "stock_ticker")', function() {
-      // uncomment below and update the code to test the property stockTicker
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property surfaceForms (base name: "surface_forms")', function() {
-      // uncomment below and update the code to test the property surfaceForms
+    it('should have the property score (base name: "score")', function() {
+      // uncomment below and update the code to test the property score
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });

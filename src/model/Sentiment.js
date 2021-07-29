@@ -17,7 +17,7 @@ import SentimentPolarity from './SentimentPolarity';
 /**
  * The Sentiment model module.
  * @module model/Sentiment
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Sentiment {
     /**

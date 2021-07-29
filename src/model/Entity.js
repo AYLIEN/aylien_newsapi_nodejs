@@ -12,14 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import EntityInText from './EntityInText';
 import EntityLinks from './EntityLinks';
 import EntitySentiment from './EntitySentiment';
-import EntitySurfaceForm from './EntitySurfaceForm';
 
 /**
  * The Entity model module.
  * @module model/Entity
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Entity {
     /**
@@ -50,6 +50,17 @@ class Entity {
         if (data) {
             obj = obj || new Entity();
 
+            if (data.hasOwnProperty('body')) {
+                obj['body'] = EntityInText.constructFromObject(data['body']);
+
+                if ('body' !== 'body') {
+                  Object.defineProperty(obj, 'body', {
+                    get() {
+                      return obj['body'];
+                    }
+                  });
+                }
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
 
@@ -57,17 +68,6 @@ class Entity {
                   Object.defineProperty(obj, 'id', {
                     get() {
                       return obj['id'];
-                    }
-                  });
-                }
-            }
-            if (data.hasOwnProperty('indices')) {
-                obj['indices'] = ApiClient.convertToType(data['indices'], [['Number']]);
-
-                if ('indices' !== 'indices') {
-                  Object.defineProperty(obj, 'indices', {
-                    get() {
-                      return obj['indices'];
                     }
                   });
                 }
@@ -83,57 +83,57 @@ class Entity {
                   });
                 }
             }
-            if (data.hasOwnProperty('prominence_score')) {
-                obj['prominence_score'] = ApiClient.convertToType(data['prominence_score'], 'Number');
+            if (data.hasOwnProperty('overall_frequency')) {
+                obj['overall_frequency'] = ApiClient.convertToType(data['overall_frequency'], 'Number');
 
-                if ('prominence_score' !== 'prominenceScore') {
-                  Object.defineProperty(obj, 'prominenceScore', {
+                if ('overall_frequency' !== 'overallFrequency') {
+                  Object.defineProperty(obj, 'overallFrequency', {
                     get() {
-                      return obj['prominence_score'];
+                      return obj['overall_frequency'];
                     }
                   });
                 }
             }
-            if (data.hasOwnProperty('sentiment')) {
-                obj['sentiment'] = EntitySentiment.constructFromObject(data['sentiment']);
+            if (data.hasOwnProperty('overall_prominence')) {
+                obj['overall_prominence'] = ApiClient.convertToType(data['overall_prominence'], 'Number');
 
-                if ('sentiment' !== 'sentiment') {
-                  Object.defineProperty(obj, 'sentiment', {
+                if ('overall_prominence' !== 'overallProminence') {
+                  Object.defineProperty(obj, 'overallProminence', {
                     get() {
-                      return obj['sentiment'];
+                      return obj['overall_prominence'];
                     }
                   });
                 }
             }
-            if (data.hasOwnProperty('stock_ticker')) {
-                obj['stock_ticker'] = ApiClient.convertToType(data['stock_ticker'], 'String');
+            if (data.hasOwnProperty('overall_sentiment')) {
+                obj['overall_sentiment'] = EntitySentiment.constructFromObject(data['overall_sentiment']);
 
-                if ('stock_ticker' !== 'stockTicker') {
-                  Object.defineProperty(obj, 'stockTicker', {
+                if ('overall_sentiment' !== 'overallSentiment') {
+                  Object.defineProperty(obj, 'overallSentiment', {
                     get() {
-                      return obj['stock_ticker'];
+                      return obj['overall_sentiment'];
                     }
                   });
                 }
             }
-            if (data.hasOwnProperty('surface_forms')) {
-                obj['surface_forms'] = ApiClient.convertToType(data['surface_forms'], [EntitySurfaceForm]);
+            if (data.hasOwnProperty('stock_tickers')) {
+                obj['stock_tickers'] = ApiClient.convertToType(data['stock_tickers'], ['String']);
 
-                if ('surface_forms' !== 'surfaceForms') {
-                  Object.defineProperty(obj, 'surfaceForms', {
+                if ('stock_tickers' !== 'stockTickers') {
+                  Object.defineProperty(obj, 'stockTickers', {
                     get() {
-                      return obj['surface_forms'];
+                      return obj['stock_tickers'];
                     }
                   });
                 }
             }
-            if (data.hasOwnProperty('text')) {
-                obj['text'] = ApiClient.convertToType(data['text'], 'String');
+            if (data.hasOwnProperty('title')) {
+                obj['title'] = EntityInText.constructFromObject(data['title']);
 
-                if ('text' !== 'text') {
-                  Object.defineProperty(obj, 'text', {
+                if ('title' !== 'title') {
+                  Object.defineProperty(obj, 'title', {
                     get() {
-                      return obj['text'];
+                      return obj['title'];
                     }
                   });
                 }
@@ -157,16 +157,15 @@ class Entity {
 }
 
 /**
+ * @member {module:model/EntityInText} body
+ */
+Entity.prototype['body'] = undefined;
+
+/**
  * The unique ID of the entity
  * @member {String} id
  */
 Entity.prototype['id'] = undefined;
-
-/**
- * The indices of the entity text
- * @member {Array.<Array.<Number>>} indices
- */
-Entity.prototype['indices'] = undefined;
 
 /**
  * @member {module:model/EntityLinks} links
@@ -174,32 +173,32 @@ Entity.prototype['indices'] = undefined;
 Entity.prototype['links'] = undefined;
 
 /**
+ * Amount of entity surface form mentions in the article
+ * @member {Number} overall_frequency
+ */
+Entity.prototype['overall_frequency'] = undefined;
+
+/**
  * Describes how relevant an entity is to the article
- * @member {Number} prominence_score
+ * @member {Number} overall_prominence
  */
-Entity.prototype['prominence_score'] = undefined;
+Entity.prototype['overall_prominence'] = undefined;
 
 /**
- * @member {module:model/EntitySentiment} sentiment
+ * @member {module:model/EntitySentiment} overall_sentiment
  */
-Entity.prototype['sentiment'] = undefined;
+Entity.prototype['overall_sentiment'] = undefined;
 
 /**
- * The stock_ticker of the entity (might be null)
- * @member {String} stock_ticker
+ * The stock tickers of the entity (might be empty)
+ * @member {Array.<String>} stock_tickers
  */
-Entity.prototype['stock_ticker'] = undefined;
+Entity.prototype['stock_tickers'] = undefined;
 
 /**
- * @member {Array.<module:model/EntitySurfaceForm>} surface_forms
+ * @member {module:model/EntityInText} title
  */
-Entity.prototype['surface_forms'] = undefined;
-
-/**
- * The entity text
- * @member {String} text
- */
-Entity.prototype['text'] = undefined;
+Entity.prototype['title'] = undefined;
 
 /**
  * An array of the entity types

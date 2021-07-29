@@ -17,11 +17,12 @@ import Story from './Story';
 /**
  * The RelatedStories model module.
  * @module model/RelatedStories
- * @version 4.4.0
+ * @version 4.5.0
  */
 class RelatedStories {
     /**
      * Constructs a new <code>RelatedStories</code>.
+     * Story containing new V3 entities - available for new_v3_entities feature flag
      * @alias module:model/RelatedStories
      */
     constructor() { 

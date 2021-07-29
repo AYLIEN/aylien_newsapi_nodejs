@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 import Author from './Author';
 import Category from './Category';
-import Entities from './Entities';
+import Entity from './Entity';
 import Media from './Media';
 import Sentiments from './Sentiments';
 import ShareCounts from './ShareCounts';
@@ -26,7 +26,7 @@ import Summary from './Summary';
 /**
  * The Story model module.
  * @module model/Story
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Story {
     /**
@@ -113,7 +113,7 @@ class Story {
                 }
             }
             if (data.hasOwnProperty('entities')) {
-                obj['entities'] = Entities.constructFromObject(data['entities']);
+                obj['entities'] = ApiClient.convertToType(data['entities'], [Entity]);
 
                 if ('entities' !== 'entities') {
                   Object.defineProperty(obj, 'entities', {
@@ -347,7 +347,8 @@ Story.prototype['characters_count'] = undefined;
 Story.prototype['clusters'] = undefined;
 
 /**
- * @member {module:model/Entities} entities
+ * An array of entities
+ * @member {Array.<module:model/Entity>} entities
  */
 Story.prototype['entities'] = undefined;
 

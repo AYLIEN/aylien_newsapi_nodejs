@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ShareCount model module.
  * @module model/ShareCount
- * @version 4.4.0
+ * @version 4.5.0
  */
 class ShareCount {
     /**

@@ -17,7 +17,7 @@ import ErrorLinks from './ErrorLinks';
 /**
  * The Warning model module.
  * @module model/Warning
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Warning {
     /**
@@ -50,36 +50,12 @@ class Warning {
 
             if (data.hasOwnProperty('detail')) {
                 obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
-
-                if ('detail' !== 'detail') {
-                  Object.defineProperty(obj, 'detail', {
-                    get() {
-                      return obj['detail'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
-
-                if ('id' !== 'id') {
-                  Object.defineProperty(obj, 'id', {
-                    get() {
-                      return obj['id'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = ErrorLinks.constructFromObject(data['links']);
-
-                if ('links' !== 'links') {
-                  Object.defineProperty(obj, 'links', {
-                    get() {
-                      return obj['links'];
-                    }
-                  });
-                }
             }
         }
         return obj;

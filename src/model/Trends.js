@@ -17,7 +17,7 @@ import Trend from './Trend';
 /**
  * The Trends model module.
  * @module model/Trends
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Trends {
     /**
@@ -50,47 +50,15 @@ class Trends {
 
             if (data.hasOwnProperty('field')) {
                 obj['field'] = ApiClient.convertToType(data['field'], 'String');
-
-                if ('field' !== 'field') {
-                  Object.defineProperty(obj, 'field', {
-                    get() {
-                      return obj['field'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at.end')) {
                 obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
-
-                if ('published_at.end' !== 'publishedAtEnd') {
-                  Object.defineProperty(obj, 'publishedAtEnd', {
-                    get() {
-                      return obj['published_at.end'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at.start')) {
                 obj['published_at.start'] = ApiClient.convertToType(data['published_at.start'], 'Date');
-
-                if ('published_at.start' !== 'publishedAtStart') {
-                  Object.defineProperty(obj, 'publishedAtStart', {
-                    get() {
-                      return obj['published_at.start'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('trends')) {
                 obj['trends'] = ApiClient.convertToType(data['trends'], [Trend]);
-
-                if ('trends' !== 'trends') {
-                  Object.defineProperty(obj, 'trends', {
-                    get() {
-                      return obj['trends'];
-                    }
-                  });
-                }
             }
         }
         return obj;

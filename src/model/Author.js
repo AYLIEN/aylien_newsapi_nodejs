@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Author model module.
  * @module model/Author
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Author {
     /**
@@ -49,36 +49,12 @@ class Author {
 
             if (data.hasOwnProperty('avatar_url')) {
                 obj['avatar_url'] = ApiClient.convertToType(data['avatar_url'], 'String');
-
-                if ('avatar_url' !== 'avatarUrl') {
-                  Object.defineProperty(obj, 'avatarUrl', {
-                    get() {
-                      return obj['avatar_url'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-
-                if ('id' !== 'id') {
-                  Object.defineProperty(obj, 'id', {
-                    get() {
-                      return obj['id'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-
-                if ('name' !== 'name') {
-                  Object.defineProperty(obj, 'name', {
-                    get() {
-                      return obj['name'];
-                    }
-                  });
-                }
             }
         }
         return obj;

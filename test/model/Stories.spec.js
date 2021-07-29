@@ -60,6 +60,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property stories (base name: "stories")', function() {
+      // uncomment below and update the code to test the property stories
+      //var instane = new AylienNewsApi.Stories();
+      //expect(instance).to.be();
+    });
+
     it('should have the property publishedAtEnd (base name: "published_at.end")', function() {
       // uncomment below and update the code to test the property publishedAtEnd
       //var instane = new AylienNewsApi.Stories();
@@ -68,18 +74,6 @@
 
     it('should have the property publishedAtStart (base name: "published_at.start")', function() {
       // uncomment below and update the code to test the property publishedAtStart
-      //var instane = new AylienNewsApi.Stories();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property stories (base name: "stories")', function() {
-      // uncomment below and update the code to test the property stories
-      //var instane = new AylienNewsApi.Stories();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property warnings (base name: "warnings")', function() {
-      // uncomment below and update the code to test the property warnings
       //var instane = new AylienNewsApi.Stories();
       //expect(instance).to.be();
     });

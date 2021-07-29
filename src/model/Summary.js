@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Summary model module.
  * @module model/Summary
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Summary {
     /**
@@ -49,14 +49,6 @@ class Summary {
 
             if (data.hasOwnProperty('sentences')) {
                 obj['sentences'] = ApiClient.convertToType(data['sentences'], ['String']);
-
-                if ('sentences' !== 'sentences') {
-                  Object.defineProperty(obj, 'sentences', {
-                    get() {
-                      return obj['sentences'];
-                    }
-                  });
-                }
             }
         }
         return obj;

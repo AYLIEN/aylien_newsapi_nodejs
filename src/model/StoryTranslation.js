@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryTranslation model module.
  * @module model/StoryTranslation
- * @version 4.4.0
+ * @version 4.5.0
  */
 class StoryTranslation {
     /**
@@ -49,25 +49,9 @@ class StoryTranslation {
 
             if (data.hasOwnProperty('body')) {
                 obj['body'] = ApiClient.convertToType(data['body'], 'String');
-
-                if ('body' !== 'body') {
-                  Object.defineProperty(obj, 'body', {
-                    get() {
-                      return obj['body'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
-
-                if ('title' !== 'title') {
-                  Object.defineProperty(obj, 'title', {
-                    get() {
-                      return obj['title'];
-                    }
-                  });
-                }
             }
         }
         return obj;

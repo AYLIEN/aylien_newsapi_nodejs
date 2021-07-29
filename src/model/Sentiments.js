@@ -17,7 +17,7 @@ import Sentiment from './Sentiment';
 /**
  * The Sentiments model module.
  * @module model/Sentiments
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Sentiments {
     /**
@@ -50,25 +50,9 @@ class Sentiments {
 
             if (data.hasOwnProperty('body')) {
                 obj['body'] = Sentiment.constructFromObject(data['body']);
-
-                if ('body' !== 'body') {
-                  Object.defineProperty(obj, 'body', {
-                    get() {
-                      return obj['body'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = Sentiment.constructFromObject(data['title']);
-
-                if ('title' !== 'title') {
-                  Object.defineProperty(obj, 'title', {
-                    get() {
-                      return obj['title'];
-                    }
-                  });
-                }
             }
         }
         return obj;

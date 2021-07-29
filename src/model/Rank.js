@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Rank model module.
  * @module model/Rank
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Rank {
     /**
@@ -49,36 +49,12 @@ class Rank {
 
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
-
-                if ('country' !== 'country') {
-                  Object.defineProperty(obj, 'country', {
-                    get() {
-                      return obj['country'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('fetched_at')) {
                 obj['fetched_at'] = ApiClient.convertToType(data['fetched_at'], 'Date');
-
-                if ('fetched_at' !== 'fetchedAt') {
-                  Object.defineProperty(obj, 'fetchedAt', {
-                    get() {
-                      return obj['fetched_at'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('rank')) {
                 obj['rank'] = ApiClient.convertToType(data['rank'], 'Number');
-
-                if ('rank' !== 'rank') {
-                  Object.defineProperty(obj, 'rank', {
-                    get() {
-                      return obj['rank'];
-                    }
-                  });
-                }
             }
         }
         return obj;

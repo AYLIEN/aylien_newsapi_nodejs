@@ -17,7 +17,7 @@ import AggregatedSentiment from './AggregatedSentiment';
 /**
  * The TimeSeries model module.
  * @module model/TimeSeries
- * @version 4.4.0
+ * @version 4.5.0
  */
 class TimeSeries {
     /**
@@ -50,36 +50,12 @@ class TimeSeries {
 
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
-
-                if ('count' !== 'count') {
-                  Object.defineProperty(obj, 'count', {
-                    get() {
-                      return obj['count'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at')) {
                 obj['published_at'] = ApiClient.convertToType(data['published_at'], 'Date');
-
-                if ('published_at' !== 'publishedAt') {
-                  Object.defineProperty(obj, 'publishedAt', {
-                    get() {
-                      return obj['published_at'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('sentiment')) {
                 obj['sentiment'] = AggregatedSentiment.constructFromObject(data['sentiment']);
-
-                if ('sentiment' !== 'sentiment') {
-                  Object.defineProperty(obj, 'sentiment', {
-                    get() {
-                      return obj['sentiment'];
-                    }
-                  });
-                }
             }
         }
         return obj;

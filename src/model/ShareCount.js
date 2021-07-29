@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ShareCount model module.
  * @module model/ShareCount
- * @version 4.4.0
+ * @version 4.5.0
  */
 class ShareCount {
     /**
@@ -49,25 +49,9 @@ class ShareCount {
 
             if (data.hasOwnProperty('count')) {
                 obj['count'] = ApiClient.convertToType(data['count'], 'Number');
-
-                if ('count' !== 'count') {
-                  Object.defineProperty(obj, 'count', {
-                    get() {
-                      return obj['count'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('fetched_at')) {
                 obj['fetched_at'] = ApiClient.convertToType(data['fetched_at'], 'Date');
-
-                if ('fetched_at' !== 'fetchedAt') {
-                  Object.defineProperty(obj, 'fetchedAt', {
-                    get() {
-                      return obj['fetched_at'];
-                    }
-                  });
-                }
             }
         }
         return obj;

@@ -18,7 +18,7 @@ import MediaType from './MediaType';
 /**
  * The Media model module.
  * @module model/Media
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Media {
     /**
@@ -51,69 +51,21 @@ class Media {
 
             if (data.hasOwnProperty('content_length')) {
                 obj['content_length'] = ApiClient.convertToType(data['content_length'], 'Number');
-
-                if ('content_length' !== 'contentLength') {
-                  Object.defineProperty(obj, 'contentLength', {
-                    get() {
-                      return obj['content_length'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = MediaFormat.constructFromObject(data['format']);
-
-                if ('format' !== 'format') {
-                  Object.defineProperty(obj, 'format', {
-                    get() {
-                      return obj['format'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('height')) {
                 obj['height'] = ApiClient.convertToType(data['height'], 'Number');
-
-                if ('height' !== 'height') {
-                  Object.defineProperty(obj, 'height', {
-                    get() {
-                      return obj['height'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = MediaType.constructFromObject(data['type']);
-
-                if ('type' !== 'type') {
-                  Object.defineProperty(obj, 'type', {
-                    get() {
-                      return obj['type'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
-
-                if ('url' !== 'url') {
-                  Object.defineProperty(obj, 'url', {
-                    get() {
-                      return obj['url'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('width')) {
                 obj['width'] = ApiClient.convertToType(data['width'], 'Number');
-
-                if ('width' !== 'width') {
-                  Object.defineProperty(obj, 'width', {
-                    get() {
-                      return obj['width'];
-                    }
-                  });
-                }
             }
         }
         return obj;

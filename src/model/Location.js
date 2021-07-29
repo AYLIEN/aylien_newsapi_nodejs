@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Location model module.
  * @module model/Location
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Location {
     /**
@@ -49,36 +49,12 @@ class Location {
 
             if (data.hasOwnProperty('city')) {
                 obj['city'] = ApiClient.convertToType(data['city'], 'String');
-
-                if ('city' !== 'city') {
-                  Object.defineProperty(obj, 'city', {
-                    get() {
-                      return obj['city'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('country')) {
                 obj['country'] = ApiClient.convertToType(data['country'], 'String');
-
-                if ('country' !== 'country') {
-                  Object.defineProperty(obj, 'country', {
-                    get() {
-                      return obj['country'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
-
-                if ('state' !== 'state') {
-                  Object.defineProperty(obj, 'state', {
-                    get() {
-                      return obj['state'];
-                    }
-                  });
-                }
             }
         }
         return obj;

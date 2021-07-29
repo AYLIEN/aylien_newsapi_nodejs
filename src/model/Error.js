@@ -17,7 +17,7 @@ import ErrorLinks from './ErrorLinks';
 /**
  * The Error model module.
  * @module model/Error
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Error {
     /**
@@ -50,69 +50,21 @@ class Error {
 
             if (data.hasOwnProperty('code')) {
                 obj['code'] = ApiClient.convertToType(data['code'], 'String');
-
-                if ('code' !== 'code') {
-                  Object.defineProperty(obj, 'code', {
-                    get() {
-                      return obj['code'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('detail')) {
                 obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
-
-                if ('detail' !== 'detail') {
-                  Object.defineProperty(obj, 'detail', {
-                    get() {
-                      return obj['detail'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
-
-                if ('id' !== 'id') {
-                  Object.defineProperty(obj, 'id', {
-                    get() {
-                      return obj['id'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = ErrorLinks.constructFromObject(data['links']);
-
-                if ('links' !== 'links') {
-                  Object.defineProperty(obj, 'links', {
-                    get() {
-                      return obj['links'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
-
-                if ('status' !== 'status') {
-                  Object.defineProperty(obj, 'status', {
-                    get() {
-                      return obj['status'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], 'String');
-
-                if ('title' !== 'title') {
-                  Object.defineProperty(obj, 'title', {
-                    get() {
-                      return obj['title'];
-                    }
-                  });
-                }
             }
         }
         return obj;

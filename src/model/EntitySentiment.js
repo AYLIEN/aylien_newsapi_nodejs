@@ -17,7 +17,7 @@ import SentimentPolarity from './SentimentPolarity';
 /**
  * The EntitySentiment model module.
  * @module model/EntitySentiment
- * @version 4.4.0
+ * @version 4.5.0
  */
 class EntitySentiment {
     /**
@@ -50,25 +50,9 @@ class EntitySentiment {
 
             if (data.hasOwnProperty('confidence')) {
                 obj['confidence'] = ApiClient.convertToType(data['confidence'], 'Number');
-
-                if ('confidence' !== 'confidence') {
-                  Object.defineProperty(obj, 'confidence', {
-                    get() {
-                      return obj['confidence'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('polarity')) {
                 obj['polarity'] = SentimentPolarity.constructFromObject(data['polarity']);
-
-                if ('polarity' !== 'polarity') {
-                  Object.defineProperty(obj, 'polarity', {
-                    get() {
-                      return obj['polarity'];
-                    }
-                  });
-                }
             }
         }
         return obj;

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import EntityMention from './EntityMention';
 
 /**
  * The EntitySurfaceForm model module.
  * @module model/EntitySurfaceForm
- * @version 4.4.0
+ * @version 4.5.0
  */
 class EntitySurfaceForm {
     /**
@@ -49,36 +50,12 @@ class EntitySurfaceForm {
 
             if (data.hasOwnProperty('frequency')) {
                 obj['frequency'] = ApiClient.convertToType(data['frequency'], 'Number');
-
-                if ('frequency' !== 'frequency') {
-                  Object.defineProperty(obj, 'frequency', {
-                    get() {
-                      return obj['frequency'];
-                    }
-                  });
-                }
             }
-            if (data.hasOwnProperty('indices')) {
-                obj['indices'] = ApiClient.convertToType(data['indices'], [['Number']]);
-
-                if ('indices' !== 'indices') {
-                  Object.defineProperty(obj, 'indices', {
-                    get() {
-                      return obj['indices'];
-                    }
-                  });
-                }
+            if (data.hasOwnProperty('mentions')) {
+                obj['mentions'] = ApiClient.convertToType(data['mentions'], [EntityMention]);
             }
             if (data.hasOwnProperty('text')) {
                 obj['text'] = ApiClient.convertToType(data['text'], 'String');
-
-                if ('text' !== 'text') {
-                  Object.defineProperty(obj, 'text', {
-                    get() {
-                      return obj['text'];
-                    }
-                  });
-                }
             }
         }
         return obj;
@@ -94,10 +71,10 @@ class EntitySurfaceForm {
 EntitySurfaceForm.prototype['frequency'] = undefined;
 
 /**
- * The indices of the entity text
- * @member {Array.<Array.<Number>>} indices
+ * Mentions of the entity text
+ * @member {Array.<module:model/EntityMention>} mentions
  */
-EntitySurfaceForm.prototype['indices'] = undefined;
+EntitySurfaceForm.prototype['mentions'] = undefined;
 
 /**
  * The entity text

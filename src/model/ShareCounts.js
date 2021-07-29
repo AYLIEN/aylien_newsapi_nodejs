@@ -17,7 +17,7 @@ import ShareCount from './ShareCount';
 /**
  * The ShareCounts model module.
  * @module model/ShareCounts
- * @version 4.4.0
+ * @version 4.5.0
  */
 class ShareCounts {
     /**
@@ -50,47 +50,15 @@ class ShareCounts {
 
             if (data.hasOwnProperty('facebook')) {
                 obj['facebook'] = ApiClient.convertToType(data['facebook'], [ShareCount]);
-
-                if ('facebook' !== 'facebook') {
-                  Object.defineProperty(obj, 'facebook', {
-                    get() {
-                      return obj['facebook'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('google_plus')) {
                 obj['google_plus'] = ApiClient.convertToType(data['google_plus'], [ShareCount]);
-
-                if ('google_plus' !== 'googlePlus') {
-                  Object.defineProperty(obj, 'googlePlus', {
-                    get() {
-                      return obj['google_plus'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('linkedin')) {
                 obj['linkedin'] = ApiClient.convertToType(data['linkedin'], [ShareCount]);
-
-                if ('linkedin' !== 'linkedin') {
-                  Object.defineProperty(obj, 'linkedin', {
-                    get() {
-                      return obj['linkedin'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('reddit')) {
                 obj['reddit'] = ApiClient.convertToType(data['reddit'], [ShareCount]);
-
-                if ('reddit' !== 'reddit') {
-                  Object.defineProperty(obj, 'reddit', {
-                    get() {
-                      return obj['reddit'];
-                    }
-                  });
-                }
             }
         }
         return obj;

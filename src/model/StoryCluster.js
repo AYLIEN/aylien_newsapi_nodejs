@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoryCluster model module.
  * @module model/StoryCluster
- * @version 4.4.0
+ * @version 4.5.0
  */
 class StoryCluster {
     /**
@@ -49,58 +49,18 @@ class StoryCluster {
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-
-                if ('id' !== 'id') {
-                  Object.defineProperty(obj, 'id', {
-                    get() {
-                      return obj['id'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('phrases')) {
                 obj['phrases'] = ApiClient.convertToType(data['phrases'], ['String']);
-
-                if ('phrases' !== 'phrases') {
-                  Object.defineProperty(obj, 'phrases', {
-                    get() {
-                      return obj['phrases'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], 'Number');
-
-                if ('score' !== 'score') {
-                  Object.defineProperty(obj, 'score', {
-                    get() {
-                      return obj['score'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-
-                if ('size' !== 'size') {
-                  Object.defineProperty(obj, 'size', {
-                    get() {
-                      return obj['size'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('stories')) {
                 obj['stories'] = ApiClient.convertToType(data['stories'], ['Number']);
-
-                if ('stories' !== 'stories') {
-                  Object.defineProperty(obj, 'stories', {
-                    get() {
-                      return obj['stories'];
-                    }
-                  });
-                }
             }
         }
         return obj;

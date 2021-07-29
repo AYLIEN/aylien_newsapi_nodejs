@@ -18,11 +18,12 @@ import Warning from './Warning';
 /**
  * The Stories model module.
  * @module model/Stories
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Stories {
     /**
      * Constructs a new <code>Stories</code>.
+     * Stories containing new V3 entities - available for new_v3_entities feature flag
      * @alias module:model/Stories
      */
     constructor() { 
@@ -51,58 +52,18 @@ class Stories {
 
             if (data.hasOwnProperty('next_page_cursor')) {
                 obj['next_page_cursor'] = ApiClient.convertToType(data['next_page_cursor'], 'String');
-
-                if ('next_page_cursor' !== 'nextPageCursor') {
-                  Object.defineProperty(obj, 'nextPageCursor', {
-                    get() {
-                      return obj['next_page_cursor'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at.end')) {
                 obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
-
-                if ('published_at.end' !== 'publishedAtEnd') {
-                  Object.defineProperty(obj, 'publishedAtEnd', {
-                    get() {
-                      return obj['published_at.end'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at.start')) {
                 obj['published_at.start'] = ApiClient.convertToType(data['published_at.start'], 'Date');
-
-                if ('published_at.start' !== 'publishedAtStart') {
-                  Object.defineProperty(obj, 'publishedAtStart', {
-                    get() {
-                      return obj['published_at.start'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('stories')) {
                 obj['stories'] = ApiClient.convertToType(data['stories'], [Story]);
-
-                if ('stories' !== 'stories') {
-                  Object.defineProperty(obj, 'stories', {
-                    get() {
-                      return obj['stories'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('warnings')) {
                 obj['warnings'] = ApiClient.convertToType(data['warnings'], [Warning]);
-
-                if ('warnings' !== 'warnings') {
-                  Object.defineProperty(obj, 'warnings', {
-                    get() {
-                      return obj['warnings'];
-                    }
-                  });
-                }
             }
         }
         return obj;

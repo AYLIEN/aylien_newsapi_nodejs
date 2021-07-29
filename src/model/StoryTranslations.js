@@ -17,7 +17,7 @@ import StoryTranslation from './StoryTranslation';
 /**
  * The StoryTranslations model module.
  * @module model/StoryTranslations
- * @version 4.4.0
+ * @version 4.5.0
  */
 class StoryTranslations {
     /**
@@ -51,14 +51,6 @@ class StoryTranslations {
 
             if (data.hasOwnProperty('en')) {
                 obj['en'] = StoryTranslation.constructFromObject(data['en']);
-
-                if ('en' !== 'en') {
-                  Object.defineProperty(obj, 'en', {
-                    get() {
-                      return obj['en'];
-                    }
-                  });
-                }
             }
         }
         return obj;

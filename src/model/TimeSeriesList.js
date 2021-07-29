@@ -17,7 +17,7 @@ import TimeSeries from './TimeSeries';
 /**
  * The TimeSeriesList model module.
  * @module model/TimeSeriesList
- * @version 4.4.0
+ * @version 4.5.0
  */
 class TimeSeriesList {
     /**
@@ -50,47 +50,15 @@ class TimeSeriesList {
 
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'String');
-
-                if ('period' !== 'period') {
-                  Object.defineProperty(obj, 'period', {
-                    get() {
-                      return obj['period'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at.end')) {
                 obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
-
-                if ('published_at.end' !== 'publishedAtEnd') {
-                  Object.defineProperty(obj, 'publishedAtEnd', {
-                    get() {
-                      return obj['published_at.end'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('published_at.start')) {
                 obj['published_at.start'] = ApiClient.convertToType(data['published_at.start'], 'Date');
-
-                if ('published_at.start' !== 'publishedAtStart') {
-                  Object.defineProperty(obj, 'publishedAtStart', {
-                    get() {
-                      return obj['published_at.start'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('time_series')) {
                 obj['time_series'] = ApiClient.convertToType(data['time_series'], [TimeSeries]);
-
-                if ('time_series' !== 'timeSeries') {
-                  Object.defineProperty(obj, 'timeSeries', {
-                    get() {
-                      return obj['time_series'];
-                    }
-                  });
-                }
             }
         }
         return obj;

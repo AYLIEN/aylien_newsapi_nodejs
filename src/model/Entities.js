@@ -17,7 +17,7 @@ import Entity from './Entity';
 /**
  * The Entities model module.
  * @module model/Entities
- * @version 4.4.0
+ * @version 4.0.0
  */
 class Entities {
     /**
@@ -50,25 +50,9 @@ class Entities {
 
             if (data.hasOwnProperty('body')) {
                 obj['body'] = ApiClient.convertToType(data['body'], [Entity]);
-
-                if ('body' !== 'body') {
-                  Object.defineProperty(obj, 'body', {
-                    get() {
-                      return obj['body'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('title')) {
                 obj['title'] = ApiClient.convertToType(data['title'], [Entity]);
-
-                if ('title' !== 'title') {
-                  Object.defineProperty(obj, 'title', {
-                    get() {
-                      return obj['title'];
-                    }
-                  });
-                }
             }
         }
         return obj;

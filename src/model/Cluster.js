@@ -18,7 +18,7 @@ import RepresentativeStory from './RepresentativeStory';
 /**
  * The Cluster model module.
  * @module model/Cluster
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Cluster {
     /**
@@ -51,80 +51,24 @@ class Cluster {
 
             if (data.hasOwnProperty('earliest_story')) {
                 obj['earliest_story'] = ApiClient.convertToType(data['earliest_story'], 'Date');
-
-                if ('earliest_story' !== 'earliestStory') {
-                  Object.defineProperty(obj, 'earliestStory', {
-                    get() {
-                      return obj['earliest_story'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'Number');
-
-                if ('id' !== 'id') {
-                  Object.defineProperty(obj, 'id', {
-                    get() {
-                      return obj['id'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('latest_story')) {
                 obj['latest_story'] = ApiClient.convertToType(data['latest_story'], 'Date');
-
-                if ('latest_story' !== 'latestStory') {
-                  Object.defineProperty(obj, 'latestStory', {
-                    get() {
-                      return obj['latest_story'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('location')) {
                 obj['location'] = Location.constructFromObject(data['location']);
-
-                if ('location' !== 'location') {
-                  Object.defineProperty(obj, 'location', {
-                    get() {
-                      return obj['location'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('representative_story')) {
                 obj['representative_story'] = RepresentativeStory.constructFromObject(data['representative_story']);
-
-                if ('representative_story' !== 'representativeStory') {
-                  Object.defineProperty(obj, 'representativeStory', {
-                    get() {
-                      return obj['representative_story'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('story_count')) {
                 obj['story_count'] = ApiClient.convertToType(data['story_count'], 'Number');
-
-                if ('story_count' !== 'storyCount') {
-                  Object.defineProperty(obj, 'storyCount', {
-                    get() {
-                      return obj['story_count'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('time')) {
                 obj['time'] = ApiClient.convertToType(data['time'], 'Date');
-
-                if ('time' !== 'time') {
-                  Object.defineProperty(obj, 'time', {
-                    get() {
-                      return obj['time'];
-                    }
-                  });
-                }
             }
         }
         return obj;

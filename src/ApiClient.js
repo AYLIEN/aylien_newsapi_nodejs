@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 4.4.0
+* @version 4.5.0
 */
 
 /**
@@ -360,7 +360,7 @@ class ApiClient {
     * @param {Array.<String>} accepts An array of acceptable response MIME types.
     * @param {(String|Array|ObjectFunction)} returnType The required type to return; can be a string for simple types or the
     * constructor for a complex type.
-    * @param {String} apiBasePath base path defined in the operation/path level to override the default one
+    * @param {String} apiBasePath base path defined in the operation/path level to override the default one 
     * @param {module:ApiClient~callApiCallback} callback The callback function.
     * @returns {Object} The SuperAgent request object.
     */
@@ -406,6 +406,8 @@ class ApiClient {
             if(contentType != 'multipart/form-data') {
                 request.type(contentType);
             }
+        } else if (!request.header['Content-Type']) {
+            request.type('application/json');
         }
 
         if (contentType === 'application/x-www-form-urlencoded') {
@@ -423,9 +425,6 @@ class ApiClient {
                 }
             }
         } else if (bodyParam !== null && bodyParam !== undefined) {
-            if (!request.header['Content-Type']) {
-                request.type('application/json');
-            }
             request.send(bodyParam);
         }
 

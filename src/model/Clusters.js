@@ -17,7 +17,7 @@ import Cluster from './Cluster';
 /**
  * The Clusters model module.
  * @module model/Clusters
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Clusters {
     /**
@@ -50,36 +50,12 @@ class Clusters {
 
             if (data.hasOwnProperty('cluster_count')) {
                 obj['cluster_count'] = ApiClient.convertToType(data['cluster_count'], 'Number');
-
-                if ('cluster_count' !== 'clusterCount') {
-                  Object.defineProperty(obj, 'clusterCount', {
-                    get() {
-                      return obj['cluster_count'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('clusters')) {
                 obj['clusters'] = ApiClient.convertToType(data['clusters'], [Cluster]);
-
-                if ('clusters' !== 'clusters') {
-                  Object.defineProperty(obj, 'clusters', {
-                    get() {
-                      return obj['clusters'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('next_page_cursor')) {
                 obj['next_page_cursor'] = ApiClient.convertToType(data['next_page_cursor'], 'String');
-
-                if ('next_page_cursor' !== 'nextPageCursor') {
-                  Object.defineProperty(obj, 'nextPageCursor', {
-                    get() {
-                      return obj['next_page_cursor'];
-                    }
-                  });
-                }
             }
         }
         return obj;

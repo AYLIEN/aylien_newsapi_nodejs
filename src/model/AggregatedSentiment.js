@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AggregatedSentiment model module.
  * @module model/AggregatedSentiment
- * @version 4.4.0
+ * @version 4.5.0
  */
 class AggregatedSentiment {
     /**
@@ -50,36 +50,12 @@ class AggregatedSentiment {
 
             if (data.hasOwnProperty('negative')) {
                 obj['negative'] = ApiClient.convertToType(data['negative'], 'Number');
-
-                if ('negative' !== 'negative') {
-                  Object.defineProperty(obj, 'negative', {
-                    get() {
-                      return obj['negative'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('neutral')) {
                 obj['neutral'] = ApiClient.convertToType(data['neutral'], 'Number');
-
-                if ('neutral' !== 'neutral') {
-                  Object.defineProperty(obj, 'neutral', {
-                    get() {
-                      return obj['neutral'];
-                    }
-                  });
-                }
             }
             if (data.hasOwnProperty('positive')) {
                 obj['positive'] = ApiClient.convertToType(data['positive'], 'Number');
-
-                if ('positive' !== 'positive') {
-                  Object.defineProperty(obj, 'positive', {
-                    get() {
-                      return obj['positive'];
-                    }
-                  });
-                }
             }
         }
         return obj;

@@ -1,12 +1,10 @@
-# AylienNewsApi.ScopeLevel
+# ScopeLevel
 
-## Enum
+## Properties
 
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
 
-* `international` (value: `"international"`)
-
-* `national` (value: `"national"`)
-
-* `local` (value: `"local"`)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

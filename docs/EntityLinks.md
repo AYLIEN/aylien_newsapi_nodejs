@@ -1,11 +1,13 @@
-# AylienNewsApi.EntityLinks
+# EntityLinks
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dbpedia** | **String** | A dbpedia resource URL (deprecated) | [optional] 
-**wikidata** | **String** | A wikidata resource URL | [optional] 
-**wikipedia** | **String** | A wikipedia resource URL | [optional] 
+**Dbpedia** | **string** | A dbpedia resource URL (deprecated) | [optional] 
+**Wikidata** | **string** | A wikidata resource URL | [optional] 
+**Wikipedia** | **string** | A wikipedia resource URL | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

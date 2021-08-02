@@ -1,26 +1,10 @@
-# AylienNewsApi.MediaFormat
+# MediaFormat
 
-## Enum
+## Properties
 
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
 
-* `BMP` (value: `"BMP"`)
-
-* `GIF` (value: `"GIF"`)
-
-* `JPEG` (value: `"JPEG"`)
-
-* `PNG` (value: `"PNG"`)
-
-* `TIFF` (value: `"TIFF"`)
-
-* `PSD` (value: `"PSD"`)
-
-* `ICO` (value: `"ICO"`)
-
-* `CUR` (value: `"CUR"`)
-
-* `WEBP` (value: `"WEBP"`)
-
-* `SVG` (value: `"SVG"`)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

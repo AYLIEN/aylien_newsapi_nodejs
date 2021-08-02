@@ -1,12 +1,14 @@
-# AylienNewsApi.ShareCounts
+# ShareCounts
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**facebook** | [**[ShareCount]**](ShareCount.md) | Facebook shares count | [optional] 
-**googlePlus** | [**[ShareCount]**](ShareCount.md) | Google Plus shares count | [optional] 
-**linkedin** | [**[ShareCount]**](ShareCount.md) | LinkedIn shares count | [optional] 
-**reddit** | [**[ShareCount]**](ShareCount.md) | Reddit shares count | [optional] 
+**Facebook** | [**[]ShareCount**](ShareCount.md) | Facebook shares count | [optional] 
+**GooglePlus** | [**[]ShareCount**](ShareCount.md) | Google Plus shares count | [optional] 
+**Linkedin** | [**[]ShareCount**](ShareCount.md) | LinkedIn shares count | [optional] 
+**Reddit** | [**[]ShareCount**](ShareCount.md) | Reddit shares count | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

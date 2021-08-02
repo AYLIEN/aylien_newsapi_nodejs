@@ -1,14 +1,16 @@
-# AylienNewsApi.Error
+# Error
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **String** |  | [optional] 
-**detail** | **String** |  | [optional] 
-**id** | **String** |  | [optional] 
-**links** | [**ErrorLinks**](ErrorLinks.md) |  | [optional] 
-**status** | **String** |  | [optional] 
-**title** | **String** |  | [optional] 
+**Code** | **string** |  | [optional] 
+**Detail** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
+**Links** | [**ErrorLinks**](ErrorLinks.md) |  | [optional] 
+**Status** | **string** |  | [optional] 
+**Title** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

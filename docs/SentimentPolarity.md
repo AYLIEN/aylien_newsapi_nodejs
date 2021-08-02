@@ -1,12 +1,10 @@
-# AylienNewsApi.SentimentPolarity
+# SentimentPolarity
 
-## Enum
+## Properties
 
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
 
-* `positive` (value: `"positive"`)
-
-* `neutral` (value: `"neutral"`)
-
-* `negative` (value: `"negative"`)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

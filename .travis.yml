@@ -1,5 +1,8 @@
-language: node_js
-cache: npm
-node_js:
-  - "6"
-  - "6.1"
+language: go
+
+install:
+  - go get -d -v .
+
+script:
+  - go build -v ./
+

@@ -1,12 +1,14 @@
-# AylienNewsApi.StoryLinks
+# StoryLinks
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**canonical** | **String** | The story canonical URL | [optional] 
-**clusters** | **String** | The clusters endpoint URL for this story | [optional] 
-**permalink** | **String** | The story permalink URL | [optional] 
-**relatedStories** | **String** | The related stories URL | [optional] 
+**Canonical** | **string** | The story canonical URL | [optional] 
+**Clusters** | **string** | The clusters endpoint URL for this story | [optional] 
+**Permalink** | **string** | The story permalink URL | [optional] 
+**RelatedStories** | **string** | The related stories URL | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

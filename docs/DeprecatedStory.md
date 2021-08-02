@@ -1,31 +1,33 @@
-# AylienNewsApi.DeprecatedStory
+# DeprecatedStory
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**author** | [**Author**](Author.md) |  | [optional] 
-**body** | **String** | Body of the story | [optional] 
-**categories** | [**[Category]**](Category.md) | Suggested categories for the story | [optional] 
-**charactersCount** | **Number** | Character count of the story body | [optional] 
-**clusters** | **[Number]** | An array of clusters the story is associated with | [optional] 
-**entities** | [**DeprecatedEntities**](DeprecatedEntities.md) |  | [optional] 
-**hashtags** | **[String]** | An array of suggested Story hashtags | [optional] 
-**id** | **Number** | ID of the story which is a unique identification | [optional] 
-**keywords** | **[String]** | Extracted keywords mentioned in the story title or body | [optional] 
-**language** | **String** | Language of the story | [optional] 
-**licenseType** | **Number** | License type of the story | [optional] 
-**links** | [**StoryLinks**](StoryLinks.md) |  | [optional] 
-**media** | [**[Media]**](Media.md) | An array of extracted media such as images and videos | [optional] 
-**paragraphsCount** | **Number** | Paragraph count of the story body | [optional] 
-**publishedAt** | **Date** | Published date of the story | [optional] 
-**sentencesCount** | **Number** | Sentence count of the story body | [optional] 
-**sentiment** | [**Sentiments**](Sentiments.md) |  | [optional] 
-**socialSharesCount** | [**ShareCounts**](ShareCounts.md) |  | [optional] 
-**source** | [**Source**](Source.md) |  | [optional] 
-**summary** | [**Summary**](Summary.md) |  | [optional] 
-**title** | **String** | Title of the story | [optional] 
-**translations** | [**StoryTranslations**](StoryTranslations.md) |  | [optional] 
-**wordsCount** | **Number** | Word count of the story body | [optional] 
+**Author** | [**Author**](Author.md) |  | [optional] 
+**Body** | **string** | Body of the story | [optional] 
+**Categories** | [**[]Category**](Category.md) | Suggested categories for the story | [optional] 
+**CharactersCount** | **int32** | Character count of the story body | [optional] 
+**Clusters** | **[]int64** | An array of clusters the story is associated with | [optional] 
+**Entities** | [**DeprecatedEntities**](DeprecatedEntities.md) |  | [optional] 
+**Hashtags** | **[]string** | An array of suggested Story hashtags | [optional] 
+**Id** | **int64** | ID of the story which is a unique identification | [optional] 
+**Keywords** | **[]string** | Extracted keywords mentioned in the story title or body | [optional] 
+**Language** | **string** | Language of the story | [optional] 
+**LicenseType** | **int32** | License type of the story | [optional] 
+**Links** | [**StoryLinks**](StoryLinks.md) |  | [optional] 
+**Media** | [**[]Media**](Media.md) | An array of extracted media such as images and videos | [optional] 
+**ParagraphsCount** | **int32** | Paragraph count of the story body | [optional] 
+**PublishedAt** | [**time.Time**](time.Time.md) | Published date of the story | [optional] 
+**SentencesCount** | **int32** | Sentence count of the story body | [optional] 
+**Sentiment** | [**Sentiments**](Sentiments.md) |  | [optional] 
+**SocialSharesCount** | [**ShareCounts**](ShareCounts.md) |  | [optional] 
+**Source** | [**Source**](Source.md) |  | [optional] 
+**Summary** | [**Summary**](Summary.md) |  | [optional] 
+**Title** | **string** | Title of the story | [optional] 
+**Translations** | [**StoryTranslations**](StoryTranslations.md) |  | [optional] 
+**WordsCount** | **int32** | Word count of the story body | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
 

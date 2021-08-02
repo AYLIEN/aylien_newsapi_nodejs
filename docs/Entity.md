@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**body** | [**EntityInText**](EntityInText.md) |  | [optional] 
 **id** | **String** | The unique ID of the entity | [optional] 
-**indices** | **[[Number]]** | The indices of the entity text | [optional] 
 **links** | [**EntityLinks**](EntityLinks.md) |  | [optional] 
-**prominenceScore** | **Number** | Describes how relevant an entity is to the article | [optional] 
-**sentiment** | [**EntitySentiment**](EntitySentiment.md) |  | [optional] 
-**stockTicker** | **String** | The stock_ticker of the entity (might be null) | [optional] 
-**surfaceForms** | [**[EntitySurfaceForm]**](EntitySurfaceForm.md) |  | [optional] 
-**text** | **String** | The entity text | [optional] 
+**overallFrequency** | **Number** | Amount of entity surface form mentions in the article | [optional] 
+**overallProminence** | **Number** | Describes how relevant an entity is to the article | [optional] 
+**overallSentiment** | [**EntitySentiment**](EntitySentiment.md) |  | [optional] 
+**stockTickers** | **[String]** | The stock tickers of the entity (might be empty) | [optional] 
+**title** | [**EntityInText**](EntityInText.md) |  | [optional] 
 **types** | **[String]** | An array of the entity types | [optional] 
 
 

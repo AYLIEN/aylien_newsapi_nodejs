@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property indices (base name: "indices")', function() {
-      // uncomment below and update the code to test the property indices
+    it('should have the property mentions (base name: "mentions")', function() {
+      // uncomment below and update the code to test the property mentions
       //var instane = new AylienNewsApi.EntitySurfaceForm();
       //expect(instance).to.be();
     });

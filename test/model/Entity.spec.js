@@ -54,14 +54,14 @@
       //expect(instance).to.be.a(AylienNewsApi.Entity);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property body (base name: "body")', function() {
+      // uncomment below and update the code to test the property body
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
 
-    it('should have the property indices (base name: "indices")', function() {
-      // uncomment below and update the code to test the property indices
+    it('should have the property id (base name: "id")', function() {
+      // uncomment below and update the code to test the property id
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
@@ -72,32 +72,32 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property prominenceScore (base name: "prominence_score")', function() {
-      // uncomment below and update the code to test the property prominenceScore
+    it('should have the property overallFrequency (base name: "overall_frequency")', function() {
+      // uncomment below and update the code to test the property overallFrequency
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
 
-    it('should have the property sentiment (base name: "sentiment")', function() {
-      // uncomment below and update the code to test the property sentiment
+    it('should have the property overallProminence (base name: "overall_prominence")', function() {
+      // uncomment below and update the code to test the property overallProminence
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
 
-    it('should have the property stockTicker (base name: "stock_ticker")', function() {
-      // uncomment below and update the code to test the property stockTicker
+    it('should have the property overallSentiment (base name: "overall_sentiment")', function() {
+      // uncomment below and update the code to test the property overallSentiment
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
 
-    it('should have the property surfaceForms (base name: "surface_forms")', function() {
-      // uncomment below and update the code to test the property surfaceForms
+    it('should have the property stockTickers (base name: "stock_tickers")', function() {
+      // uncomment below and update the code to test the property stockTickers
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
 
-    it('should have the property text (base name: "text")', function() {
-      // uncomment below and update the code to test the property text
+    it('should have the property title (base name: "title")', function() {
+      // uncomment below and update the code to test the property title
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });

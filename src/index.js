@@ -22,9 +22,17 @@ import CategoryLinks from './model/CategoryLinks';
 import CategoryTaxonomy from './model/CategoryTaxonomy';
 import Cluster from './model/Cluster';
 import Clusters from './model/Clusters';
-import Entities from './model/Entities';
+import DeprecatedEntities from './model/DeprecatedEntities';
+import DeprecatedEntity from './model/DeprecatedEntity';
+import DeprecatedEntitySurfaceForm from './model/DeprecatedEntitySurfaceForm';
+import DeprecatedRelatedStories from './model/DeprecatedRelatedStories';
+import DeprecatedStories from './model/DeprecatedStories';
+import DeprecatedStory from './model/DeprecatedStory';
 import Entity from './model/Entity';
+import EntityInText from './model/EntityInText';
 import EntityLinks from './model/EntityLinks';
+import EntityMention from './model/EntityMention';
+import EntityMentionIndex from './model/EntityMentionIndex';
 import EntitySentiment from './model/EntitySentiment';
 import EntitySurfaceForm from './model/EntitySurfaceForm';
 import Error from './model/Error';
@@ -92,7 +100,7 @@ import DefaultApi from './api/DefaultApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.4.0
+* @version 4.5.0
 */
 export {
     /**
@@ -156,10 +164,40 @@ export {
     Clusters,
 
     /**
-     * The Entities model constructor.
-     * @property {module:model/Entities}
+     * The DeprecatedEntities model constructor.
+     * @property {module:model/DeprecatedEntities}
      */
-    Entities,
+    DeprecatedEntities,
+
+    /**
+     * The DeprecatedEntity model constructor.
+     * @property {module:model/DeprecatedEntity}
+     */
+    DeprecatedEntity,
+
+    /**
+     * The DeprecatedEntitySurfaceForm model constructor.
+     * @property {module:model/DeprecatedEntitySurfaceForm}
+     */
+    DeprecatedEntitySurfaceForm,
+
+    /**
+     * The DeprecatedRelatedStories model constructor.
+     * @property {module:model/DeprecatedRelatedStories}
+     */
+    DeprecatedRelatedStories,
+
+    /**
+     * The DeprecatedStories model constructor.
+     * @property {module:model/DeprecatedStories}
+     */
+    DeprecatedStories,
+
+    /**
+     * The DeprecatedStory model constructor.
+     * @property {module:model/DeprecatedStory}
+     */
+    DeprecatedStory,
 
     /**
      * The Entity model constructor.
@@ -168,10 +206,28 @@ export {
     Entity,
 
     /**
+     * The EntityInText model constructor.
+     * @property {module:model/EntityInText}
+     */
+    EntityInText,
+
+    /**
      * The EntityLinks model constructor.
      * @property {module:model/EntityLinks}
      */
     EntityLinks,
+
+    /**
+     * The EntityMention model constructor.
+     * @property {module:model/EntityMention}
+     */
+    EntityMention,
+
+    /**
+     * The EntityMentionIndex model constructor.
+     * @property {module:model/EntityMentionIndex}
+     */
+    EntityMentionIndex,
 
     /**
      * The EntitySentiment model constructor.

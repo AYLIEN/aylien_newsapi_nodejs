@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **categories** | [**[Category]**](Category.md) | Suggested categories for the story | [optional] 
 **charactersCount** | **Number** | Character count of the story body | [optional] 
 **clusters** | **[Number]** | An array of clusters the story is associated with | [optional] 
-**entities** | [**Entities**](Entities.md) |  | [optional] 
+**entities** | [**[Entity]**](Entity.md) | An array of entities | [optional] 
 **hashtags** | **[String]** | An array of suggested Story hashtags | [optional] 
 **id** | **Number** | ID of the story which is a unique identification | [optional] 
 **keywords** | **[String]** | Extracted keywords mentioned in the story title or body | [optional] 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AggregatedSentiment model module.
  * @module model/AggregatedSentiment
- * @version 4.4.0
+ * @version 4.5.0
  */
 class AggregatedSentiment {
     /**

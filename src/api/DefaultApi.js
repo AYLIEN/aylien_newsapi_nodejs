@@ -17,15 +17,15 @@ import Autocompletes from '../model/Autocompletes';
 import Clusters from '../model/Clusters';
 import Errors from '../model/Errors';
 import Histograms from '../model/Histograms';
-import RelatedStories from '../model/RelatedStories';
-import Stories from '../model/Stories';
+import OneOfRelatedStoriesDeprecatedRelatedStories from '../model/OneOfRelatedStoriesDeprecatedRelatedStories';
+import OneOfStoriesDeprecatedStories from '../model/OneOfStoriesDeprecatedStories';
 import TimeSeriesList from '../model/TimeSeriesList';
 import Trends from '../model/Trends';
 
 /**
 * Default service.
 * @module api/DefaultApi
-* @version 4.4.0
+* @version 4.5.0
 */
 export default class DefaultApi {
 
@@ -45,7 +45,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the advancedListStories operation.
      * @callback module:api/DefaultApi~advancedListStoriesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Stories} data The data returned by the service call.
+     * @param {module:model/OneOfStoriesDeprecatedStories} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -62,7 +62,7 @@ export default class DefaultApi {
      * @param {String} opts.cursor This parameter is used for finding a specific page. You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results).  (default to '*')
      * @param {Number} opts.perPage This parameter is used for specifying number of items in each page You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results)  (default to 10)
      * @param {module:api/DefaultApi~advancedListStoriesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Stories}
+     * data is of type: {@link module:model/OneOfStoriesDeprecatedStories}
      */
     advancedListStories(body, opts, callback) {
       opts = opts || {};
@@ -91,7 +91,7 @@ export default class DefaultApi {
       let authNames = ['app_id', 'app_key'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json', 'text/xml'];
-      let returnType = Stories;
+      let returnType = OneOfStoriesDeprecatedStories;
       return this.apiClient.callApi(
         '/stories', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -261,38 +261,49 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.notCategoriesLabel This parameter is used for excluding stories by categories label. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.categoriesLevel This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.notCategoriesLevel This parameter is used for excluding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
+     * @param {Array.<String>} opts.entitiesId This parameter is used to find stories based on the specified entities `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesId This parameter is used to exclude stories based on the specified entity's `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTypes This parameter is used to find stories based on the specified entities `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTypes This parameter is used to exclude stories based on the specified entity's `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesStockTickers This parameter is used to find stories based on the specified entities `stock_tickers`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodyStockTickers This parameter is used to exclude stories based on the specified entity's `stock_tickers` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleId This parameter is used to find stories based on the specified entities `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entities `id` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entity's `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {String} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleText This parameter is used to find stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleText This parameter is used to exclude stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleType This parameter is used to find stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleType This parameter is used to exclude stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyId This parameter is used to find stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entity's `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyText This parameter is used to find stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyText This parameter is used to exclude stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyType This parameter is used to find stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyType This parameter is used to exclude stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {module:model/String} opts.sentimentTitlePolarity This parameter is used for finding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.notSentimentTitlePolarity This parameter is used for excluding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.sentimentBodyPolarity This parameter is used for finding stories whose body sentiment is the specified value. 
@@ -386,9 +397,21 @@ export default class DefaultApi {
         '!categories.label[]': this.apiClient.buildCollectionParam(opts['notCategoriesLabel'], 'multi'),
         'categories.level[]': this.apiClient.buildCollectionParam(opts['categoriesLevel'], 'multi'),
         '!categories.level[]': this.apiClient.buildCollectionParam(opts['notCategoriesLevel'], 'multi'),
+        'entities.id[]': this.apiClient.buildCollectionParam(opts['entitiesId'], 'multi'),
+        '!entities.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesId'], 'multi'),
+        'entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikipedia'], 'multi'),
+        '!entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikipedia'], 'multi'),
+        'entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikidata'], 'multi'),
+        '!entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikidata'], 'multi'),
+        'entities.types[]': this.apiClient.buildCollectionParam(opts['entitiesTypes'], 'multi'),
+        '!entities.types[]': this.apiClient.buildCollectionParam(opts['notEntitiesTypes'], 'multi'),
+        'entities.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesStockTickers'], 'multi'),
+        '!entities.body.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesBodyStockTickers'], 'multi'),
+        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
+        '!entities.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesSurfaceFormsText'], 'multi'),
         'entities.title.id[]': this.apiClient.buildCollectionParam(opts['entitiesTitleId'], 'multi'),
         '!entities.title.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleId'], 'multi'),
-        'entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleSurfaceFormsText'], 'multi'),
+        'entities.title.surface_forms.text[]': opts['entitiesTitleSurfaceFormsText'],
         '!entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleSurfaceFormsText'], 'multi'),
         'entities.title.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleText'], 'multi'),
         '!entities.title.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleText'], 'multi'),
@@ -404,7 +427,6 @@ export default class DefaultApi {
         '!entities.title.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleLinksWikidata'], 'multi'),
         'entities.body.id[]': this.apiClient.buildCollectionParam(opts['entitiesBodyId'], 'multi'),
         '!entities.body.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyId'], 'multi'),
-        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
         '!entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodySurfaceFormsText'], 'multi'),
         'entities.body.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodyText'], 'multi'),
         '!entities.body.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyText'], 'multi'),
@@ -500,7 +522,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the listRelatedStoriesGet operation.
      * @callback module:api/DefaultApi~listRelatedStoriesGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/RelatedStories} data The data returned by the service call.
+     * @param {module:model/OneOfRelatedStoriesDeprecatedRelatedStories} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -528,38 +550,49 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.notCategoriesLabel This parameter is used for excluding stories by categories label. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.categoriesLevel This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.notCategoriesLevel This parameter is used for excluding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
+     * @param {Array.<String>} opts.entitiesId This parameter is used to find stories based on the specified entities `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesId This parameter is used to exclude stories based on the specified entity's `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTypes This parameter is used to find stories based on the specified entities `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTypes This parameter is used to exclude stories based on the specified entity's `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesStockTickers This parameter is used to find stories based on the specified entities `stock_tickers`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodyStockTickers This parameter is used to exclude stories based on the specified entity's `stock_tickers` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleId This parameter is used to find stories based on the specified entities `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entities `id` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entity's `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {String} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleText This parameter is used to find stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleText This parameter is used to exclude stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleType This parameter is used to find stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleType This parameter is used to exclude stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyId This parameter is used to find stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entity's `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyText This parameter is used to find stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyText This parameter is used to exclude stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyType This parameter is used to find stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyType This parameter is used to exclude stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {module:model/String} opts.sentimentTitlePolarity This parameter is used for finding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.notSentimentTitlePolarity This parameter is used for excluding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.sentimentBodyPolarity This parameter is used for finding stories whose body sentiment is the specified value. 
@@ -626,7 +659,7 @@ export default class DefaultApi {
      * @param {module:model/String} opts.storyLanguage This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.  (default to 'auto')
      * @param {Number} opts.perPage This parameter is used for specifying number of items in each page.  (default to 3)
      * @param {module:api/DefaultApi~listRelatedStoriesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RelatedStories}
+     * data is of type: {@link module:model/OneOfRelatedStoriesDeprecatedRelatedStories}
      */
     listRelatedStoriesGet(opts, callback) {
       opts = opts || {};
@@ -657,9 +690,21 @@ export default class DefaultApi {
         '!categories.label[]': this.apiClient.buildCollectionParam(opts['notCategoriesLabel'], 'multi'),
         'categories.level[]': this.apiClient.buildCollectionParam(opts['categoriesLevel'], 'multi'),
         '!categories.level[]': this.apiClient.buildCollectionParam(opts['notCategoriesLevel'], 'multi'),
+        'entities.id[]': this.apiClient.buildCollectionParam(opts['entitiesId'], 'multi'),
+        '!entities.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesId'], 'multi'),
+        'entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikipedia'], 'multi'),
+        '!entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikipedia'], 'multi'),
+        'entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikidata'], 'multi'),
+        '!entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikidata'], 'multi'),
+        'entities.types[]': this.apiClient.buildCollectionParam(opts['entitiesTypes'], 'multi'),
+        '!entities.types[]': this.apiClient.buildCollectionParam(opts['notEntitiesTypes'], 'multi'),
+        'entities.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesStockTickers'], 'multi'),
+        '!entities.body.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesBodyStockTickers'], 'multi'),
+        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
+        '!entities.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesSurfaceFormsText'], 'multi'),
         'entities.title.id[]': this.apiClient.buildCollectionParam(opts['entitiesTitleId'], 'multi'),
         '!entities.title.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleId'], 'multi'),
-        'entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleSurfaceFormsText'], 'multi'),
+        'entities.title.surface_forms.text[]': opts['entitiesTitleSurfaceFormsText'],
         '!entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleSurfaceFormsText'], 'multi'),
         'entities.title.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleText'], 'multi'),
         '!entities.title.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleText'], 'multi'),
@@ -675,7 +720,6 @@ export default class DefaultApi {
         '!entities.title.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleLinksWikidata'], 'multi'),
         'entities.body.id[]': this.apiClient.buildCollectionParam(opts['entitiesBodyId'], 'multi'),
         '!entities.body.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyId'], 'multi'),
-        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
         '!entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodySurfaceFormsText'], 'multi'),
         'entities.body.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodyText'], 'multi'),
         '!entities.body.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyText'], 'multi'),
@@ -763,7 +807,7 @@ export default class DefaultApi {
       let authNames = ['app_id', 'app_key'];
       let contentTypes = [];
       let accepts = ['application/json', 'text/xml'];
-      let returnType = RelatedStories;
+      let returnType = OneOfRelatedStoriesDeprecatedRelatedStories;
       return this.apiClient.callApi(
         '/related_stories', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -775,7 +819,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the listRelatedStoriesPost operation.
      * @callback module:api/DefaultApi~listRelatedStoriesPostCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/RelatedStories} data The data returned by the service call.
+     * @param {module:model/OneOfRelatedStoriesDeprecatedRelatedStories} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -803,38 +847,49 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.notCategoriesLabel This parameter is used for excluding stories by categories label. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.categoriesLevel This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.notCategoriesLevel This parameter is used for excluding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
+     * @param {Array.<String>} opts.entitiesId This parameter is used to find stories based on the specified entities `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesId This parameter is used to exclude stories based on the specified entity's `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTypes This parameter is used to find stories based on the specified entities `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTypes This parameter is used to exclude stories based on the specified entity's `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesStockTickers This parameter is used to find stories based on the specified entities `stock_tickers`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodyStockTickers This parameter is used to exclude stories based on the specified entity's `stock_tickers` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleId This parameter is used to find stories based on the specified entities `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entities `id` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entity's `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {String} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleText This parameter is used to find stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleText This parameter is used to exclude stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleType This parameter is used to find stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleType This parameter is used to exclude stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyId This parameter is used to find stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entity's `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyText This parameter is used to find stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyText This parameter is used to exclude stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyType This parameter is used to find stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyType This parameter is used to exclude stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {module:model/String} opts.sentimentTitlePolarity This parameter is used for finding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.notSentimentTitlePolarity This parameter is used for excluding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.sentimentBodyPolarity This parameter is used for finding stories whose body sentiment is the specified value. 
@@ -901,7 +956,7 @@ export default class DefaultApi {
      * @param {module:model/String} opts.storyLanguage This parameter is used for setting the language of the story. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes.  (default to 'auto')
      * @param {Number} opts.perPage This parameter is used for specifying number of items in each page.  (default to 3)
      * @param {module:api/DefaultApi~listRelatedStoriesPostCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/RelatedStories}
+     * data is of type: {@link module:model/OneOfRelatedStoriesDeprecatedRelatedStories}
      */
     listRelatedStoriesPost(opts, callback) {
       opts = opts || {};
@@ -932,9 +987,21 @@ export default class DefaultApi {
         '!categories.label[]': this.apiClient.buildCollectionParam(opts['notCategoriesLabel'], 'multi'),
         'categories.level[]': this.apiClient.buildCollectionParam(opts['categoriesLevel'], 'multi'),
         '!categories.level[]': this.apiClient.buildCollectionParam(opts['notCategoriesLevel'], 'multi'),
+        'entities.id[]': this.apiClient.buildCollectionParam(opts['entitiesId'], 'multi'),
+        '!entities.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesId'], 'multi'),
+        'entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikipedia'], 'multi'),
+        '!entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikipedia'], 'multi'),
+        'entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikidata'], 'multi'),
+        '!entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikidata'], 'multi'),
+        'entities.types[]': this.apiClient.buildCollectionParam(opts['entitiesTypes'], 'multi'),
+        '!entities.types[]': this.apiClient.buildCollectionParam(opts['notEntitiesTypes'], 'multi'),
+        'entities.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesStockTickers'], 'multi'),
+        '!entities.body.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesBodyStockTickers'], 'multi'),
+        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
+        '!entities.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesSurfaceFormsText'], 'multi'),
         'entities.title.id[]': this.apiClient.buildCollectionParam(opts['entitiesTitleId'], 'multi'),
         '!entities.title.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleId'], 'multi'),
-        'entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleSurfaceFormsText'], 'multi'),
+        'entities.title.surface_forms.text[]': opts['entitiesTitleSurfaceFormsText'],
         '!entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleSurfaceFormsText'], 'multi'),
         'entities.title.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleText'], 'multi'),
         '!entities.title.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleText'], 'multi'),
@@ -950,7 +1017,6 @@ export default class DefaultApi {
         '!entities.title.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleLinksWikidata'], 'multi'),
         'entities.body.id[]': this.apiClient.buildCollectionParam(opts['entitiesBodyId'], 'multi'),
         '!entities.body.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyId'], 'multi'),
-        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
         '!entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodySurfaceFormsText'], 'multi'),
         'entities.body.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodyText'], 'multi'),
         '!entities.body.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyText'], 'multi'),
@@ -1038,7 +1104,7 @@ export default class DefaultApi {
       let authNames = ['app_id', 'app_key'];
       let contentTypes = [];
       let accepts = ['application/json', 'text/xml'];
-      let returnType = RelatedStories;
+      let returnType = OneOfRelatedStoriesDeprecatedRelatedStories;
       return this.apiClient.callApi(
         '/related_stories', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1050,7 +1116,7 @@ export default class DefaultApi {
      * Callback function to receive the result of the listStories operation.
      * @callback module:api/DefaultApi~listStoriesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Stories} data The data returned by the service call.
+     * @param {module:model/OneOfStoriesDeprecatedStories} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1080,38 +1146,49 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.notCategoriesLabel This parameter is used for excluding stories by categories label. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.categoriesLevel This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.notCategoriesLevel This parameter is used for excluding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
+     * @param {Array.<String>} opts.entitiesId This parameter is used to find stories based on the specified entities `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesId This parameter is used to exclude stories based on the specified entity's `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTypes This parameter is used to find stories based on the specified entities `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTypes This parameter is used to exclude stories based on the specified entity's `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesStockTickers This parameter is used to find stories based on the specified entities `stock_tickers`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodyStockTickers This parameter is used to exclude stories based on the specified entity's `stock_tickers` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleId This parameter is used to find stories based on the specified entities `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entities `id` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entity's `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {String} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleText This parameter is used to find stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleText This parameter is used to exclude stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleType This parameter is used to find stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleType This parameter is used to exclude stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyId This parameter is used to find stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entity's `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyText This parameter is used to find stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyText This parameter is used to exclude stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyType This parameter is used to find stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyType This parameter is used to exclude stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {module:model/String} opts.sentimentTitlePolarity This parameter is used for finding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.notSentimentTitlePolarity This parameter is used for excluding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.sentimentBodyPolarity This parameter is used for finding stories whose body sentiment is the specified value. 
@@ -1175,7 +1252,7 @@ export default class DefaultApi {
      * @param {String} opts.cursor This parameter is used for finding a specific page. You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results).  (default to '*')
      * @param {Number} opts.perPage This parameter is used for specifying number of items in each page You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results)  (default to 10)
      * @param {module:api/DefaultApi~listStoriesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Stories}
+     * data is of type: {@link module:model/OneOfStoriesDeprecatedStories}
      */
     listStories(opts, callback) {
       opts = opts || {};
@@ -1206,9 +1283,21 @@ export default class DefaultApi {
         '!categories.label[]': this.apiClient.buildCollectionParam(opts['notCategoriesLabel'], 'multi'),
         'categories.level[]': this.apiClient.buildCollectionParam(opts['categoriesLevel'], 'multi'),
         '!categories.level[]': this.apiClient.buildCollectionParam(opts['notCategoriesLevel'], 'multi'),
+        'entities.id[]': this.apiClient.buildCollectionParam(opts['entitiesId'], 'multi'),
+        '!entities.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesId'], 'multi'),
+        'entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikipedia'], 'multi'),
+        '!entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikipedia'], 'multi'),
+        'entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikidata'], 'multi'),
+        '!entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikidata'], 'multi'),
+        'entities.types[]': this.apiClient.buildCollectionParam(opts['entitiesTypes'], 'multi'),
+        '!entities.types[]': this.apiClient.buildCollectionParam(opts['notEntitiesTypes'], 'multi'),
+        'entities.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesStockTickers'], 'multi'),
+        '!entities.body.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesBodyStockTickers'], 'multi'),
+        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
+        '!entities.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesSurfaceFormsText'], 'multi'),
         'entities.title.id[]': this.apiClient.buildCollectionParam(opts['entitiesTitleId'], 'multi'),
         '!entities.title.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleId'], 'multi'),
-        'entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleSurfaceFormsText'], 'multi'),
+        'entities.title.surface_forms.text[]': opts['entitiesTitleSurfaceFormsText'],
         '!entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleSurfaceFormsText'], 'multi'),
         'entities.title.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleText'], 'multi'),
         '!entities.title.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleText'], 'multi'),
@@ -1224,7 +1313,6 @@ export default class DefaultApi {
         '!entities.title.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleLinksWikidata'], 'multi'),
         'entities.body.id[]': this.apiClient.buildCollectionParam(opts['entitiesBodyId'], 'multi'),
         '!entities.body.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyId'], 'multi'),
-        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
         '!entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodySurfaceFormsText'], 'multi'),
         'entities.body.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodyText'], 'multi'),
         '!entities.body.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyText'], 'multi'),
@@ -1309,7 +1397,7 @@ export default class DefaultApi {
       let authNames = ['app_id', 'app_key'];
       let contentTypes = [];
       let accepts = ['application/json', 'text/xml'];
-      let returnType = Stories;
+      let returnType = OneOfStoriesDeprecatedStories;
       return this.apiClient.callApi(
         '/stories', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -1347,38 +1435,49 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.notCategoriesLabel This parameter is used for excluding stories by categories label. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.categoriesLevel This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.notCategoriesLevel This parameter is used for excluding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
+     * @param {Array.<String>} opts.entitiesId This parameter is used to find stories based on the specified entities `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesId This parameter is used to exclude stories based on the specified entity's `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTypes This parameter is used to find stories based on the specified entities `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTypes This parameter is used to exclude stories based on the specified entity's `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesStockTickers This parameter is used to find stories based on the specified entities `stock_tickers`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodyStockTickers This parameter is used to exclude stories based on the specified entity's `stock_tickers` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleId This parameter is used to find stories based on the specified entities `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entities `id` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entity's `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {String} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleText This parameter is used to find stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleText This parameter is used to exclude stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleType This parameter is used to find stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleType This parameter is used to exclude stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyId This parameter is used to find stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entity's `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyText This parameter is used to find stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyText This parameter is used to exclude stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyType This parameter is used to find stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyType This parameter is used to exclude stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {module:model/String} opts.sentimentTitlePolarity This parameter is used for finding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.notSentimentTitlePolarity This parameter is used for excluding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.sentimentBodyPolarity This parameter is used for finding stories whose body sentiment is the specified value. 
@@ -1467,9 +1566,21 @@ export default class DefaultApi {
         '!categories.label[]': this.apiClient.buildCollectionParam(opts['notCategoriesLabel'], 'multi'),
         'categories.level[]': this.apiClient.buildCollectionParam(opts['categoriesLevel'], 'multi'),
         '!categories.level[]': this.apiClient.buildCollectionParam(opts['notCategoriesLevel'], 'multi'),
+        'entities.id[]': this.apiClient.buildCollectionParam(opts['entitiesId'], 'multi'),
+        '!entities.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesId'], 'multi'),
+        'entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikipedia'], 'multi'),
+        '!entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikipedia'], 'multi'),
+        'entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikidata'], 'multi'),
+        '!entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikidata'], 'multi'),
+        'entities.types[]': this.apiClient.buildCollectionParam(opts['entitiesTypes'], 'multi'),
+        '!entities.types[]': this.apiClient.buildCollectionParam(opts['notEntitiesTypes'], 'multi'),
+        'entities.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesStockTickers'], 'multi'),
+        '!entities.body.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesBodyStockTickers'], 'multi'),
+        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
+        '!entities.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesSurfaceFormsText'], 'multi'),
         'entities.title.id[]': this.apiClient.buildCollectionParam(opts['entitiesTitleId'], 'multi'),
         '!entities.title.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleId'], 'multi'),
-        'entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleSurfaceFormsText'], 'multi'),
+        'entities.title.surface_forms.text[]': opts['entitiesTitleSurfaceFormsText'],
         '!entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleSurfaceFormsText'], 'multi'),
         'entities.title.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleText'], 'multi'),
         '!entities.title.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleText'], 'multi'),
@@ -1485,7 +1596,6 @@ export default class DefaultApi {
         '!entities.title.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleLinksWikidata'], 'multi'),
         'entities.body.id[]': this.apiClient.buildCollectionParam(opts['entitiesBodyId'], 'multi'),
         '!entities.body.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyId'], 'multi'),
-        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
         '!entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodySurfaceFormsText'], 'multi'),
         'entities.body.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodyText'], 'multi'),
         '!entities.body.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyText'], 'multi'),
@@ -1611,38 +1721,49 @@ export default class DefaultApi {
      * @param {Array.<String>} opts.notCategoriesLabel This parameter is used for excluding stories by categories label. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.categoriesLevel This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
      * @param {Array.<Number>} opts.notCategoriesLevel This parameter is used for excluding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). 
+     * @param {Array.<String>} opts.entitiesId This parameter is used to find stories based on the specified entities `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesId This parameter is used to exclude stories based on the specified entity's `id`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTypes This parameter is used to find stories based on the specified entities `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTypes This parameter is used to exclude stories based on the specified entity's `types`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesStockTickers This parameter is used to find stories based on the specified entities `stock_tickers`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodyStockTickers This parameter is used to exclude stories based on the specified entity's `stock_tickers` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form`. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleId This parameter is used to find stories based on the specified entities `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entities `id` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleId This parameter is used to exclude stories based on the specified entity's `id` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {String} opts.entitiesTitleSurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleSurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleText This parameter is used to find stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleText This parameter is used to exclude stories based on the specified entities `text` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleType This parameter is used to find stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleType This parameter is used to exclude stories based on the specified entities `type` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesTitleLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.entitiesTitleLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesTitleLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the title of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyId This parameter is used to find stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entities `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.entitiesBodySurfaceFormsText This parameter is used to find stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entities `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyId This parameter is used to exclude stories based on the specified entity's `id` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodySurfaceFormsText This parameter is used to exclude stories based on the specified entity's `surface_form` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyText This parameter is used to find stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyText This parameter is used to exclude stories based on the specified entities `text` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyType This parameter is used to find stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyType This parameter is used to exclude stories based on the specified entities `type` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyStockTicker This parameter is used to find stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entities `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyStockTicker This parameter is used to exclude stories based on the specified entity's `stock_ticker` in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.notEntitiesBodyLinksDbpedia This parameter is used to exclude stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikipedia This parameter is used to find stories based on the specified entities wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entities Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikipedia This parameter is used to exclude stories based on the specified entity's Wikipedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {Array.<String>} opts.entitiesBodyLinksWikidata This parameter is used to find stories based on the specified entities wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
-     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entities Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
+     * @param {Array.<String>} opts.notEntitiesBodyLinksWikidata This parameter is used to exclude stories based on the specified entity's Wikidata URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). 
      * @param {module:model/String} opts.sentimentTitlePolarity This parameter is used for finding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.notSentimentTitlePolarity This parameter is used for excluding stories whose title sentiment is the specified value. 
      * @param {module:model/String} opts.sentimentBodyPolarity This parameter is used for finding stories whose body sentiment is the specified value. 
@@ -1736,9 +1857,21 @@ export default class DefaultApi {
         '!categories.label[]': this.apiClient.buildCollectionParam(opts['notCategoriesLabel'], 'multi'),
         'categories.level[]': this.apiClient.buildCollectionParam(opts['categoriesLevel'], 'multi'),
         '!categories.level[]': this.apiClient.buildCollectionParam(opts['notCategoriesLevel'], 'multi'),
+        'entities.id[]': this.apiClient.buildCollectionParam(opts['entitiesId'], 'multi'),
+        '!entities.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesId'], 'multi'),
+        'entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikipedia'], 'multi'),
+        '!entities.links.wikipedia[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikipedia'], 'multi'),
+        'entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['entitiesLinksWikidata'], 'multi'),
+        '!entities.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesLinksWikidata'], 'multi'),
+        'entities.types[]': this.apiClient.buildCollectionParam(opts['entitiesTypes'], 'multi'),
+        '!entities.types[]': this.apiClient.buildCollectionParam(opts['notEntitiesTypes'], 'multi'),
+        'entities.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesStockTickers'], 'multi'),
+        '!entities.body.stock_tickers[]': this.apiClient.buildCollectionParam(opts['entitiesBodyStockTickers'], 'multi'),
+        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
+        '!entities.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesSurfaceFormsText'], 'multi'),
         'entities.title.id[]': this.apiClient.buildCollectionParam(opts['entitiesTitleId'], 'multi'),
         '!entities.title.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleId'], 'multi'),
-        'entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleSurfaceFormsText'], 'multi'),
+        'entities.title.surface_forms.text[]': opts['entitiesTitleSurfaceFormsText'],
         '!entities.title.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleSurfaceFormsText'], 'multi'),
         'entities.title.text[]': this.apiClient.buildCollectionParam(opts['entitiesTitleText'], 'multi'),
         '!entities.title.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleText'], 'multi'),
@@ -1754,7 +1887,6 @@ export default class DefaultApi {
         '!entities.title.links.wikidata[]': this.apiClient.buildCollectionParam(opts['notEntitiesTitleLinksWikidata'], 'multi'),
         'entities.body.id[]': this.apiClient.buildCollectionParam(opts['entitiesBodyId'], 'multi'),
         '!entities.body.id[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyId'], 'multi'),
-        'entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodySurfaceFormsText'], 'multi'),
         '!entities.body.surface_forms.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodySurfaceFormsText'], 'multi'),
         'entities.body.text[]': this.apiClient.buildCollectionParam(opts['entitiesBodyText'], 'multi'),
         '!entities.body.text[]': this.apiClient.buildCollectionParam(opts['notEntitiesBodyText'], 'multi'),

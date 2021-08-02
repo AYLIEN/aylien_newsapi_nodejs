@@ -18,11 +18,12 @@ import Warning from './Warning';
 /**
  * The Stories model module.
  * @module model/Stories
- * @version 4.4.0
+ * @version 4.5.0
  */
 class Stories {
     /**
      * Constructs a new <code>Stories</code>.
+     * Stories containing new V3 entities - available for new_v3_entities feature flag
      * @alias module:model/Stories
      */
     constructor() { 

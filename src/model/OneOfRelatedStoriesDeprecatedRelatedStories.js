@@ -12,22 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
+import DeprecatedRelatedStories from './DeprecatedRelatedStories';
 import DeprecatedStory from './DeprecatedStory';
+import RelatedStories from './RelatedStories';
 
 /**
- * The DeprecatedRelatedStories model module.
- * @module model/DeprecatedRelatedStories
+ * The OneOfRelatedStoriesDeprecatedRelatedStories model module.
+ * @module model/OneOfRelatedStoriesDeprecatedRelatedStories
  * @version 4.6.0
  */
-class DeprecatedRelatedStories {
+class OneOfRelatedStoriesDeprecatedRelatedStories {
     /**
-     * Constructs a new <code>DeprecatedRelatedStories</code>.
-     * Story with deprecated entities
-     * @alias module:model/DeprecatedRelatedStories
+     * Constructs a new <code>OneOfRelatedStoriesDeprecatedRelatedStories</code>.
+     * Wrapper of RelatedStories or DeprecatedRelatedStories
+     * @alias module:model/OneOfRelatedStoriesDeprecatedRelatedStories
+     * @implements module:model/RelatedStories
+     * @implements module:model/DeprecatedRelatedStories
      */
     constructor() { 
-        
-        DeprecatedRelatedStories.initialize(this);
+        RelatedStories.initialize(this);DeprecatedRelatedStories.initialize(this);
+        OneOfRelatedStoriesDeprecatedRelatedStories.initialize(this);
     }
 
     /**
@@ -39,15 +43,17 @@ class DeprecatedRelatedStories {
     }
 
     /**
-     * Constructs a <code>DeprecatedRelatedStories</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>OneOfRelatedStoriesDeprecatedRelatedStories</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DeprecatedRelatedStories} obj Optional instance to populate.
-     * @return {module:model/DeprecatedRelatedStories} The populated <code>DeprecatedRelatedStories</code> instance.
+     * @param {module:model/OneOfRelatedStoriesDeprecatedRelatedStories} obj Optional instance to populate.
+     * @return {module:model/OneOfRelatedStoriesDeprecatedRelatedStories} The populated <code>OneOfRelatedStoriesDeprecatedRelatedStories</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new DeprecatedRelatedStories();
+            obj = obj || new OneOfRelatedStoriesDeprecatedRelatedStories();
+            RelatedStories.constructFromObject(data, obj);
+            DeprecatedRelatedStories.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('published_at.end')) {
                 obj['published_at.end'] = ApiClient.convertToType(data['published_at.end'], 'Date');
@@ -126,32 +132,96 @@ class DeprecatedRelatedStories {
  * The end of a period in which searched stories were published
  * @member {Date} published_at.end
  */
-DeprecatedRelatedStories.prototype['published_at.end'] = undefined;
+OneOfRelatedStoriesDeprecatedRelatedStories.prototype['published_at.end'] = undefined;
 
 /**
  * The start of a period in which searched stories were published
  * @member {Date} published_at.start
  */
-DeprecatedRelatedStories.prototype['published_at.start'] = undefined;
+OneOfRelatedStoriesDeprecatedRelatedStories.prototype['published_at.start'] = undefined;
 
 /**
  * An array of related stories for the input story
  * @member {Array.<module:model/DeprecatedStory>} related_stories
  */
-DeprecatedRelatedStories.prototype['related_stories'] = undefined;
+OneOfRelatedStoriesDeprecatedRelatedStories.prototype['related_stories'] = undefined;
 
 /**
  * The input story body
  * @member {String} story_body
  */
-DeprecatedRelatedStories.prototype['story_body'] = undefined;
+OneOfRelatedStoriesDeprecatedRelatedStories.prototype['story_body'] = undefined;
 
 /**
  * The input story language
  * @member {String} story_language
  */
-DeprecatedRelatedStories.prototype['story_language'] = undefined;
+OneOfRelatedStoriesDeprecatedRelatedStories.prototype['story_language'] = undefined;
 
+/**
+ * The input story title
+ * @member {String} story_title
+ */
+OneOfRelatedStoriesDeprecatedRelatedStories.prototype['story_title'] = undefined;
+
+
+// Implement RelatedStories interface:
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+RelatedStories.prototype['published_at.end'] = undefined;
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+RelatedStories.prototype['published_at.start'] = undefined;
+/**
+ * An array of related stories for the input story
+ * @member {Array.<module:model/Story>} related_stories
+ */
+RelatedStories.prototype['related_stories'] = undefined;
+/**
+ * The input story body
+ * @member {String} story_body
+ */
+RelatedStories.prototype['story_body'] = undefined;
+/**
+ * The input story language
+ * @member {String} story_language
+ */
+RelatedStories.prototype['story_language'] = undefined;
+/**
+ * The input story title
+ * @member {String} story_title
+ */
+RelatedStories.prototype['story_title'] = undefined;
+// Implement DeprecatedRelatedStories interface:
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+DeprecatedRelatedStories.prototype['published_at.end'] = undefined;
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+DeprecatedRelatedStories.prototype['published_at.start'] = undefined;
+/**
+ * An array of related stories for the input story
+ * @member {Array.<module:model/DeprecatedStory>} related_stories
+ */
+DeprecatedRelatedStories.prototype['related_stories'] = undefined;
+/**
+ * The input story body
+ * @member {String} story_body
+ */
+DeprecatedRelatedStories.prototype['story_body'] = undefined;
+/**
+ * The input story language
+ * @member {String} story_language
+ */
+DeprecatedRelatedStories.prototype['story_language'] = undefined;
 /**
  * The input story title
  * @member {String} story_title
@@ -161,7 +231,5 @@ DeprecatedRelatedStories.prototype['story_title'] = undefined;
 
 
 
-
-
-export default DeprecatedRelatedStories;
+export default OneOfRelatedStoriesDeprecatedRelatedStories;
 

@@ -32,6 +32,8 @@ docs/Location.md
 docs/Media.md
 docs/MediaFormat.md
 docs/MediaType.md
+docs/OneOfRelatedStoriesDeprecatedRelatedStories.md
+docs/OneOfStoriesDeprecatedStories.md
 docs/Rank.md
 docs/Rankings.md
 docs/RelatedStories.md
@@ -93,6 +95,8 @@ src/model/Location.js
 src/model/Media.js
 src/model/MediaFormat.js
 src/model/MediaType.js
+src/model/OneOfRelatedStoriesDeprecatedRelatedStories.js
+src/model/OneOfStoriesDeprecatedStories.js
 src/model/Rank.js
 src/model/Rankings.js
 src/model/RelatedStories.js

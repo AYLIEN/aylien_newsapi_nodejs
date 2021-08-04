@@ -12,23 +12,27 @@
  */
 
 import ApiClient from '../ApiClient';
+import DeprecatedStories from './DeprecatedStories';
 import DeprecatedStory from './DeprecatedStory';
+import Stories from './Stories';
 import Warning from './Warning';
 
 /**
- * The DeprecatedStories model module.
- * @module model/DeprecatedStories
+ * The OneOfStoriesDeprecatedStories model module.
+ * @module model/OneOfStoriesDeprecatedStories
  * @version 4.6.0
  */
-class DeprecatedStories {
+class OneOfStoriesDeprecatedStories {
     /**
-     * Constructs a new <code>DeprecatedStories</code>.
-     * Stories containing deprecated entities
-     * @alias module:model/DeprecatedStories
+     * Constructs a new <code>OneOfStoriesDeprecatedStories</code>.
+     * Wrapper of Stories or DeprecatedStories
+     * @alias module:model/OneOfStoriesDeprecatedStories
+     * @implements module:model/Stories
+     * @implements module:model/DeprecatedStories
      */
     constructor() { 
-        
-        DeprecatedStories.initialize(this);
+        Stories.initialize(this);DeprecatedStories.initialize(this);
+        OneOfStoriesDeprecatedStories.initialize(this);
     }
 
     /**
@@ -40,15 +44,17 @@ class DeprecatedStories {
     }
 
     /**
-     * Constructs a <code>DeprecatedStories</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>OneOfStoriesDeprecatedStories</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/DeprecatedStories} obj Optional instance to populate.
-     * @return {module:model/DeprecatedStories} The populated <code>DeprecatedStories</code> instance.
+     * @param {module:model/OneOfStoriesDeprecatedStories} obj Optional instance to populate.
+     * @return {module:model/OneOfStoriesDeprecatedStories} The populated <code>OneOfStoriesDeprecatedStories</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new DeprecatedStories();
+            obj = obj || new OneOfStoriesDeprecatedStories();
+            Stories.constructFromObject(data, obj);
+            DeprecatedStories.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('next_page_cursor')) {
                 obj['next_page_cursor'] = ApiClient.convertToType(data['next_page_cursor'], 'String');
@@ -116,26 +122,80 @@ class DeprecatedStories {
  * The next page cursor
  * @member {String} next_page_cursor
  */
-DeprecatedStories.prototype['next_page_cursor'] = undefined;
+OneOfStoriesDeprecatedStories.prototype['next_page_cursor'] = undefined;
 
 /**
  * The end of a period in which searched stories were published
  * @member {Date} published_at.end
  */
-DeprecatedStories.prototype['published_at.end'] = undefined;
+OneOfStoriesDeprecatedStories.prototype['published_at.end'] = undefined;
 
 /**
  * The start of a period in which searched stories were published
  * @member {Date} published_at.start
  */
-DeprecatedStories.prototype['published_at.start'] = undefined;
+OneOfStoriesDeprecatedStories.prototype['published_at.start'] = undefined;
 
 /**
  * An array of stories
  * @member {Array.<module:model/DeprecatedStory>} stories
  */
-DeprecatedStories.prototype['stories'] = undefined;
+OneOfStoriesDeprecatedStories.prototype['stories'] = undefined;
 
+/**
+ * Notifies about possible issues that occurred when searching for stories
+ * @member {Array.<module:model/Warning>} warnings
+ */
+OneOfStoriesDeprecatedStories.prototype['warnings'] = undefined;
+
+
+// Implement Stories interface:
+/**
+ * The next page cursor
+ * @member {String} next_page_cursor
+ */
+Stories.prototype['next_page_cursor'] = undefined;
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+Stories.prototype['published_at.end'] = undefined;
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+Stories.prototype['published_at.start'] = undefined;
+/**
+ * An array of stories
+ * @member {Array.<module:model/Story>} stories
+ */
+Stories.prototype['stories'] = undefined;
+/**
+ * Notifies about possible issues that occurred when searching for stories
+ * @member {Array.<module:model/Warning>} warnings
+ */
+Stories.prototype['warnings'] = undefined;
+// Implement DeprecatedStories interface:
+/**
+ * The next page cursor
+ * @member {String} next_page_cursor
+ */
+DeprecatedStories.prototype['next_page_cursor'] = undefined;
+/**
+ * The end of a period in which searched stories were published
+ * @member {Date} published_at.end
+ */
+DeprecatedStories.prototype['published_at.end'] = undefined;
+/**
+ * The start of a period in which searched stories were published
+ * @member {Date} published_at.start
+ */
+DeprecatedStories.prototype['published_at.start'] = undefined;
+/**
+ * An array of stories
+ * @member {Array.<module:model/DeprecatedStory>} stories
+ */
+DeprecatedStories.prototype['stories'] = undefined;
 /**
  * Notifies about possible issues that occurred when searching for stories
  * @member {Array.<module:model/Warning>} warnings
@@ -145,7 +205,5 @@ DeprecatedStories.prototype['warnings'] = undefined;
 
 
 
-
-
-export default DeprecatedStories;
+export default OneOfStoriesDeprecatedStories;
 

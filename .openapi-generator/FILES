@@ -1,4 +1,5 @@
 .babelrc
+.gitignore
 .travis.yml
 docs/AggregatedSentiment.md
 docs/Author.md

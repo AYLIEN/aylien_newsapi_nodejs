@@ -19,7 +19,7 @@ import EntitySentiment from './EntitySentiment';
 /**
  * The DeprecatedEntity model module.
  * @module model/DeprecatedEntity
- * @version 4.5.0
+ * @version 5.0.0
  */
 class DeprecatedEntity {
     /**

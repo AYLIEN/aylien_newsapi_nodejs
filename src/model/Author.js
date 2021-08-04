@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Author model module.
  * @module model/Author
- * @version 4.5.0
+ * @version 5.0.0
  */
 class Author {
     /**

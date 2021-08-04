@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorLinks model module.
  * @module model/ErrorLinks
- * @version 4.5.0
+ * @version 5.0.0
  */
 class ErrorLinks {
     /**

@@ -17,7 +17,7 @@ import DeprecatedStory from './DeprecatedStory';
 /**
  * The DeprecatedRelatedStories model module.
  * @module model/DeprecatedRelatedStories
- * @version 4.5.0
+ * @version 5.0.0
  */
 class DeprecatedRelatedStories {
     /**

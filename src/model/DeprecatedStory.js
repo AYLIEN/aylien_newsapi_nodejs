@@ -26,7 +26,7 @@ import Summary from './Summary';
 /**
  * The DeprecatedStory model module.
  * @module model/DeprecatedStory
- * @version 4.5.0
+ * @version 5.0.0
  */
 class DeprecatedStory {
     /**

@@ -18,7 +18,7 @@ import Warning from './Warning';
 /**
  * The Stories model module.
  * @module model/Stories
- * @version 4.5.0
+ * @version 5.0.0
  */
 class Stories {
     /**

@@ -17,7 +17,7 @@ import DeprecatedEntity from './DeprecatedEntity';
 /**
  * The DeprecatedEntities model module.
  * @module model/DeprecatedEntities
- * @version 4.5.0
+ * @version 5.0.0
  */
 class DeprecatedEntities {
     /**

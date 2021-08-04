@@ -18,7 +18,7 @@ import EntitySurfaceForm from './EntitySurfaceForm';
 /**
  * The EntityInText model module.
  * @module model/EntityInText
- * @version 4.5.0
+ * @version 5.0.0
  */
 class EntityInText {
     /**

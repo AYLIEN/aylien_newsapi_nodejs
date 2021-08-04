@@ -54,12 +54,6 @@
       //expect(instance).to.be.a(AylienNewsApi.Warning);
     });
 
-    it('should have the property detail (base name: "detail")', function() {
-      // uncomment below and update the code to test the property detail
-      //var instane = new AylienNewsApi.Warning();
-      //expect(instance).to.be();
-    });
-
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
       //var instane = new AylienNewsApi.Warning();
@@ -68,6 +62,12 @@
 
     it('should have the property links (base name: "links")', function() {
       // uncomment below and update the code to test the property links
+      //var instane = new AylienNewsApi.Warning();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property details (base name: "details")', function() {
+      // uncomment below and update the code to test the property details
       //var instane = new AylienNewsApi.Warning();
       //expect(instance).to.be();
     });

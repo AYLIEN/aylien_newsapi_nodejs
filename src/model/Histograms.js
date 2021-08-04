@@ -17,7 +17,7 @@ import HistogramInterval from './HistogramInterval';
 /**
  * The Histograms model module.
  * @module model/Histograms
- * @version 4.5.0
+ * @version 5.0.0
  */
 class Histograms {
     /**

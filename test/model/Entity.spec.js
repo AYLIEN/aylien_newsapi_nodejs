@@ -54,14 +54,8 @@
       //expect(instance).to.be.a(AylienNewsApi.Entity);
     });
 
-    it('should have the property body (base name: "body")', function() {
-      // uncomment below and update the code to test the property body
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property indices (base name: "indices")', function() {
+      // uncomment below and update the code to test the property indices
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
@@ -72,32 +66,14 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property overallFrequency (base name: "overall_frequency")', function() {
-      // uncomment below and update the code to test the property overallFrequency
+    it('should have the property score (base name: "score")', function() {
+      // uncomment below and update the code to test the property score
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });
 
-    it('should have the property overallProminence (base name: "overall_prominence")', function() {
-      // uncomment below and update the code to test the property overallProminence
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property overallSentiment (base name: "overall_sentiment")', function() {
-      // uncomment below and update the code to test the property overallSentiment
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property stockTickers (base name: "stock_tickers")', function() {
-      // uncomment below and update the code to test the property stockTickers
-      //var instane = new AylienNewsApi.Entity();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property title (base name: "title")', function() {
-      // uncomment below and update the code to test the property title
+    it('should have the property text (base name: "text")', function() {
+      // uncomment below and update the code to test the property text
       //var instane = new AylienNewsApi.Entity();
       //expect(instance).to.be();
     });

@@ -18,7 +18,7 @@ import EntitySentiment from './EntitySentiment';
 /**
  * The EntityMention model module.
  * @module model/EntityMention
- * @version 4.5.0
+ * @version 5.0.0
  */
 class EntityMention {
     /**

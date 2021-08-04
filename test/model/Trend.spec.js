@@ -60,12 +60,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sentiment (base name: "sentiment")', function() {
-      // uncomment below and update the code to test the property sentiment
-      //var instane = new AylienNewsApi.Trend();
-      //expect(instance).to.be();
-    });
-
     it('should have the property value (base name: "value")', function() {
       // uncomment below and update the code to test the property value
       //var instane = new AylienNewsApi.Trend();

@@ -10,6 +10,12 @@ docs/CategoryTaxonomy.md
 docs/Cluster.md
 docs/Clusters.md
 docs/DefaultApi.md
+docs/DeprecatedEntities.md
+docs/DeprecatedEntity.md
+docs/DeprecatedEntitySurfaceForm.md
+docs/DeprecatedRelatedStories.md
+docs/DeprecatedStories.md
+docs/DeprecatedStory.md
 docs/Entity.md
 docs/EntityInText.md
 docs/EntityLinks.md
@@ -28,7 +34,6 @@ docs/MediaFormat.md
 docs/MediaType.md
 docs/Rank.md
 docs/Rankings.md
-docs/RelatedStories.md
 docs/RepresentativeStory.md
 docs/Scope.md
 docs/ScopeLevel.md
@@ -38,8 +43,6 @@ docs/Sentiments.md
 docs/ShareCount.md
 docs/ShareCounts.md
 docs/Source.md
-docs/Stories.md
-docs/Story.md
 docs/StoryCluster.md
 docs/StoryLinks.md
 docs/StoryTranslation.md
@@ -65,6 +68,12 @@ src/model/CategoryLinks.js
 src/model/CategoryTaxonomy.js
 src/model/Cluster.js
 src/model/Clusters.js
+src/model/DeprecatedEntities.js
+src/model/DeprecatedEntity.js
+src/model/DeprecatedEntitySurfaceForm.js
+src/model/DeprecatedRelatedStories.js
+src/model/DeprecatedStories.js
+src/model/DeprecatedStory.js
 src/model/Entity.js
 src/model/EntityInText.js
 src/model/EntityLinks.js
@@ -83,7 +92,6 @@ src/model/MediaFormat.js
 src/model/MediaType.js
 src/model/Rank.js
 src/model/Rankings.js
-src/model/RelatedStories.js
 src/model/RepresentativeStory.js
 src/model/Scope.js
 src/model/ScopeLevel.js
@@ -93,8 +101,6 @@ src/model/Sentiments.js
 src/model/ShareCount.js
 src/model/ShareCounts.js
 src/model/Source.js
-src/model/Stories.js
-src/model/Story.js
 src/model/StoryCluster.js
 src/model/StoryLinks.js
 src/model/StoryTranslation.js
@@ -115,6 +121,12 @@ test/model/CategoryLinks.spec.js
 test/model/CategoryTaxonomy.spec.js
 test/model/Cluster.spec.js
 test/model/Clusters.spec.js
+test/model/DeprecatedEntities.spec.js
+test/model/DeprecatedEntity.spec.js
+test/model/DeprecatedEntitySurfaceForm.spec.js
+test/model/DeprecatedRelatedStories.spec.js
+test/model/DeprecatedStories.spec.js
+test/model/DeprecatedStory.spec.js
 test/model/Entity.spec.js
 test/model/EntityInText.spec.js
 test/model/EntityLinks.spec.js
@@ -133,7 +145,6 @@ test/model/MediaFormat.spec.js
 test/model/MediaType.spec.js
 test/model/Rank.spec.js
 test/model/Rankings.spec.js
-test/model/RelatedStories.spec.js
 test/model/RepresentativeStory.spec.js
 test/model/Scope.spec.js
 test/model/ScopeLevel.spec.js
@@ -143,8 +154,6 @@ test/model/Sentiments.spec.js
 test/model/ShareCount.spec.js
 test/model/ShareCounts.spec.js
 test/model/Source.spec.js
-test/model/Stories.spec.js
-test/model/Story.spec.js
 test/model/StoryCluster.spec.js
 test/model/StoryLinks.spec.js
 test/model/StoryTranslation.spec.js

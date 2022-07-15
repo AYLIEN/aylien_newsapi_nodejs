@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**negative** | **Number** | Negative sentiments count | [optional] 
-**neutral** | **Number** | Neutral sentiments count | [optional] 
 **positive** | **Number** | Positive sentiments count | [optional] 
+**neutral** | **Number** | Neutral sentiments count | [optional] 
+**negative** | **Number** | Negative sentiments count | [optional] 
 
 

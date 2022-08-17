@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## advancedListStories
 
-> Stories advancedListStories(UNKNOWN_BASE_TYPE, opts)
+> Stories advancedListStories(body, opts)
 
 List Stories
 
@@ -41,7 +41,7 @@ app_key.apiKey = 'YOUR API KEY';
 //app_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new AylienNewsApi.DefaultApi();
-let UNKNOWN_BASE_TYPE = {"$and":[{"$or":[{"body":{"$text":"Tim Cook"}},{"social.shares.count.reddit.max":{"$gte":5000,"$boost":5}}]},{"entity":{"$and":[{"name":{"$text":"Apple","$boost":2}},{"$not":[{"type":{"$eq":"Fruit"}}]}]}}]}; // UNKNOWN_BASE_TYPE | /stories body schema to perform an advanced search with logical operators and nested objects. 
+let body = null; // Object | /stories body schema to perform an advanced search with logical operators and nested objects. 
 let opts = {
   'publishedAtStart': "publishedAtStart_example", // String | This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
   'publishedAtEnd': "publishedAtEnd_example", // String | This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). 
@@ -51,7 +51,7 @@ let opts = {
   'cursor': "'*'", // String | This parameter is used for finding a specific page. You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results). 
   'perPage': 10 // Number | This parameter is used for specifying number of items in each page You can read more about pagination of results [here](https://newsapi.aylien.com/docs/pagination-of-results) 
 };
-apiInstance.advancedListStories(UNKNOWN_BASE_TYPE, opts, (error, data, response) => {
+apiInstance.advancedListStories(body, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -65,7 +65,7 @@ apiInstance.advancedListStories(UNKNOWN_BASE_TYPE, opts, (error, data, response)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)| /stories body schema to perform an advanced search with logical operators and nested objects.  | 
+ **body** | **Object**| /stories body schema to perform an advanced search with logical operators and nested objects.  | 
  **publishedAtStart** | **String**| This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).  | [optional] 
  **publishedAtEnd** | **String**| This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates).  | [optional] 
  **_return** | [**[String]**](String.md)| This parameter is used for specifying return fields. | [optional] 

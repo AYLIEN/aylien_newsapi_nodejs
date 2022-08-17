@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **detail** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **links** | [**ErrorLinks**](ErrorLinks.md) |  | [optional] 
-**status** | **String** |  | [optional] 
+**status** | **Number** |  | [optional] 
 **title** | **String** |  | [optional] 
 
 

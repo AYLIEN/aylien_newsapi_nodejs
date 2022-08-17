@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**polarity** | [**SentimentPolarity**](SentimentPolarity.md) |  | [optional] 
 **confidence** | **Number** | Polarity confidence of the sentiment | [optional] 
+**polarity** | [**SentimentPolarity**](SentimentPolarity.md) |  | [optional] 
 
 
